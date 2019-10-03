@@ -53,6 +53,8 @@ This is great for cementing skills.
 
 Participant can reflect on mistakes and improve on them.
 
+## Digital Twins
+
 ### What are Digital Twins?
 
 [Forbes: Digital Twins](https://www.forbes.com/sites/bernardmarr/2017/03/06/what-is-digital-twin-technology-and-why-is-it-so-important/#1cd612f52e2a)
