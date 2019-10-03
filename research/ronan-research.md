@@ -23,3 +23,58 @@ Concludes:
 [Wikipedia: Serious game](https://en.wikipedia.org/wiki/Serious_game)
 
 "A serious game or applied game is a game designed for a primary purpose other than pure entertainment."
+
+## Gamification
+### What is Gamification?
+
+[Bunchball: Gamification](https://www.bunchball.com/gamification)
+
+Gamification is a process in which we look at something that already exists and that we wouldn’t consider to be a game for example scanning items at a till and make it into a game. Gamification is already present in many things for example the dashboard of the Ford Fusion hybrid. On the dashboard there are vine leaves present. If you waste fuel the leaves wither but if you conserve fuel they blossom.
+
+### What is Gamification used for?
+
+[Tophat](https://tophat.com/blog/gamification-education-class/)
+
+Gamification is used to promote participation, engagement and learning through means of rewarding the participant for completing tasks in the workplace, school etc.
+
+### What benefits does Gamification bring?
+
+[Learnlight](https://insights.learnlight.com/en/articles/5-benefits-of-gamification-in-learning/)
+
+* Makes learning fun
+
+Having fun while learning engages the participant more.
+
+* Gives the learners an opportunity to see real-world applications.
+
+This is great for cementing skills.
+
+*	The participant gets real time feedback.
+
+Participant can reflect on mistakes and improve on them.
+
+### What are Digital Twins?
+
+[Forbes: Digital Twins](https://www.forbes.com/sites/bernardmarr/2017/03/06/what-is-digital-twin-technology-and-why-is-it-so-important/#1cd612f52e2a)
+
+Digital Twins are a virtual implementation of a process, product or service. They are used by pairing the virtual world with the physical world together which allows for data analysis that can simulate what would happen in a real-life situation, prevent problems and prevent downtime.
+
+### How does a Digital Twin work?
+
+[HappiestMinds](https://www.happiestminds.com/insights/digital-twins/)
+
+A digital twin is a bridge between the physical and virtual world. Using sensors physical, manufacturing and operational data can be collected. This information is integrated into a virtual model. This model can then be used for data analysis which helps optimize the best outcome in the physical world. The digital twin acts as a live model of the physical equipment.
+
+### What benefits do Digital Twins bring?
+
+[Slcontrols](https://slcontrols.com/what-is-digital-twin-technology-and-how-can-it-benefit-manufacturing/)
+
+* Improved Productivity
+*	Faster production times
+*	Lower maintenance costs
+*	Reduced risk in various areas
+*	Improved product/training quality
+
+
+
+
