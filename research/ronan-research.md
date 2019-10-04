@@ -77,6 +77,20 @@ A digital twin is a bridge between the physical and virtual world. Using sensors
 *	Reduced risk in various areas
 *	Improved product/training quality
 
+## Sara De Freitas
+
+[Google books](https://books.google.ie/books/about/Education_in_Computer_Generated_Environm.html?id=3SxAswEACAAJ&source=kp_author_description&redir_esc=y)
+
+Sara De Freitas was responsible for setting up the Serious Games Institute. The first institute of its kind. She writes many articles in the areas of game-based learning.
+
+[Paper: Serious Games: A New Paradigm for Education?](https://www.researchgate.net/publication/262545606_Serious_Games_A_New_Paradigm_for_Education)
+
+Concludes:
+* "Serious games are a new and emerging sector of the games
+industry, but they are here to stay and could solve many of our key problems and
+challenges with engaging learners as well as supporting social learning long into the
+twenty-ﬁrst century."
+
 
 
 
