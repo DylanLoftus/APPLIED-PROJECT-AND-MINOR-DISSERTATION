@@ -18,11 +18,19 @@ Results:
 Concludes:
 * "Virtual reality is an effective method to supplement lessons in anatomy for students studying health sciences and medicine. **Mobile based virtual reality is as effective as desktop based virtual reality, and requires a substantially lower cost for setup.** However, shorter lessons in the virtual environment are required, as mobile virtual reality lessons can cause more cybersickness and adverse effects than desktop based applications."
 
-[Game based leaarning - Micheal Sutton](https://www.academia.edu/30689263/Game_Based_Learning_Journals_V3)
+### Serious games
 
 [Wikipedia: Serious game](https://en.wikipedia.org/wiki/Serious_game)
 
 "A serious game or applied game is a game designed for a primary purpose other than pure entertainment."
+
+"The idea shares aspects with simulation generally, including flight simulation and medical simulation, but explicitly emphasizes the added pedagogical value of fun and competition."
+
+### Michael Sutton
+Michael Sutton is a game-based learning author, educator, and innovator. He uses game-based learning to motivate engagement, innovation, creativity, retention, entrepreneurship, and performance improvements.
+
+[Game based learning - Micheal Sutton](https://www.academia.edu/30689263/Game_Based_Learning_Journals_V3)
+
 
 ## Gamification
 ### What is Gamification?
