@@ -26,6 +26,7 @@ As of right now, it's hard to know if sockets, or a HTTP/RESTful API, would be m
 *(packets sent as lines of text, with comma separated values, in the format **id:value,value,value,...\n** for this example)*
 
 **Protocol**
+
 Packet ID | Sent from | Format (datatypes) | Format (desc) | Description
 ----------|-----------|--------------------|---------------|------------
 0 | Client | (no values) | (no values) | Simulation start
@@ -34,6 +35,7 @@ Packet ID | Sent from | Format (datatypes) | Format (desc) | Description
 3 | Client | (no values) | (no values) | Simulation end
 
 **Indicator list**
+
 Indicator ID | Type | Description
 -------------|------|------------
 0 | Warning light | Temperature too high
@@ -41,6 +43,7 @@ Indicator ID | Type | Description
 2 | Siren | Evacuate immediately
 
 **Environment variables**
+
 Environment variable ID | Name | Unit
 -------------|------|------------
 0 | Temperature | Celsius
