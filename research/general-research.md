@@ -61,6 +61,26 @@ This is great for cementing skills.
 
 Participant can reflect on mistakes and improve on them.
 
+### Known Knowns, Known Unknowns, Unknown Knowns, and Unknown Unknowns
+
+[Medium](https://medium.com/datadriveninvestor/known-knowns-unknown-knowns-and-unknown-unknowns-b35013fb350d)
+
+* Known knowns are things that we **are** aware of and also understand.
+
+"You know everything there is to know about how to create the paper airplane since a child. Now you just have to execute, and the problem is solved."
+
+* Known unknowns are things that we **are** aware of but we do not understand.
+
+"If you want to build a product with cloud native architecture, an expert is helpful to shift through the unknowns and create clarity."
+
+* Unknown knowns are things that we are **not** aware of but we do understand them.
+
+"Unknown knowns are those moments when you say, I feel like this is the right thing to do. This is a result of years of experience."
+
+* Unknown unknowns are things that we are **not** aware of **and** we also do not understand.
+
+These are the things that we didn't know we didn't know.
+
 ## Digital Twins
 
 ### What are Digital Twins?
