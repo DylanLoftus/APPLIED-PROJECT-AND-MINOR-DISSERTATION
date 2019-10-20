@@ -18,11 +18,19 @@ Results:
 Concludes:
 * "Virtual reality is an effective method to supplement lessons in anatomy for students studying health sciences and medicine. **Mobile based virtual reality is as effective as desktop based virtual reality, and requires a substantially lower cost for setup.** However, shorter lessons in the virtual environment are required, as mobile virtual reality lessons can cause more cybersickness and adverse effects than desktop based applications."
 
-[Game based leaarning - Micheal Sutton](https://www.academia.edu/30689263/Game_Based_Learning_Journals_V3)
+### Serious games
 
 [Wikipedia: Serious game](https://en.wikipedia.org/wiki/Serious_game)
 
 "A serious game or applied game is a game designed for a primary purpose other than pure entertainment."
+
+"The idea shares aspects with simulation generally, including flight simulation and medical simulation, but explicitly emphasizes the added pedagogical value of fun and competition."
+
+### Michael Sutton
+Michael Sutton is a game-based learning author, educator, and innovator. He uses game-based learning to motivate engagement, innovation, creativity, retention, entrepreneurship, and performance improvements.
+
+[Game based learning - Micheal Sutton](https://www.academia.edu/30689263/Game_Based_Learning_Journals_V3)
+
 
 ## Gamification
 ### What is Gamification?
@@ -53,6 +61,26 @@ This is great for cementing skills.
 
 Participant can reflect on mistakes and improve on them.
 
+### Known Knowns, Known Unknowns, Unknown Knowns, and Unknown Unknowns
+
+[Medium](https://medium.com/datadriveninvestor/known-knowns-unknown-knowns-and-unknown-unknowns-b35013fb350d)
+
+* Known knowns are things that we **are** aware of and also understand.
+
+"You know everything there is to know about how to create the paper airplane since a child. Now you just have to execute, and the problem is solved."
+
+* Known unknowns are things that we **are** aware of but we do not understand.
+
+"If you want to build a product with cloud native architecture, an expert is helpful to shift through the unknowns and create clarity."
+
+* Unknown knowns are things that we are **not** aware of but we do understand them.
+
+"Unknown knowns are those moments when you say, I feel like this is the right thing to do. This is a result of years of experience."
+
+* Unknown unknowns are things that we are **not** aware of **and** we also do not understand.
+
+These are the things that we didn't know we didn't know.
+
 ## Digital Twins
 
 ### What are Digital Twins?
@@ -76,6 +104,20 @@ A digital twin is a bridge between the physical and virtual world. Using sensors
 *	Lower maintenance costs
 *	Reduced risk in various areas
 *	Improved product/training quality
+
+## Sara De Freitas
+
+[Google books](https://books.google.ie/books/about/Education_in_Computer_Generated_Environm.html?id=3SxAswEACAAJ&source=kp_author_description&redir_esc=y)
+
+Sara De Freitas was responsible for setting up the Serious Games Institute. The first institute of its kind. She writes many articles in the areas of game-based learning.
+
+[Paper: Serious Games: A New Paradigm for Education?](https://www.researchgate.net/publication/262545606_Serious_Games_A_New_Paradigm_for_Education)
+
+Concludes:
+* "Serious games are a new and emerging sector of the games
+industry, but they are here to stay and could solve many of our key problems and
+challenges with engaging learners as well as supporting social learning long into the
+twenty-ﬁrst century."
 
 
 
