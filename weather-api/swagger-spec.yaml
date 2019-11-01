@@ -22,6 +22,19 @@ paths:
       operationId: getWeatherHistory
       description: |
         Retrieves a premade dataset of weather history for a specified area
+      parameters:
+        - name: area
+          in: path
+          required: true
+          description: location of weather data to use
+          schema:
+            type: string
+        - name: dataset
+          in: path
+          required: true
+          description: dataset number to use
+          schema:
+            type: integer
       responses:
         '200':
           description: a premade set of weather history
@@ -47,7 +60,7 @@ components:
         data:
           type: array
           items:
-            $ref "#/components/schemas/DataPoint"
+            $ref: "#/components/schemas/DataPoint"
     DataPoint:
       type: object
       required:
