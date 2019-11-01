@@ -1,0 +1,61 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Ronan-H/weather-api/1.0.0
+info:
+  description: Weather API for use in our 4th year project, 3D House Simulator
+  version: "1.0.0"
+  title: Weather API
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: users
+    description: Operations available to regular users
+paths:
+  /historical/{area}/{dataset}:
+    get:
+      tags:
+        - users
+      summary: retrieves weather history
+      operationId: getWeatherHistory
+      description: |
+        Retrieves a premade dataset of weather history for a specified area
+      responses:
+        '200':
+          description: a premade set of weather history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherHistory'
+        '400':
+          description: bad input parameter
+components:
+  schemas:
+    WeatherHistory:
+      type: object
+      required:
+        - description
+        - length
+        - data
+      properties:
+        description:
+          type: string
+        length:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref "#/components/schemas/DataPoint"
+    DataPoint:
+      type: object
+      required:
+        - temperature
+      properties:
+        temperature:
+          type: number
+          example: 10
+        windspeed:
+          type: number
+          example: 3
