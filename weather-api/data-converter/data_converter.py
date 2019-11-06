@@ -71,7 +71,7 @@ for i in range(num_sets):
     # dump json file
     out_path = "{}/{}.json".format(out_dir, str(i))
     with open(out_path, "w") as out_file:
-        json.dump(weather_history, out_file)
+        json.dump(weather_history, out_file, indent=4)
 
     line += sim_set_length
 

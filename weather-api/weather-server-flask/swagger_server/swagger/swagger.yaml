@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Weather API
+  description: Weather API for use in our 4th year project, 3D House Simulator
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/Ronan-H/weather-api/1.0.0
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: users
+  description: Operations available to regular users
+paths:
+  /historical/{area}/{dataset}:
+    get:
+      tags:
+      - users
+      summary: retrieves weather history
+      description: |
+        Retrieves a premade dataset of weather history for a specified area
+      operationId: get_weather_history
+      parameters:
+      - name: area
+        in: path
+        description: location of weather data to use
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: dataset
+        in: path
+        description: dataset number to use
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        200:
+          description: a premade set of weather history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherHistory'
+        400:
+          description: bad input parameter
+      x-openapi-router-controller: swagger_server.controllers.users_controller
+components:
+  schemas:
+    WeatherHistory:
+      required:
+      - data
+      - description
+      - length
+      type: object
+      properties:
+        description:
+          type: string
+        length:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataPoint'
+      example:
+        data:
+        - temperature: 10
+          windspeed: 3
+          timestamp: 15-aug-2012 17:00
+        - temperature: 10
+          windspeed: 3
+          timestamp: 15-aug-2012 17:00
+        length: 0
+        description: description
+    DataPoint:
+      required:
+      - temperature
+      type: object
+      properties:
+        timestamp:
+          type: string
+          example: 15-aug-2012 17:00
+        temperature:
+          type: number
+          example: 10
+        windspeed:
+          type: number
+          example: 3
+      example:
+        temperature: 10
+        windspeed: 3
+        timestamp: 15-aug-2012 17:00
+

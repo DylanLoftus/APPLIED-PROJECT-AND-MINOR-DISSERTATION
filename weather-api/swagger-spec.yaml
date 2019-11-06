@@ -66,6 +66,9 @@ components:
       required:
         - temperature
       properties:
+        timestamp:
+          type: string
+          example: "15-aug-2012 17:00"
         temperature:
           type: number
           example: 10
