@@ -1,8 +1,9 @@
 import connexion
 import six
 
-from swagger_server.models.weather_history import WeatherHistory  # noqa: E501
-from swagger_server import util
+from ..models.weather_history import WeatherHistory  # noqa: E501
+from ..models.weather_history import DataPoint
+from .. import util
 
 
 def get_weather_history(area, dataset):  # noqa: E501
@@ -17,4 +18,5 @@ def get_weather_history(area, dataset):  # noqa: E501
 
     :rtype: WeatherHistory
     """
-    return 'do some magic!'
+    test = WeatherHistory("Test desc", 1, [DataPoint("15-aug-2012 17:00", 17, 6)])
+    return test
