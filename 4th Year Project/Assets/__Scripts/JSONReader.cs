@@ -2,31 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
+using System;
+using Newtonsoft.Json;
 
 public class JSONReader : MonoBehaviour
 {
-    string path;
-    string jsonData;
 
-    // Start is called before the first frame update
+    GameManager gameManager;
+
     void Start()
     {
-        path = Application.streamingAssetsPath + "/temperature.json";
-        jsonData = File.ReadAllText(path);
-        SpudTest spud = JsonUtility.FromJson<SpudTest>(jsonData);
-        Debug.Log("Reading in from JSON file: " + spud.id);
+        StartCoroutine(GetText());
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator GetText()
     {
+        UnityWebRequest www = UnityWebRequest.Get("http://ronanstuff.strangled.net:8080/Ronan-H/weather-api/1.0.0/historical/athenry/0");
+        yield return www.SendWebRequest();
 
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            // Show results as text
+            Debug.Log(www.downloadHandler.text);
+
+            // Or retrieve results as binary data
+            byte[] results = www.downloadHandler.data;
+            deserializeBytes(results);
+        }
     }
 
-    [System.Serializable]
-    public class SpudTest
+    public void deserializeBytes(byte[] results)
     {
-        public string id;
-        public int[] temperature;
+        
+        string str = System.Text.Encoding.Default.GetString(results);
+        WeatherForecast forecast = JsonConvert.DeserializeObject<WeatherForecast>(str);
+        gameManager.setForecast(forecast);
+        Debug.Log("Sending to game manager!");
+        
     }
 }
