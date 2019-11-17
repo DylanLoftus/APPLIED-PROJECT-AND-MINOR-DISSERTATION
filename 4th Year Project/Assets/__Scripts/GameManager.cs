@@ -21,7 +21,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkDoorOpen();
+        checkWindowOpen();
+    }
 
+    private void checkWindowOpen()
+    {
+        if (windowOpen)
+        {
+            // Do the window stuff.
+        }
+    }
+
+    private void checkDoorOpen()
+    {
+        if (doorOpen)
+        {
+            // Do the door stuff.
+        }
     }
 
     public IEnumerator setWeatherForecast()

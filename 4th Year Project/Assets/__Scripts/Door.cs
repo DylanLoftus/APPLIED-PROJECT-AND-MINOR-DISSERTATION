@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-
+    public GameObject[] connectingRooms;
     GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        connectingRooms = new GameObject[2];
     }
 
     // Update is called once per frame
