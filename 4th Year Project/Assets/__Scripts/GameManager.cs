@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public float outsideTemp;
     public WeatherForecast f = new WeatherForecast();
+    public bool doorOpen = false;
+    public bool windowOpen = false;
 
     // Start is called before the first frame update
     void Start()
