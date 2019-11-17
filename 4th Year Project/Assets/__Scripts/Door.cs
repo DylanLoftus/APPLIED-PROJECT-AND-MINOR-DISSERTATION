@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public GameObject[] connectingRooms;
+    public Room[] connectingRooms;
     GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        connectingRooms = new GameObject[2];
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
             Debug.Log("Door collision detected with player");
 
             GetComponentInChildren<Rigidbody>().transform.Rotate(0, 90, 0, Space.Self);
-            gameManager.doorOpen = true;
+            gameManager.DoorOpen(connectingRooms);
 
         }
     }
@@ -39,7 +39,6 @@ public class Door : MonoBehaviour
             Debug.Log("Close door");
 
             GetComponentInChildren<Rigidbody>().transform.Rotate(0, -90, 0, Space.Self);
-            gameManager.doorOpen = false;
         }
     }
 }

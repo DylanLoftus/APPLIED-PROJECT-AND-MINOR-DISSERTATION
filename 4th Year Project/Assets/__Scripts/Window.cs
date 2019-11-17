@@ -5,11 +5,13 @@ using UnityEngine;
 public class Window : MonoBehaviour
 {
     GameManager gameManager;
+    Room room;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        room = GameManager.FindObjectOfType<Room>();
 
     }
 
@@ -26,7 +28,7 @@ public class Window : MonoBehaviour
             Debug.Log("Window collision detected with player");
 
             GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
-            gameManager.windowOpen = true;
+            gameManager.WindowOpen(room);
 
         }
     }

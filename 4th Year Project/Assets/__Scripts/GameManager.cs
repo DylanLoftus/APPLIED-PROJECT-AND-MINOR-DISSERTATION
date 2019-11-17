@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public float outsideTemp;
     public WeatherForecast f = new WeatherForecast();
-    public bool doorOpen = false;
     public bool windowOpen = false;
 
     // Start is called before the first frame update
@@ -21,24 +20,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkDoorOpen();
-        checkWindowOpen();
+
     }
 
-    private void checkWindowOpen()
+    public void DoorOpen(Room[] connectingRooms)
     {
-        if (windowOpen)
-        {
-            // Do the window stuff.
+        foreach(Room r in connectingRooms){
+            r.roomTemperature -= 5;
+            Debug.Log(r.roomTemperature);
         }
+
     }
 
-    private void checkDoorOpen()
+    public void WindowOpen(Room room)
     {
-        if (doorOpen)
-        {
-            // Do the door stuff.
-        }
+        room.roomTemperature -= 8;
+        Debug.Log(room.roomTemperature);
     }
 
     public IEnumerator setWeatherForecast()
