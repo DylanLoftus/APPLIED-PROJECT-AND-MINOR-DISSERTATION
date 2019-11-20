@@ -8,16 +8,23 @@ public class Room : MonoBehaviour
     public int roomId;
     public float roomTemperature;
 
-    GameManager gameManager;
-    Room room;
-    
+    private GameManager gameManager;
+    private Room roomObject;
+
+    [SerializeField]
+    private Room roomNorth;
+    [SerializeField]
+    private Room roomSouth;
+    [SerializeField]
+    private Room roomEast;
+    [SerializeField]
+    private Room roomWest;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        room = GameObject.FindObjectOfType<Room>();
-
+        roomObject = GameObject.FindObjectOfType<Room>();
     }
 
     // Update is called once per frame
@@ -33,9 +40,8 @@ public class Room : MonoBehaviour
         float tempGradient = Mathf.Clamp((gameManager.outsideTemp - floorTemp) / tempScale, 0, 1);
         float red = tempGradient;
         float blue = (1 - tempGradient);
-
-
-        var roomRenderer = room.GetComponentInChildren<Renderer>();
+        
+        var roomRenderer = roomObject.GetComponentInChildren<Renderer>();
         roomRenderer.material.SetColor("_Color", new Color(red, 0, blue));
     }
 

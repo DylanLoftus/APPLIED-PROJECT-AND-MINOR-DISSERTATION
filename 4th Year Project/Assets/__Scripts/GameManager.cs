@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float outsideTemp;
-    public WeatherForecast f = new WeatherForecast();
+    public WeatherHistory weatherHistory = new WeatherHistory();
     public bool windowOpen = false;
 
     // Start is called before the first frame update
@@ -38,24 +38,27 @@ public class GameManager : MonoBehaviour
         Debug.Log(room.roomTemperature);
     }
 
-    public IEnumerator setWeatherForecast()
+    public IEnumerator runSimulation()
     {
 
         Debug.Log("Gamemanager received!");
-        for (int i = 1; i < 180; i++)
+        for (int i = 0; i < weatherHistory.Length; i++)
         {
-            Debug.Log("Got into loop");
-            Debug.Log(f.Data[i].Temperature);
-            outsideTemp = f.Data[i].Temperature;
+            outsideTemp = weatherHistory.Data[i].Temperature;
             Debug.Log("Outside temperature is: " + outsideTemp);
-            yield return new WaitForSeconds(5.0f);
+            for (int j = 0; j < 5; j++)
+            {
+                // simulate 1 second (equalise temperatures)
+
+                yield return new WaitForSeconds(1.0f);
+            }
         }
         Debug.Log("Outside loop");
     }
 
-    public void setForecast(WeatherForecast forecast)
+    public void setWeatherData(WeatherHistory weatherHistory)
     {
-        f = forecast;
-        StartCoroutine(setWeatherForecast());
+        this.weatherHistory = weatherHistory;
+        StartCoroutine(runSimulation());
     }
 }
