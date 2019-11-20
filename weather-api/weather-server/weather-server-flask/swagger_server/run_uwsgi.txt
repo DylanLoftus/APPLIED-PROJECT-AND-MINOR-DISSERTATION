@@ -1,1 +1,0 @@
-sudo uwsgi --plugin python --http 0.0.0.0:5000 --wsgi-file wsgi.py --master --processes 4 --threads 2 --uid pi
