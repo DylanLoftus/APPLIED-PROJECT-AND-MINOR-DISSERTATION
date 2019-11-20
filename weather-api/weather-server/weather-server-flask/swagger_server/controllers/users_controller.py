@@ -1,9 +1,12 @@
+import sys
+sys.path.append("..")
+
 import connexion
 import six
 
-from ..models.weather_history import WeatherHistory  # noqa: E501
-from ..models.weather_history import DataPoint
-from .. import util
+from models.weather_history import WeatherHistory  # noqa: E501
+from models.weather_history import DataPoint
+import util
 import pymongo
 import gridfs
 from flask import abort

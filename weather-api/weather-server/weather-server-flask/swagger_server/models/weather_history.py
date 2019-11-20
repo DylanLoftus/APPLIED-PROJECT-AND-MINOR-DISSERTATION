@@ -1,13 +1,17 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+
+import sys
+sys.path.append("..")
+
 from datetime import date, datetime  # noqa: F401
 
 from typing import List, Dict  # noqa: F401
 
-from ..models.base_model_ import Model
-from ..models.data_point import DataPoint  # noqa: F401,E501
-from .. import util
+from models.base_model_ import Model
+from models.data_point import DataPoint  # noqa: F401,E501
+import util
 
 
 class WeatherHistory(Model):

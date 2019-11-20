@@ -1,9 +1,12 @@
+import sys
+sys.path.append("..")
+
 import pprint
 
 import six
 import typing
 
-from .. import util
+import util
 
 T = typing.TypeVar('T')
 

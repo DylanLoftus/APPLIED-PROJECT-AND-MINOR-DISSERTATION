@@ -2,11 +2,14 @@
 
 from __future__ import absolute_import
 
+import sys
+sys.path.append("..")
+
 from flask import json
 from six import BytesIO
 
-from swagger_server.models.weather_history import WeatherHistory  # noqa: E501
-from swagger_server.test import BaseTestCase
+from models.weather_history import WeatherHistory  # noqa: E501
+from test import BaseTestCase
 
 
 class TestUsersController(BaseTestCase):

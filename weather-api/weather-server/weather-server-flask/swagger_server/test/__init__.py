@@ -1,9 +1,12 @@
+import sys
+sys.path.append("..")
+
 import logging
 
 import connexion
 from flask_testing import TestCase
 
-from swagger_server.encoder import JSONEncoder
+from encoder import JSONEncoder
 
 
 class BaseTestCase(TestCase):
