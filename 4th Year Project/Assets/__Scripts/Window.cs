@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Window : MonoBehaviour
 {
+    public bool isOpen;
+
     GameManager gameManager;
     Room room;
 
@@ -12,7 +14,7 @@ public class Window : MonoBehaviour
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         room = GameManager.FindObjectOfType<Room>();
-
+        isOpen = false;
     }
 
     // Update is called once per frame
@@ -25,22 +27,20 @@ public class Window : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Window collision detected with player");
+            if (isOpen)
+            {
+                Debug.Log("Close window");
 
-            GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
-            gameManager.WindowOpen(room);
+                GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
+            }
+            else
+            {
+                Debug.Log("Window collision detected with player");
 
-        }
-    }
+                GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
+            }
 
-    private void OnTriggerExit(Collider collision)
-    {
-        if(collision.tag == "Player")
-        {
-            Debug.Log("Close window");
-
-            GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
-            gameManager.windowOpen = false;
+            isOpen = !isOpen;
         }
     }
 }

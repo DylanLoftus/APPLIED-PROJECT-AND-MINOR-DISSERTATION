@@ -44,8 +44,7 @@ public class JSONReader : MonoBehaviour
         
         string str = System.Text.Encoding.Default.GetString(results);
         WeatherHistory forecast = JsonConvert.DeserializeObject<WeatherHistory>(str);
-        gameManager.setWeatherData(forecast);
+        gameManager.SetWeatherData(forecast);
         Debug.Log("Sending to game manager!");
-        
     }
 }

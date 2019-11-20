@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
             Debug.Log("Door collision detected with player");
 
             GetComponentInChildren<Rigidbody>().transform.Rotate(0, 90, 0, Space.Self);
-            gameManager.DoorOpen(connectingRooms);
+            //gameManager.DoorOpen(connectingRooms);
 
         }
     }

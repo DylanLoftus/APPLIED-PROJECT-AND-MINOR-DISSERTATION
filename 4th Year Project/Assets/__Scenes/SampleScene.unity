@@ -589,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_Name
-      value: Room (1)
+      value: Room SW
       objectReference: {fileID: 0}
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
@@ -656,6 +656,16 @@ PrefabInstance:
       propertyPath: roomId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomNorth
+      value: 
+      objectReference: {fileID: 805763000}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomEast
+      value: 
+      objectReference: {fileID: 103295450}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
@@ -924,7 +934,7 @@ PrefabInstance:
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_Name
-      value: Room (3)
+      value: Room NE
       objectReference: {fileID: 0}
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
@@ -991,6 +1001,16 @@ PrefabInstance:
       propertyPath: roomId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomWest
+      value: 
+      objectReference: {fileID: 805763000}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomSouth
+      value: 
+      objectReference: {fileID: 103295450}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
@@ -1008,7 +1028,7 @@ PrefabInstance:
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_Name
-      value: Room (2)
+      value: Room SE
       objectReference: {fileID: 0}
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
@@ -1075,6 +1095,16 @@ PrefabInstance:
       propertyPath: roomId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomNorth
+      value: 
+      objectReference: {fileID: 805763000}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomWest
+      value: 
+      objectReference: {fileID: 1436157436}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
@@ -1301,7 +1331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outsideTemp: 0
-  windowOpen: 0
+  rooms:
+  - {fileID: 805763000}
+  - {fileID: 1436157436}
+  - {fileID: 103295450}
+  - {fileID: 718686829}
 --- !u!4 &1713849199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4571443780402599106, guid: 5639e7c8af10e184a8fd90f221932296,
@@ -1664,7 +1698,7 @@ PrefabInstance:
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_Name
-      value: Room
+      value: Room NW
       objectReference: {fileID: 0}
     - target: {fileID: 8332832530680009158, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
@@ -1731,6 +1765,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomSouth
+      value: 
+      objectReference: {fileID: 1436157436}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: roomEast
+      value: 
+      objectReference: {fileID: 718686829}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
