@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeatherForecast
+public class WeatherHistory
 {
     public string Description { get; set; }
-    public int length { get; set; }
+    public int Length { get; set; }
     public string Summary { get; set; }
     public IList<DataPoint> Data { get; set; }
 }

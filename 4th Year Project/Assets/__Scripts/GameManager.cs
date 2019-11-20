@@ -7,8 +7,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float outsideTemp;
-    public WeatherForecast f = new WeatherForecast();
-    public bool windowOpen = false;
+    public WeatherHistory weatherHistory = new WeatherHistory();
+
+    [SerializeField]
+    private Room[] rooms;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,6 @@ public class GameManager : MonoBehaviour
             r.roomTemperature -= 5;
             Debug.Log(r.roomTemperature);
         }
-
     }
 
     public void WindowOpen(Room room)
@@ -38,24 +39,34 @@ public class GameManager : MonoBehaviour
         Debug.Log(room.roomTemperature);
     }
 
-    public IEnumerator setWeatherForecast()
+    public IEnumerator RunSimulation()
     {
 
         Debug.Log("Gamemanager received!");
-        for (int i = 1; i < 180; i++)
+        for (int i = 0; i < weatherHistory.Length; i++)
         {
-            Debug.Log("Got into loop");
-            Debug.Log(f.Data[i].Temperature);
-            outsideTemp = f.Data[i].Temperature;
-            Debug.Log("Outside temperature is: " + outsideTemp);
-            yield return new WaitForSeconds(5.0f);
+            outsideTemp = weatherHistory.Data[i].Temperature;
+            Debug.Log("New outside temperature is: " + outsideTemp);
+            for (int j = 0; j < 5; j++)
+            {
+                // simulate 1 second (equalise temperatures)
+                EqualizeTemperatures();
+                yield return new WaitForSeconds(1.0f);
+            }
         }
         Debug.Log("Outside loop");
     }
 
-    public void setForecast(WeatherForecast forecast)
+    public void EqualizeTemperatures()
     {
-        f = forecast;
-        StartCoroutine(setWeatherForecast());
+        foreach (Room room in rooms) {
+            room.EqualizeTemperature();
+        }
+    }
+
+    public void SetWeatherData(WeatherHistory weatherHistory)
+    {
+        this.weatherHistory = weatherHistory;
+        StartCoroutine(RunSimulation());
     }
 }
