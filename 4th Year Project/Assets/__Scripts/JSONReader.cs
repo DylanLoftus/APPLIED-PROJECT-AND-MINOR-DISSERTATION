@@ -19,8 +19,9 @@ public class JSONReader : MonoBehaviour
 
     IEnumerator GetText()
     {
-        //UnityWebRequest www = UnityWebRequest.Get("http://ronanstuff.strangled.net:8080/Ronan-H/weather-api/1.0.0/historical/athenry/0");
-        UnityWebRequest www = UnityWebRequest.Get("http://127.0.0.1:8080/Ronan-H/weather-api/1.0.0/historical/athenry/0");
+        // switch if hosting flask server locally
+        //UnityWebRequest www = UnityWebRequest.Get("http://127.0.0.1:8080/Ronan-H/weather-api/1.0.0/historical/athenry/0");
+        UnityWebRequest www = UnityWebRequest.Get("http://ronanstuff.strangled.net:53269/Ronan-H/weather-api/1.0.0/historical/athenry/0");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
