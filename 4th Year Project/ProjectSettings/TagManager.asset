@@ -12,6 +12,7 @@ TagManager:
   - Window2
   - Window3
   - Window4
+  - cube
   layers:
   - Default
   - TransparentFX

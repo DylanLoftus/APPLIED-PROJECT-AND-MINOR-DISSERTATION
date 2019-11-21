@@ -71,6 +71,6 @@ public class Room : MonoBehaviour
         //Debug.Log("temp change: " + tempChange);
         roomTemperature += tempChange;
 
-        Debug.Log(gameObject.name + " temp: " + roomTemperature);
+        //Debug.Log(gameObject.name + " temp: " + roomTemperature);
     }
 }

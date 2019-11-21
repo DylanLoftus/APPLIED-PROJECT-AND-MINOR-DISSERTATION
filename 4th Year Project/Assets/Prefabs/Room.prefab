@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87845b094e7d8864aa19f171edd16016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1 &7217549481223155375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1308,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomId: 0
   roomTemperature: 0
+  roomNorth: {fileID: 0}
+  roomSouth: {fileID: 0}
+  roomEast: {fileID: 0}
+  roomWest: {fileID: 0}
 --- !u!1 &8735284831860603233
 GameObject:
   m_ObjectHideFlags: 0

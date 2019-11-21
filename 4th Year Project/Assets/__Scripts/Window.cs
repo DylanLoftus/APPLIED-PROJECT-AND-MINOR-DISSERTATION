@@ -20,27 +20,25 @@ public class Window : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (Input.GetMouseButtonDown(0) == true)
         {
-            if (isOpen)
+            if (collision.tag == "Player")
             {
-                Debug.Log("Close window");
+                if (isOpen)
+                {
+                    GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
+                }
+                else
+                {
+                    GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
+                }
 
-                GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
+                isOpen = !isOpen;
             }
-            else
-            {
-                Debug.Log("Window collision detected with player");
-
-                GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
-            }
-
-            isOpen = !isOpen;
         }
     }
 }
