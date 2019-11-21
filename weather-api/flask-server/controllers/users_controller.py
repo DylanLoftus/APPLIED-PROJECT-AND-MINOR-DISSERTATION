@@ -25,8 +25,6 @@ def get_weather_history(area, dataset):  # noqa: E501
     :rtype: WeatherHistory
     """
     try:
-        # test = WeatherHistory("Test desc", 1, [DataPoint("15-aug-2012 17:00", 17, 6)])
-
         # user Ronan is read-only for security
         mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
         db = mongo["weather"]
@@ -35,6 +33,34 @@ def get_weather_history(area, dataset):  # noqa: E501
         del doc["_id"]
         # this line seems redundant, you can just return the doc dict instead
         response = WeatherHistory(**doc)
+
+        return response
+    except:
+        abort(404)
+
+def get_data_point(area, dataset, datapoint):  # noqa: E501
+    """retrieves a specific DataPoint from a WeatherHistory set
+
+    Retrieves a specific DataPoint from a WeatherHistory set  # noqa: E501
+
+    :param area: location of weather data to use
+    :type area: str
+    :param dataset: dataset number to use
+    :type dataset: int
+    :param datapoint: index of specific DataPoint to get from the WeatherHistory
+    :type datapoint: int
+
+    :rtype: DataPoint
+    """
+    try:
+        # user Ronan is read-only for security
+        mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
+        db = mongo["weather"]
+        coll = db.get_collection(area)
+        doc = list(coll.find({}))[dataset]
+        del doc["_id"]
+        # this line seems redundant, you can just return the doc dict instead
+        response = WeatherHistory(**doc).data[datapoint]
 
         return response
     except:

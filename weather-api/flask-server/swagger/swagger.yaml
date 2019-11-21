@@ -2,13 +2,10 @@ openapi: 3.0.0
 info:
   title: Weather API
   description: Weather API for use in our 4th year project, 3D House Simulator
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/Ronan-H/weather-api/1.0.0
-  description: SwaggerHub API Auto Mocking
+- url: http://ronanstuff.strangled.net:53269/Ronan-H/weather-api/1.0.0
+  description: API hosted on web server
 tags:
 - name: users
   description: Operations available to regular users
@@ -45,6 +42,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WeatherHistory'
+        400:
+          description: bad input parameter
+      x-openapi-router-controller: controllers.users_controller
+  /historical/{area}/{dataset}/{datapoint}:
+    get:
+      tags:
+      - users
+      summary: retrieves a specific DataPoint from a WeatherHistory set
+      description: |
+        Retrieves a specific DataPoint from a WeatherHistory set
+      operationId: get_data_point
+      parameters:
+      - name: area
+        in: path
+        description: location of weather data to use
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: dataset
+        in: path
+        description: dataset number to use
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: datapoint
+        in: path
+        description: index of specific DataPoint to get from the WeatherHistory
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        200:
+          description: specified DataPoint from WeatherHistory set
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPoint'
         400:
           description: bad input parameter
       x-openapi-router-controller: controllers.users_controller
@@ -93,4 +133,3 @@ components:
         temperature: 10
         windspeed: 3
         timestamp: 15-aug-2012 17:00
-
