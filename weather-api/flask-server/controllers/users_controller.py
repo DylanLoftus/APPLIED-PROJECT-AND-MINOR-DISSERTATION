@@ -57,20 +57,7 @@ def get_data_point(area, dataset, datapoint):  # noqa: E501
 
     :rtype: DataPoint
     """
-    global mongo
-
     try:
-        if mongo is None:
-            mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
-
-        # user Ronan is read-only for security
-        db = mongo["weather"]
-        coll = db.get_collection(area)
-        doc = list(coll.find({}))[dataset]
-        del doc["_id"]
-        # this line seems redundant, you can just return the doc dict instead
-        response = WeatherHistory(**doc).data[datapoint]
-
-        return response
+        return get_weather_history(area, dataset).data[datapoint]
     except:
         abort(404)
