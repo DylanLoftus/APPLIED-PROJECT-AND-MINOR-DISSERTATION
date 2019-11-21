@@ -11,6 +11,7 @@ import pymongo
 import gridfs
 from flask import abort
 
+mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
 
 def get_weather_history(area, dataset):  # noqa: E501
     """retrieves weather history
@@ -26,7 +27,6 @@ def get_weather_history(area, dataset):  # noqa: E501
     """
     try:
         # user Ronan is read-only for security
-        mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
         db = mongo["weather"]
         coll = db.get_collection(area)
         doc = list(coll.find({}))[dataset]
@@ -54,7 +54,6 @@ def get_data_point(area, dataset, datapoint):  # noqa: E501
     """
     try:
         # user Ronan is read-only for security
-        mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
         db = mongo["weather"]
         coll = db.get_collection(area)
         doc = list(coll.find({}))[dataset]
