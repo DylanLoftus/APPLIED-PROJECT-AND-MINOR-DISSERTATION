@@ -12,17 +12,8 @@ public class Room : MonoBehaviour
     private GameManager gameManager;
     private Room roomObject;
     private Window window;
-
-    [SerializeField]
-    private Room roomNorth;
-    [SerializeField]
-    private Room roomSouth;
-    [SerializeField]
-    private Room roomEast;
-    [SerializeField]
-    private Room roomWest;
-
-    private Room[] adjRooms;
+    
+    public AdjRooms adjRooms;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +22,7 @@ public class Room : MonoBehaviour
         roomObject = gameObject.GetComponent<Room>();
         window = gameObject.GetComponentInChildren<Window>();
 
-        adjRooms = new Room[] {roomNorth, roomSouth, roomEast, roomWest};
+        // adjRooms = new Room[] {roomNorth, roomSouth, roomEast, roomWest};
 
         roomTemperature = 8;
     }
@@ -52,23 +43,23 @@ public class Room : MonoBehaviour
         roomRenderer.material.SetColor("_Color", new Color(red, 0, blue));
     }
 
-    public void EqualizeTemperature()
+    public void EqualiseTempToOutside()
     {
         //Debug.Log("Starting room temp: " + roomTemperature);
         //Debug.Log("outside temp: " + gameManager.outsideTemp);
 
         // count the number of walls that are exposed to the elements
-        float numWallsExposed = adjRooms.Count(r => r == null);
+        float numWallsExposed = adjRooms.NumSidesNotConnected();
 
         // compute heat rate to the outside (10x faster if window is open)
         float heatLossRate = (numWallsExposed * (window.isOpen ? 10 : 2)) / 80f;
-        //Debug.Log("Heat loss rate: " + heatLossRate);
+        Debug.Log("Heat loss rate: " + heatLossRate);
 
         // change room temperature towards temperature outside
         float tempDiff = gameManager.outsideTemp - roomTemperature;
-        //Debug.Log("Temp diff: " + tempDiff);
+        Debug.Log("Temp diff: " + tempDiff);
         float tempChange = tempDiff * heatLossRate;
-        //Debug.Log("temp change: " + tempChange);
+        Debug.Log("temp change: " + tempChange);
         roomTemperature += tempChange;
 
         //Debug.Log(gameObject.name + " temp: " + roomTemperature);

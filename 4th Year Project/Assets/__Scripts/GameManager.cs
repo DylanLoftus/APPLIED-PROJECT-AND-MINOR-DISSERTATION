@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Room[] rooms;
 
+    [SerializeField]
+    private Door[] doors;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void EqualizeTemperatures()
     {
         foreach (Room room in rooms) {
-            room.EqualizeTemperature();
+            room.EqualiseTempToOutside();
         }
     }
 
