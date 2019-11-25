@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
     public Transform cube;
     public GameObject cubeObject;
 
+    [SerializeField]
+    private AdjRooms adjRooms;
 
     // Start is called before the first frame update
     void Start()
@@ -46,5 +48,20 @@ public class Door : MonoBehaviour
                 isOpen = !isOpen;
             }
         }
+    }
+
+    public void EqualiseTempBetweenRooms()
+    {
+        Room[] twoRooms = adjRooms.GetConnectedRooms();
+        Room roomA = twoRooms[0];
+        Room roomB = twoRooms[1];
+
+        // faster heat exchange if door is open
+        float heatChangeRate = (isOpen ? 5 : 1) / 10f;
+
+        float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
+        float tempChange = (tempDiff * heatChangeRate) / 2;
+        roomA.roomTemperature -= tempChange;
+        roomB.roomTemperature += tempChange;
     }
 }
