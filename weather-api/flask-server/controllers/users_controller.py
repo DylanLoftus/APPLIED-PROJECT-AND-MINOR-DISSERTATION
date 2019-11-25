@@ -11,6 +11,7 @@ import pymongo
 import gridfs
 from flask import abort
 
+mongo = None
 
 def get_weather_history(area, dataset):  # noqa: E501
     """retrieves weather history
@@ -24,11 +25,13 @@ def get_weather_history(area, dataset):  # noqa: E501
 
     :rtype: WeatherHistory
     """
+    global mongo
+
     try:
-        # test = WeatherHistory("Test desc", 1, [DataPoint("15-aug-2012 17:00", 17, 6)])
+        if mongo is None:
+            mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
 
         # user Ronan is read-only for security
-        mongo = pymongo.MongoClient("mongodb://Ronan:4thyearproject2019@ds243518.mlab.com:43518/weather")
         db = mongo["weather"]
         coll = db.get_collection(area)
         doc = list(coll.find({}))[dataset]
@@ -37,5 +40,24 @@ def get_weather_history(area, dataset):  # noqa: E501
         response = WeatherHistory(**doc)
 
         return response
+    except:
+        abort(404)
+
+def get_data_point(area, dataset, datapoint):  # noqa: E501
+    """retrieves a specific DataPoint from a WeatherHistory set
+
+    Retrieves a specific DataPoint from a WeatherHistory set  # noqa: E501
+
+    :param area: location of weather data to use
+    :type area: str
+    :param dataset: dataset number to use
+    :type dataset: int
+    :param datapoint: index of specific DataPoint to get from the WeatherHistory
+    :type datapoint: int
+
+    :rtype: DataPoint
+    """
+    try:
+        return get_weather_history(area, dataset).data[datapoint]
     except:
         abort(404)
