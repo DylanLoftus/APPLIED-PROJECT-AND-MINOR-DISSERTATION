@@ -179,6 +179,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &118927842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -292,6 +297,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &128250170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -437,7 +447,7 @@ GameObject:
   - component: {fileID: 260429960}
   - component: {fileID: 260429959}
   m_Layer: 0
-  m_Name: Door (4)
+  m_Name: Door E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -457,7 +467,7 @@ Transform:
   - {fileID: 118927840}
   - {fileID: 1763735973}
   m_Father: {fileID: 395837715}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &260429959
 MonoBehaviour:
@@ -477,6 +487,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 718686829}
+    roomSouth: {fileID: 103295450}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!65 &260429960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -502,7 +517,7 @@ GameObject:
   - component: {fileID: 262068237}
   - component: {fileID: 262068236}
   m_Layer: 0
-  m_Name: Door (2)
+  m_Name: Door W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +537,7 @@ Transform:
   - {fileID: 733996283}
   - {fileID: 1137750420}
   m_Father: {fileID: 395837715}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &262068236
 MonoBehaviour:
@@ -542,6 +557,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 805763000}
+    roomSouth: {fileID: 1436157436}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!65 &262068237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -587,9 +607,9 @@ Transform:
   - {fileID: 981580056}
   - {fileID: 1713849199}
   - {fileID: 2055658167}
-  - {fileID: 262068235}
   - {fileID: 1330122814}
   - {fileID: 260429958}
+  - {fileID: 262068235}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -678,6 +698,16 @@ PrefabInstance:
     - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: roomEast
+      value: 
+      objectReference: {fileID: 103295450}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 805763000}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomEast
       value: 
       objectReference: {fileID: 103295450}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
@@ -779,6 +809,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &733996285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1159,6 +1194,16 @@ PrefabInstance:
       propertyPath: roomSouth
       value: 
       objectReference: {fileID: 103295450}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomWest
+      value: 
+      objectReference: {fileID: 805763000}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 103295450}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
@@ -1385,6 +1430,16 @@ PrefabInstance:
     - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: roomWest
+      value: 
+      objectReference: {fileID: 1436157436}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 718686829}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomWest
       value: 
       objectReference: {fileID: 1436157436}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
@@ -1648,7 +1703,7 @@ GameObject:
   - component: {fileID: 1330122816}
   - component: {fileID: 1330122815}
   m_Layer: 0
-  m_Name: Door (3)
+  m_Name: Door S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,7 +1723,7 @@ Transform:
   - {fileID: 128250168}
   - {fileID: 1579167799}
   m_Father: {fileID: 395837715}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330122815
 MonoBehaviour:
@@ -1688,6 +1743,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 103295450}
+    roomWest: {fileID: 103295450}
 --- !u!65 &1330122816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1889,6 +1949,11 @@ MonoBehaviour:
   - {fileID: 1436157436}
   - {fileID: 103295450}
   - {fileID: 718686829}
+  doors:
+  - {fileID: 2055658168}
+  - {fileID: 1330122815}
+  - {fileID: 260429959}
+  - {fileID: 262068236}
 --- !u!4 &1713849199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4571443780402599106, guid: 5639e7c8af10e184a8fd90f221932296,
@@ -2033,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1774752303
 Transform:
   m_ObjectHideFlags: 0
@@ -2212,7 +2277,7 @@ GameObject:
   - component: {fileID: 2055658169}
   - component: {fileID: 2055658168}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: Door N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,6 +2317,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 718686829}
+    roomWest: {fileID: 805763000}
 --- !u!65 &2055658169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2283,7 +2353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!143 &2062363736
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2484,6 +2554,16 @@ PrefabInstance:
       propertyPath: roomEast
       value: 
       objectReference: {fileID: 718686829}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomEast
+      value: 
+      objectReference: {fileID: 718686829}
+    - target: {fileID: 8959785835410388982, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 103295450}
     - target: {fileID: 6460265229470993059, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_TagString
