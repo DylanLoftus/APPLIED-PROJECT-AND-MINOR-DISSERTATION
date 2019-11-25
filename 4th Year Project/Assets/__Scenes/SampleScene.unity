@@ -179,10 +179,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 0}
-  roomSouth: {fileID: 0}
-  roomEast: {fileID: 0}
-  roomWest: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &118927842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -296,10 +297,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 0}
-  roomSouth: {fileID: 0}
-  roomEast: {fileID: 0}
-  roomWest: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &128250170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -485,10 +487,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 718686829}
-  roomSouth: {fileID: 103295450}
-  roomEast: {fileID: 0}
-  roomWest: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 718686829}
+    roomSouth: {fileID: 103295450}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!65 &260429960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -554,10 +557,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 805763000}
-  roomSouth: {fileID: 1436157436}
-  roomEast: {fileID: 0}
-  roomWest: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 805763000}
+    roomSouth: {fileID: 1436157436}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!65 &262068237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -805,10 +809,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 0}
-  roomSouth: {fileID: 0}
-  roomEast: {fileID: 0}
-  roomWest: {fileID: 0}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 0}
+    roomWest: {fileID: 0}
 --- !u!54 &733996285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1738,10 +1743,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 0}
-  roomSouth: {fileID: 0}
-  roomEast: {fileID: 103295450}
-  roomWest: {fileID: 1436157436}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 103295450}
+    roomWest: {fileID: 103295450}
 --- !u!65 &1330122816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1943,6 +1949,11 @@ MonoBehaviour:
   - {fileID: 1436157436}
   - {fileID: 103295450}
   - {fileID: 718686829}
+  doors:
+  - {fileID: 2055658168}
+  - {fileID: 1330122815}
+  - {fileID: 260429959}
+  - {fileID: 262068236}
 --- !u!4 &1713849199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4571443780402599106, guid: 5639e7c8af10e184a8fd90f221932296,
@@ -2087,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1774752303
 Transform:
   m_ObjectHideFlags: 0
@@ -2306,10 +2317,11 @@ MonoBehaviour:
   isOpen: 0
   cube: {fileID: 0}
   cubeObject: {fileID: 0}
-  roomNorth: {fileID: 0}
-  roomSouth: {fileID: 0}
-  roomEast: {fileID: 718686829}
-  roomWest: {fileID: 805763000}
+  adjRooms:
+    roomNorth: {fileID: 0}
+    roomSouth: {fileID: 0}
+    roomEast: {fileID: 718686829}
+    roomWest: {fileID: 805763000}
 --- !u!65 &2055658169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2341,7 +2353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!143 &2062363736
 CharacterController:
   m_ObjectHideFlags: 0

@@ -11,14 +11,6 @@ public class Door : MonoBehaviour
     public GameObject cubeObject;
 
     [SerializeField]
-    private Room roomNorth;
-    [SerializeField]
-    private Room roomSouth;
-    [SerializeField]
-    private Room roomEast;
-    [SerializeField]
-    private Room roomWest;
-
     private AdjRooms adjRooms;
 
     // Start is called before the first frame update
@@ -64,10 +56,8 @@ public class Door : MonoBehaviour
         Room roomA = twoRooms[0];
         Room roomB = twoRooms[1];
 
-        //Debug.Log("Starting room temp: " + roomTemperature);
-
         // faster heat exchange if door is open
-        float heatChangeRate = (isOpen ? 5 : 1) / 20f;
+        float heatChangeRate = (isOpen ? 5 : 1) / 10f;
 
         float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
         float tempChange = (tempDiff * heatChangeRate) / 2;

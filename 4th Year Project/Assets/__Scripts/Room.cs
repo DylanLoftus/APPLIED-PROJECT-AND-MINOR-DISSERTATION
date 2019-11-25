@@ -45,23 +45,15 @@ public class Room : MonoBehaviour
 
     public void EqualiseTempToOutside()
     {
-        //Debug.Log("Starting room temp: " + roomTemperature);
-        //Debug.Log("outside temp: " + gameManager.outsideTemp);
-
         // count the number of walls that are exposed to the elements
         float numWallsExposed = adjRooms.NumSidesNotConnected();
 
         // compute heat rate to the outside (10x faster if window is open)
         float heatLossRate = (numWallsExposed * (window.isOpen ? 10 : 2)) / 80f;
-        Debug.Log("Heat loss rate: " + heatLossRate);
 
         // change room temperature towards temperature outside
         float tempDiff = gameManager.outsideTemp - roomTemperature;
-        Debug.Log("Temp diff: " + tempDiff);
         float tempChange = tempDiff * heatLossRate;
-        Debug.Log("temp change: " + tempChange);
         roomTemperature += tempChange;
-
-        //Debug.Log(gameObject.name + " temp: " + roomTemperature);
     }
 }

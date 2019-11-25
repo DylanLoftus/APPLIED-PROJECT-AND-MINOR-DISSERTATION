@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour
         foreach (Room room in rooms) {
             room.EqualiseTempToOutside();
         }
+
+        foreach (Door door in doors)
+        {
+            door.EqualiseTempBetweenRooms();
+        }
     }
 
     public void SetWeatherData(WeatherHistory weatherHistory)

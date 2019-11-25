@@ -28,11 +28,11 @@ public class AdjRooms
 
     public int NumConnectedRooms()
     {
-        return GetConnectedRooms().Count(r => r != null);
+        return GetAdjList().Count(r => r != null);
     }
 
     public int NumSidesNotConnected()
     {
-        return GetConnectedRooms().Count(r => r == null);
+        return GetAdjList().Count(r => r == null);
     }
 }
