@@ -28,20 +28,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void DoorOpen(Room[] connectingRooms)
-    {
-        foreach(Room r in connectingRooms){
-            r.roomTemperature -= 5;
-            Debug.Log(r.roomTemperature);
-        }
-    }
-
-    public void WindowOpen(Room room)
-    {
-        room.roomTemperature -= 8;
-        Debug.Log(room.roomTemperature);
-    }
-
     public IEnumerator RunSimulation()
     {
 

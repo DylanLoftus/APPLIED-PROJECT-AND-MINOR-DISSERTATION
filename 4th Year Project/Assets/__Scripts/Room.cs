@@ -24,14 +24,14 @@ public class Room : MonoBehaviour
 
         // adjRooms = new Room[] {roomNorth, roomSouth, roomEast, roomWest};
 
-        roomTemperature = 8;
+        roomTemperature = 18;
     }
 
     // Update is called once per frame
     void Update()
     {
         // change floor color of floor to gradient between blue/red based on temperature
-        float floorTemp = 8;
+        float floorTemp = 0;
         float ceilTemp = 18;
         float tempScale = ceilTemp - floorTemp;
 
