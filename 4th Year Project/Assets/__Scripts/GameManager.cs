@@ -32,10 +32,23 @@ public class GameManager : MonoBehaviour
 
     public void EqualizeTemperatures()
     {
+        // add heat to rooms if the radiator is on
+        foreach (Room room in rooms)
+        {
+            Radiator radiator = room.GetComponentInChildren<Radiator>();
+
+            if (radiator.isOn)
+            {
+                room.roomTemperature += 1;
+            }
+        }
+
+        // equalise temperatures between each room and the outside weather
         foreach (Room room in rooms) {
             room.EqualiseTempToOutside();
         }
 
+        // equalise temperatures between rooms
         foreach (Door door in doors)
         {
             door.EqualiseTempBetweenRooms();

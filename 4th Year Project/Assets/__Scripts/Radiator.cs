@@ -8,11 +8,13 @@ public class Radiator : MonoBehaviour
 
     GameManager gameManager;
     Room room;
+    private Material mat;
 
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         room = GameManager.FindObjectOfType<Room>();
+        mat = gameObject.GetComponentInChildren<Renderer>().material;
         isOn = false;
     }
 
@@ -23,8 +25,7 @@ public class Radiator : MonoBehaviour
             if (collision.tag == "Player")
             {
                 isOn = !isOn;
-
-                Debug.Log("Radiator on: " + isOn);
+                mat.SetColor("_Color", isOn ? Color.red : Color.white);
             }
         }
     }
