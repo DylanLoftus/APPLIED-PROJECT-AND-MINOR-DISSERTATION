@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
+[System.Serializable]
 public class WeatherHistory
 {
-    public string Description { get; set; }
-    public int Length { get; set; }
-    public string Summary { get; set; }
-    public IList<DataPoint> Data { get; set; }
+    public string description;
+    public int length;
+    public List<DataPoint> data;
 }
 
+[System.Serializable]
 public class DataPoint
 {
-    public string Timestamp { get; set; }
-    public float Temperature { get; set; }
-    public float Windspeed { get; set; }
+    public string timestamp;
+    public float temperature;
+    public float windspeed;
 }

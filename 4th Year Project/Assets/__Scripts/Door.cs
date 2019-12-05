@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Door : MonoBehaviour
 {
@@ -12,20 +10,13 @@ public class Door : MonoBehaviour
 
     [SerializeField]
     private AdjRooms adjRooms;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         cube = transform.GetChild(1);
         cubeObject = cube.gameObject;
         cubeObject.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerStay(Collider collision)
@@ -41,7 +32,6 @@ public class Door : MonoBehaviour
                 else
                 {
                     GetComponentInChildren<Rigidbody>().transform.Rotate(0, 90, 0, Space.Self);
-                    //gameManager.DoorOpen(connectingRooms);
                     cubeObject.SetActive(false);
                 }
 

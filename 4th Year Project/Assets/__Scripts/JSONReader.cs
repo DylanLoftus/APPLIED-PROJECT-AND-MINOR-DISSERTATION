@@ -1,10 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using UnityEngine.Networking;
-using System;
-using Newtonsoft.Json;
 
 public class JSONReader : MonoBehaviour
 {
@@ -43,7 +39,8 @@ public class JSONReader : MonoBehaviour
     {
         
         string str = System.Text.Encoding.Default.GetString(results);
-        WeatherHistory forecast = JsonConvert.DeserializeObject<WeatherHistory>(str);
+        WeatherHistory forecast = JsonUtility.FromJson<WeatherHistory>(str);
+        Debug.Log("Forcast data length: " + forecast.length);
         gameManager.SetWeatherData(forecast);
         Debug.Log("Sending to game manager!");
     }

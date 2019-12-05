@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,26 +12,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Door[] doors;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public IEnumerator RunSimulation()
     {
 
         Debug.Log("Gamemanager received!");
-        for (int i = 0; i < weatherHistory.Length; i++)
+        for (int i = 0; i < weatherHistory.length; i++)
         {
-            outsideTemp = weatherHistory.Data[i].Temperature;
+            outsideTemp = weatherHistory.data[i].temperature;
             Debug.Log("New outside temperature is: " + outsideTemp);
             for (int j = 0; j < 5; j++)
             {

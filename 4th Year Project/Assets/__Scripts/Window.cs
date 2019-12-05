@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Window : MonoBehaviour
 {
@@ -8,18 +6,12 @@ public class Window : MonoBehaviour
 
     GameManager gameManager;
     Room room;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         room = GameManager.FindObjectOfType<Room>();
         isOpen = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private void OnTriggerStay(Collider collision)

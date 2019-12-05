@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.IO;
-using System.Linq;
+﻿using UnityEngine;
 
 public class Room : MonoBehaviour
 {
@@ -14,20 +10,16 @@ public class Room : MonoBehaviour
     private Window window;
     
     public AdjRooms adjRooms;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         roomObject = gameObject.GetComponent<Room>();
         window = gameObject.GetComponentInChildren<Window>();
 
-        // adjRooms = new Room[] {roomNorth, roomSouth, roomEast, roomWest};
-
         roomTemperature = 18;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         // change floor color of floor to gradient between blue/red based on temperature
