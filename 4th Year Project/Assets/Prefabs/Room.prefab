@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 323422194170936430}
   - component: {fileID: 8711074071502285472}
   - component: {fileID: 1163354544908969197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 4146876875343986847}
   - component: {fileID: 5407945288810550938}
   - component: {fileID: 6750905992890262681}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Radiator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 63009063852335423}
   - component: {fileID: 8488473806969463069}
   - component: {fileID: 7635067321833239278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
