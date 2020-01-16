@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (Input.GetMouseButtonDown(0) == true) {
+        if (Input.GetMouseButtonDown(0) == true || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger") == true) {
             if (collision.tag == "Player")
             {
                 if (isOpen)
@@ -38,6 +38,7 @@ public class Door : MonoBehaviour
                 isOpen = !isOpen;
             }
         }
+
     }
 
     public void EqualiseTempBetweenRooms()
