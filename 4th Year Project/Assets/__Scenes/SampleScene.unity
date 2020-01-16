@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -491,7 +491,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.97000027, y: 1.9999999, z: 2}
+  m_Size: {x: 1.5, y: 1.9999999, z: 2.5}
   m_Center: {x: 0.48500013, y: 0, z: 0.1}
 --- !u!1 &262068234
 GameObject:
@@ -561,7 +561,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.97000027, y: 1.9999999, z: 2}
+  m_Size: {x: 1.5, y: 1.9999999, z: 2.5}
   m_Center: {x: 0.48500013, y: 0, z: 0.1}
 --- !u!1 &395837714
 GameObject:
@@ -2621,8 +2621,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3, y: 1, z: 0.15}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!23 &1137750423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2846,7 +2846,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.97000027, y: 1.9999999, z: 2}
+  m_Size: {x: 1.5, y: 1.9999999, z: 2.5}
   m_Center: {x: 0.48500013, y: 0, z: 0.1}
 --- !u!1 &1431859304
 GameObject:
@@ -3072,8 +3072,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3, y: 1, z: 0.15}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!23 &1579167802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3258,8 +3258,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3, y: 1, z: 0.15}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!23 &1763735976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3444,8 +3444,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3, y: 1, z: 0.15}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!23 &1957645101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3586,7 +3586,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.96999997, y: 1.9999999, z: 2}
+  m_Size: {x: 1.5, y: 1.9999999, z: 2.5}
   m_Center: {x: 0.48499998, y: 0, z: 0.1}
 --- !u!1 &2062363735
 GameObject:
@@ -3671,7 +3671,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &2142414509
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,5 +4153,50 @@ PrefabInstance:
       propertyPath: connectingRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1436157435}
+    - target: {fileID: 5407945288810550938, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407945288810550938, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 9.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407945288810550938, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407945288810550938, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407945288810550938, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 370595683396614444, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 33.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 370595683396614444, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 25.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 370595683396614444, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 7.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635067321833239278, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5639e7c8af10e184a8fd90f221932296, type: 3}
