@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 3120872597
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2cebe7dce551bb7c9e0106f3437070b5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2164263bd948184a9373784f776f453a
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/GoogleVR/Materials/ControllerBase.mat
+- Assets/__Sprites/Ceiling.mat
+- Assets/__Sprites/Walls.mat
+- Assets/GoogleVR/Materials/ControllerLaser.mat
+- Assets/GoogleVR/Materials/TooltipSimple.mat
+- Assets/__Sprites/Floor.mat
+- Assets/__Sprites/Radiator.mat
+- Assets/GoogleVR/Materials/ReticlePointer.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
+- Assets/GoogleVR/Materials/ControllerReticle.mat
+Dependencies:
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_tga0

@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerNear)
+        if (Input.GetMouseButtonDown(0) && playerNear || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger"))
         {
             isOpen = !isOpen;
 

@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 2156925560
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ec99284fa32cd0cfc5e70bcf9f7f1a3d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cb3f6df5cbc4a2990c44c2787bc9553a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GoogleVR/Textures/ddcontroller.png
+- Assets/GoogleVR/Textures/ControllerTooltips.png
+- Assets/__Sprites/windowSprite.png
+- Assets/GoogleVR/Textures/cursor_pointer.png
+- Assets/__Sprites/Radiator.png
+- Assets/GoogleVR/Textures/laserTexture.png
+- Assets/__Sprites/Circle.png
+Dependencies: []
