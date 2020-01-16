@@ -3,6 +3,7 @@
 public class Window : MonoBehaviour
 {
     public bool isOpen;
+    private bool playerNear;
 
     GameManager gameManager;
     Room room;
@@ -14,23 +15,36 @@ public class Window : MonoBehaviour
         isOpen = false;
     }
 
-    private void OnTriggerStay(Collider collision)
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0) == true || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger") == true)
+        if (Input.GetMouseButtonDown(0) && playerNear || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger"))
         {
-            if (collision.tag == "Player")
-            {
-                if (isOpen)
-                {
-                    GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
-                }
-                else
-                {
-                    GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
-                }
+            isOpen = !isOpen;
 
-                isOpen = !isOpen;
+            if (isOpen)
+            {
+                GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
             }
+            else
+            {
+                GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = false;
         }
     }
 }

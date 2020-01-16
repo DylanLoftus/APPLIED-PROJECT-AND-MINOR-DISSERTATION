@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Radiator : MonoBehaviour
 {
     public bool isOn;
+    private bool playerNear;
 
     GameManager gameManager;
     Room room;
@@ -18,15 +17,28 @@ public class Radiator : MonoBehaviour
         isOn = false;
     }
 
-    private void OnTriggerStay(Collider collision)
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0) == true)
+        if (Input.GetMouseButtonDown(0) && playerNear)
         {
-            if (collision.tag == "Player")
-            {
-                isOn = !isOn;
-                mat.SetColor("_Color", isOn ? Color.red : Color.white);
-            }
+            isOn = !isOn;
+            mat.SetColor("_Color", isOn ? Color.red : Color.white);
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = false;
         }
     }
 }

@@ -5,6 +5,7 @@ public class Door : MonoBehaviour
     public Room[] connectingRooms;
     GameManager gameManager;
     public bool isOpen;
+    private bool playerNear;
     public Transform cube;
     public GameObject cubeObject;
 
@@ -19,26 +20,39 @@ public class Door : MonoBehaviour
         cubeObject.SetActive(true);
     }
 
-    private void OnTriggerStay(Collider collision)
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0) == true || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger") == true) {
-            if (collision.tag == "Player")
-            {
-                if (isOpen)
-                {
-                    GetComponentInChildren<Rigidbody>().transform.Rotate(0, -90, 0, Space.Self);
-                    cubeObject.SetActive(true);
-                }
-                else
-                {
-                    GetComponentInChildren<Rigidbody>().transform.Rotate(0, 90, 0, Space.Self);
-                    cubeObject.SetActive(false);
-                }
+        if (Input.GetMouseButtonDown(0) && playerNear || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger"))
+        {
+            isOpen = !isOpen;
 
-                isOpen = !isOpen;
+            if (isOpen)
+            {
+                GetComponentInChildren<Rigidbody>().transform.Rotate(0, 90, 0, Space.Self);
+                cubeObject.SetActive(false);
+            }
+            else
+            {
+                GetComponentInChildren<Rigidbody>().transform.Rotate(0, -90, 0, Space.Self);
+                cubeObject.SetActive(true);
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerNear = false;
+        }
     }
 
     public void EqualiseTempBetweenRooms()
