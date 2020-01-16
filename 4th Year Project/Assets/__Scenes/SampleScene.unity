@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,6 @@ GameObject:
   - component: {fileID: 118927840}
   - component: {fileID: 118927843}
   - component: {fileID: 118927842}
-  - component: {fileID: 118927841}
   m_Layer: 0
   m_Name: Door (2)
   m_TagString: Untagged
@@ -171,27 +170,6 @@ Transform:
   m_Father: {fileID: 260429958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &118927841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118927839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectingRooms: []
-  isOpen: 0
-  cube: {fileID: 0}
-  cubeObject: {fileID: 0}
-  adjRooms:
-    roomNorth: {fileID: 0}
-    roomSouth: {fileID: 0}
-    roomEast: {fileID: 0}
-    roomWest: {fileID: 0}
 --- !u!54 &118927842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -268,7 +246,6 @@ GameObject:
   - component: {fileID: 128250168}
   - component: {fileID: 128250171}
   - component: {fileID: 128250170}
-  - component: {fileID: 128250169}
   m_Layer: 0
   m_Name: Door (2)
   m_TagString: Untagged
@@ -290,27 +267,6 @@ Transform:
   m_Father: {fileID: 1330122814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &128250169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128250167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectingRooms: []
-  isOpen: 0
-  cube: {fileID: 0}
-  cubeObject: {fileID: 0}
-  adjRooms:
-    roomNorth: {fileID: 0}
-    roomSouth: {fileID: 0}
-    roomEast: {fileID: 0}
-    roomWest: {fileID: 0}
 --- !u!54 &128250170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1229,7 +1185,6 @@ GameObject:
   - component: {fileID: 733996283}
   - component: {fileID: 733996286}
   - component: {fileID: 733996285}
-  - component: {fileID: 733996284}
   m_Layer: 0
   m_Name: Door (2)
   m_TagString: Untagged
@@ -1251,27 +1206,6 @@ Transform:
   m_Father: {fileID: 262068235}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &733996284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733996282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectingRooms: []
-  isOpen: 0
-  cube: {fileID: 0}
-  cubeObject: {fileID: 0}
-  adjRooms:
-    roomNorth: {fileID: 0}
-    roomSouth: {fileID: 0}
-    roomEast: {fileID: 0}
-    roomWest: {fileID: 0}
 --- !u!54 &733996285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3924,36 +3858,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[0]
-      value: 
-      objectReference: {fileID: 805762999}
-    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[1]
-      value: 
-      objectReference: {fileID: 718686828}
-    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[0]
-      value: 
-      objectReference: {fileID: 805762999}
-    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[1]
-      value: 
-      objectReference: {fileID: 1436157435}
     - target: {fileID: 2304274258618530117, guid: 5639e7c8af10e184a8fd90f221932296,
         type: 3}
       propertyPath: m_Layer
@@ -4219,5 +4123,35 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 805762999}
+    - target: {fileID: 7713790037294550024, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 718686828}
+    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 805762999}
+    - target: {fileID: 7223244532513477662, guid: 5639e7c8af10e184a8fd90f221932296,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1436157435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5639e7c8af10e184a8fd90f221932296, type: 3}
