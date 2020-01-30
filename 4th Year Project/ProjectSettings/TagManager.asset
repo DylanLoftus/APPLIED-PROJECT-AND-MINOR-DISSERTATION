@@ -13,6 +13,8 @@ TagManager:
   - Window3
   - Window4
   - cube
+  - ProgressSlider
+  - WeatherTimestamp
   layers:
   - Default
   - TransparentFX
