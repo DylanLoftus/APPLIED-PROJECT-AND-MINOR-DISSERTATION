@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RunSimulation()
     {
-
         Debug.Log("Gamemanager received!");
         for (int i = 0; i < weatherHistory.length; i++)
         {
-            outsideTemp = weatherHistory.data[i].temperature;
+            DataPoint dataPoint = weatherHistory.data[i];
+            UpdateWeatherUI(dataPoint.timestamp, i);
+            outsideTemp = dataPoint.temperature;
             Debug.Log("New outside temperature is: " + outsideTemp);
             for (int j = 0; j < 5; j++)
             {
@@ -28,6 +29,15 @@ public class GameManager : MonoBehaviour
             }
         }
         Debug.Log("Outside loop");
+    }
+
+    public void UpdateWeatherUI(string timestamp, int dataPointIndex)
+    {
+        TMPro.TextMeshProUGUI tmpComponent = GameObject.FindGameObjectWithTag("WeatherTimestamp").GetComponent<TMPro.TextMeshProUGUI>();
+        tmpComponent.text = timestamp;
+
+        UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
+        slider.value = dataPointIndex;
     }
 
     public void EqualizeTemperatures()
