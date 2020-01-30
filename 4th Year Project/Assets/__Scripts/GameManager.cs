@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                EqualizeTemperatures();
+                //EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
