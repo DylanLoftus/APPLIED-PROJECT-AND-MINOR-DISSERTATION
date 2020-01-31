@@ -15,6 +15,7 @@ TagManager:
   - cube
   - ProgressSlider
   - WeatherTimestamp
+  - Hallway
   layers:
   - Default
   - TransparentFX
