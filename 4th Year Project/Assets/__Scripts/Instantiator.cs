@@ -21,14 +21,33 @@ public class Instantiator : MonoBehaviour
     private GameObject previousHallway;
 
     private int multiplier = 1;
+    private int i = 0;
+
+    private IEnumerator coroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHallway.transform.position = hallway.transform.position;
 
-        for (int i = 0; i <= 5; i++)
+        coroutine = WaitTime(2.0f);
+        StartCoroutine(coroutine);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private IEnumerator WaitTime(float waitTime)
+    {
+        while (i < 5)
         {
+            yield return new WaitForSeconds(waitTime);
+
+            i++;
 
             wallDestroy = hallway.transform.FindChild("WallDestroy").gameObject;
             wallDestroy.SetActive(false);
@@ -62,11 +81,6 @@ public class Instantiator : MonoBehaviour
 
             multiplier++;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
 }
