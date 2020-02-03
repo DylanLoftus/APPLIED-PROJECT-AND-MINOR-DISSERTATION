@@ -10,6 +10,22 @@ tags:
 - name: users
   description: Operations available to regular users
 paths:
+  /historical:
+    get:
+      tags:
+      - users
+      summary: retrieves a list of historical weather history endpoints
+      description: |
+        Retrieves a list of historical weather history endpoints
+      operationId: get_historical
+      responses:
+        200:
+          description: a premade set of weather history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherHistory'
+      x-openapi-router-controller: controllers.users_controller
   /historical/{area}/{dataset}:
     get:
       tags:
@@ -90,6 +106,34 @@ paths:
       x-openapi-router-controller: controllers.users_controller
 components:
   schemas:
+    WeatherHistoryListing:
+      required:
+      - area
+      - datasetNum
+      - startTime
+      - length
+      - link
+      type: object
+      properties:
+        area:
+          type: string
+        datasetNum:
+          type: integer
+        startTime:
+          type: integer
+        length:
+          type: integer
+        link:
+          type: string
+      example:
+        data:
+        - area: "athenry"
+          datasetNum: 14 
+          startTime: "28-nov-2012 17:00"
+          length: 180
+          link: "https://ronanstuff.strangled.net:53269/Ronan-H/weather-api/1.0.0/historical/athenry/14"
+        length: 0
+        description: description
     WeatherHistory:
       required:
       - data
