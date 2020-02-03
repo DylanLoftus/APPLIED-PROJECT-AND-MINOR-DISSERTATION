@@ -20,11 +20,13 @@ paths:
       operationId: get_historical
       responses:
         200:
-          description: a premade set of weather history
+          description: a list of available historical weather datasets
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/WeatherHistory'
+                type: array
+                items: 
+                  $ref: '#/components/schemas/WeatherHistoryListing'
       x-openapi-router-controller: controllers.users_controller
   /historical/{area}/{dataset}:
     get:
