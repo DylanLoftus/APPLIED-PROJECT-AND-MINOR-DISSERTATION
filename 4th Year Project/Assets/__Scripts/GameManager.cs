@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < weatherHistory.length; i++)
         {
             DataPoint dataPoint = weatherHistory.data[i];
-            UpdateWeatherUI(dataPoint.timestamp, i);
             outsideTemp = dataPoint.temperature;
+            UpdateWeatherUI(dataPoint.timestamp, i);
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                //EqualizeTemperatures();
+                EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
