@@ -16,6 +16,8 @@ TagManager:
   - ProgressSlider
   - WeatherTimestamp
   - Hallway
+  - OutsideTempText
+  - WeatherSelectPrompt
   layers:
   - Default
   - TransparentFX
