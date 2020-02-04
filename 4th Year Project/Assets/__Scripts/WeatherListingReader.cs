@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WeatherListingReader : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject listingButton;
 
     GameManager gameManager;
+    public WeatherListings listings;
+    public string chosenDatasetLink;
 
     void Start()
     {
+        DontDestroyOnLoad(transform.gameObject);
+
         StartCoroutine(GetListings());
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
@@ -38,8 +47,10 @@ public class WeatherListingReader : MonoBehaviour
     {
         // adding an outer JSON object here since JsonUtility.FromJson doesn't accept json arrays
         string str = "{\"listings\":" + System.Text.Encoding.Default.GetString(results) + "}";
-        WeatherListings listings = JsonUtility.FromJson<WeatherListings>(str);
+        listings = JsonUtility.FromJson<WeatherListings>(str);
         // gameManager.SetWeatherData(forecast);
+
+        /*
         foreach (WeatherListing listing in listings.listings) {
             Debug.Log("Area: " + listing.area);
             Debug.Log("Dataset: " + listing.dataset);
@@ -47,5 +58,27 @@ public class WeatherListingReader : MonoBehaviour
             Debug.Log("Link: " + listing.link);
             Debug.Log("Start time: " + listing.start_time + "\n");
         }
+        */
+
+        
+
+        // .GetComponent<UnityEngine.UI.Slider>();
+        //GameObject buttonTemplate = GameObject.FindGameObjectWithTag("ListingButtonTemplate");
+        for (int i = 0; i < listings.listings.Length; i++)
+        {
+            WeatherListing listing = listings.listings[i];
+            GameObject button = Instantiate(listingButton);
+            button.name = i.ToString();
+            button.transform.SetParent(GameObject.FindGameObjectWithTag("WeatherSelectContent").transform, false);
+            button.transform.position = new Vector3(0, 0, 0);
+            button.transform.localPosition = new Vector3(0, 0, 0);
+
+            string desc = string.Format("{0} #{1}, starts at {2}, {3} realtime hours",
+                listing.area, listing.dataset + 1, listing.start_time, listing.length);
+
+            button.GetComponentInChildren<Text>().text = desc;
+        }
+
+        GameObject.FindGameObjectWithTag("WeatherSelectPrompt").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Choose a weather data set";
     }
 }

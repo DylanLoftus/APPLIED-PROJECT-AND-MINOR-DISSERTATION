@@ -18,6 +18,8 @@ TagManager:
   - Hallway
   - OutsideTempText
   - WeatherSelectPrompt
+  - ListingButtonTemplate
+  - WeatherSelectContent
   layers:
   - Default
   - TransparentFX
