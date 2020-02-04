@@ -16,11 +16,7 @@ public class JSONReader : MonoBehaviour
 
     IEnumerator GetText()
     {
-        // switch if hosting flask server locally
-        //UnityWebRequest www = UnityWebRequest.Get("http://127.0.0.1:8080/Ronan-H/weather-api/1.0.0/historical/athenry/14");
-        //UnityWebRequest www = UnityWebRequest.Get("https://ronanstuff.strangled.net:53269/Ronan-H/weather-api/1.0.0/historical/athenry/14");
-
-        UnityWebRequest www = GetUserChosenDataset();
+        UnityWebRequest www = UnityWebRequest.Get(GetUserChosenDatasetLink());
 
         yield return www.SendWebRequest();
 
@@ -30,20 +26,23 @@ public class JSONReader : MonoBehaviour
         }
         else
         {
-            // Show results as text
-            Debug.Log(www.downloadHandler.text);
-
-            // Or retrieve results as binary data
             byte[] results = www.downloadHandler.data;
             deserializeBytes(results);
         }
     }
 
-    private UnityWebRequest GetUserChosenDataset()
+    private string GetUserChosenDatasetLink()
     {
-        string link = GameObject.Find("WeatherListingReader").GetComponent<WeatherListingReader>().chosenDatasetLink;
-        Debug.Log("Link: " + link);
-        return UnityWebRequest.Get(link);
+        try
+        {
+            WeatherListingReader reader = GameObject.Find("WeatherListingReader").GetComponent<WeatherListingReader>();
+            return reader.chosenDatasetLink;
+        }
+        catch (NullReferenceException e)
+        {
+            // default value if the weather selection scene wasn't used
+            return "https://ronanstuff.strangled.net:53269/Ronan-H/weather-api/1.0.0/historical/athenry/14";
+        }
     }
 
     public void deserializeBytes(byte[] results)
@@ -51,8 +50,6 @@ public class JSONReader : MonoBehaviour
         
         string str = System.Text.Encoding.Default.GetString(results);
         WeatherHistory forecast = JsonUtility.FromJson<WeatherHistory>(str);
-        Debug.Log("Forcast data length: " + forecast.length);
         gameManager.SetWeatherData(forecast);
-        Debug.Log("Sending to game manager!");
     }
 }

@@ -34,10 +34,6 @@ public class WeatherListingReader : MonoBehaviour
         }
         else
         {
-            // Show results as text
-            Debug.Log(www.downloadHandler.text);
-
-            // Or retrieve results as binary data
             byte[] results = www.downloadHandler.data;
             deserializeBytes(results);
         }
@@ -48,22 +44,7 @@ public class WeatherListingReader : MonoBehaviour
         // adding an outer JSON object here since JsonUtility.FromJson doesn't accept json arrays
         string str = "{\"listings\":" + System.Text.Encoding.Default.GetString(results) + "}";
         listings = JsonUtility.FromJson<WeatherListings>(str);
-        // gameManager.SetWeatherData(forecast);
 
-        /*
-        foreach (WeatherListing listing in listings.listings) {
-            Debug.Log("Area: " + listing.area);
-            Debug.Log("Dataset: " + listing.dataset);
-            Debug.Log("Length: " + listing.length);
-            Debug.Log("Link: " + listing.link);
-            Debug.Log("Start time: " + listing.start_time + "\n");
-        }
-        */
-
-        
-
-        // .GetComponent<UnityEngine.UI.Slider>();
-        //GameObject buttonTemplate = GameObject.FindGameObjectWithTag("ListingButtonTemplate");
         for (int i = 0; i < listings.listings.Length; i++)
         {
             WeatherListing listing = listings.listings[i];

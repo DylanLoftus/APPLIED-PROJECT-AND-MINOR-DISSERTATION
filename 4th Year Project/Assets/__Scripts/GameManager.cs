@@ -14,13 +14,11 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RunSimulation()
     {
-        Debug.Log("Gamemanager received!");
         for (int i = 0; i < weatherHistory.length; i++)
         {
             DataPoint dataPoint = weatherHistory.data[i];
             UpdateWeatherUI(dataPoint.timestamp, i);
             outsideTemp = dataPoint.temperature;
-            Debug.Log("New outside temperature is: " + outsideTemp);
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
@@ -28,7 +26,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
             }
         }
-        Debug.Log("Outside loop");
+        Debug.Log("End of weather data set");
     }
 
     public void UpdateWeatherUI(string timestamp, int dataPointIndex)
