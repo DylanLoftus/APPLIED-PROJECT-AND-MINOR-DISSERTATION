@@ -41,7 +41,7 @@ public class Room : MonoBehaviour
         float numWallsExposed = adjRooms.NumSidesNotConnected();
 
         // compute heat rate to the outside (10x faster if window is open)
-        float heatLossRate = (numWallsExposed * (window.isOpen ? 10 : 2)) / 80f;
+        float heatLossRate = (numWallsExposed * (window.activated ? 10 : 2)) / 80f;
 
         // change room temperature towards temperature outside
         float tempDiff = gameManager.outsideTemp - roomTemperature;

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         {
             Radiator radiator = room.GetComponentInChildren<Radiator>();
 
-            if (radiator.isOn)
+            if (radiator.activated)
             {
                 room.roomTemperature += 1;
             }
