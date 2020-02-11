@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3494829383
+CRC: 1289116919
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fea13545805fbb7eedbf4c698724927a
+    Hash: 8b4d0c2fd53ca1c6f1593185eb690da4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ce06485bf71a5696c695193c4d6855ad
+    Hash: 56300b2ed1472a794c82522b09abc950
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -20,10 +20,6 @@ ClassTypes:
 - Class: 109
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: ad074644ff568a14187a3690cfbd7534, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 70c2f484f132c044097f03d65cac3b24, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
@@ -31,6 +27,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 2705215ac5b84b70bacc50632be6e391, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ad074644ff568a14187a3690cfbd7534, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 70c2f484f132c044097f03d65cac3b24, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 Assets:
@@ -65,6 +65,7 @@ Assets:
 - Assets/Oculus/VR/Resources/Underlay Transparent Occluder.shader
 - Assets/Oculus/VR/Resources/Texture2D Blit.shader
 - Assets/Oculus/Avatar/Resources/Materials/Expressive/Avatar_PC_SingleComponentExpressive.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF 1.mat
 - Assets/Oculus/Avatar/Resources/Materials/AvatarPBRV2Simple.shader
 - Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader
 - Assets/Resources/OVRBuildConfig.asset
@@ -84,6 +85,7 @@ Assets:
 - Assets/Oculus/Avatar/Resources/Materials/AvatarMaterialStateShader.cginc
 - Assets/Oculus/Avatar/Resources/Materials/Expressive/AvatarEyeLens.shader
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShader.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.mat
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_normal_1024.tif
 - Assets/Oculus/VR/Resources/Underlay Impostor.shader
 - Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader

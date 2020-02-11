@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2003002233
+CRC: 3397799474
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 845074787c6be33e6f6a69cfce0e46df
+    Hash: 2c22aa5173949d0a66d02c019114ed0c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6f79c52042ace86579cd8bdae76b17c7
+    Hash: 5bf8570564a3f4a42bbe6bc14c88c5d3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -33,26 +33,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 99aa482061408734780800f6843fbef8, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 7dda4bb2d5509e44e978d2bf56e25d7c, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 311793381eb9d45149dc1a422000a9fd, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 51b65678ccdd949e9a58874d2880c0ef, type: 3}
+  Script: {fileID: 11500000, guid: 9f6d08e39bec89a40b7f5372bbc8ed39, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 87845b094e7d8864aa19f171edd16016, type: 3}
 - Class: 114
@@ -62,22 +50,26 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: ef63f87a26b474e1c88f77dfc4f3aa3a, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e7dcc90c2e60c4011896c7f21fc1f557, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f4ee199cdc1304b2090f019e4f488674, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: aa952cbcc0eb13d4ca558b6da550ff55, type: 3}
+  Script: {fileID: 11500000, guid: bc5068da948957f41b50f5886a9ebbe3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: b5cd7f7fcfc8a4c1fbc201ccc579556d, type: 3}
+  Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
 - Class: 115
-  Script: {instanceID: 0}
-- Class: 120
   Script: {instanceID: 0}
 - Class: 143
   Script: {instanceID: 0}
@@ -90,13 +82,15 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/GoogleVR/Prefabs/Controller/GvrControllerPointer.prefab
-- Assets/GoogleVR/Prefabs/Cardboard/GvrReticlePointer.prefab
-- Assets/Prefabs/Room.prefab
-- Assets/GoogleVR/Prefabs/Controller/Tooltips/GvrControllerTooltipsSimple.prefab
+- Assets/Prefabs/RoomMod.prefab
+- Assets/Prefabs/Radiator.prefab
+- Assets/Prefabs/Door N.prefab
+- Assets/Prefabs/Hallway.prefab
+- Assets/Prefabs/Window (2).prefab
 - Assets/Oculus/VR/Prefabs/OVRPlayerController.prefab
 Dependencies:
 - C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_resources
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_controller0
 - C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_mat0
-- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_fbx0
 - C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_jpg0

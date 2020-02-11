@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 828528496
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 76398687554946735387381d5c583dd1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+Assets:
+- Assets/Animation/Spawn.controller
+Dependencies:
+- C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_anim0

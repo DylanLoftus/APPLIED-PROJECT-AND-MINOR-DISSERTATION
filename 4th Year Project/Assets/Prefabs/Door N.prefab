@@ -45,7 +45,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.9999999, z: 2.5}
+  m_Size: {x: 1.5, y: 1.9999999, z: 1.5}
   m_Center: {x: 0.48499998, y: 0, z: 0.1}
 --- !u!114 &2588150165987739292
 MonoBehaviour:
@@ -59,12 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectingRooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  isOpen: 0
+  activated: 0
   cube: {fileID: 0}
-  cubeObject: {fileID: 0}
   adjRooms:
     roomNorth: {fileID: 0}
     roomSouth: {fileID: 0}

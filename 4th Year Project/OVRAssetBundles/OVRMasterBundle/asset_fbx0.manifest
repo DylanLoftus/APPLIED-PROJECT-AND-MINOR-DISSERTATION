@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2788195948
+CRC: 1009642916
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 99eaf22e86d97e7d2e09d86da852074f
+    Hash: 79be08a8948c73fe66ba145c9c3420f7
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ebb4c2859e0504b83cfc3d6e33aac92c
+    Hash: aded893bc7efee6b045cb82d8cb9e5d4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,8 +21,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
-- Class: 48
-  Script: {instanceID: 0}
 - Class: 90
   Script: {instanceID: 0}
 - Class: 95
@@ -30,7 +28,5 @@ ClassTypes:
 Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
-- Assets/GoogleVR/Models/ddtooltips.fbx
-- Assets/GoogleVR/Models/ddcontroller.fbx
 Dependencies:
 - C:/Users/Dylan/Documents/APPLIED-PROJECT-AND-MINOR-DISSERTATION/4th Year Project/OVRAssetBundles/OVRMasterBundle/asset_mat0

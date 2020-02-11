@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                EqualizeTemperatures();
+                //EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
     }
-
+    /*
     public void EqualizeTemperatures()
     {
         // add heat to rooms if the radiator is on
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             door.EqualiseTempBetweenRooms();
         }
     }
-
+    */
     public void SetWeatherData(WeatherHistory weatherHistory)
     {
         this.weatherHistory = weatherHistory;

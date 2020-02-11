@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerNear || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger"))
+        if (Input.GetMouseButtonDown(0) && playerNear /*|| (OVRInput.Get(OVRInput.RawButton.LIndexTrigger) == true && playerNear)*/)
         {
             activated = !activated;
             OnInteraction(activated);
@@ -33,7 +33,7 @@ public abstract class Interactable : MonoBehaviour
             playerNear = true;
         }
     }
-
+    
     private void OnTriggerExit(Collider collision)
     {
         if (collision.tag == "Player")
