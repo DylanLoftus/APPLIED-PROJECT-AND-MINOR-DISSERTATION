@@ -49,15 +49,15 @@ public class Instantiator : MonoBehaviour
 
             i++;
 
-            wallDestroy = hallway.transform.FindChild("WallDestroy").gameObject;
+            wallDestroy = hallway.transform.Find("WallDestroy").gameObject;
             wallDestroy.SetActive(false);
 
             newHallway = Instantiate(hallway, new Vector3(currentHallway.transform.position.x, currentHallway.transform.position.y, currentHallway.transform.position.z + 10 * multiplier), Quaternion.identity);
 
-            wallInsDestroy = newHallway.transform.FindChild("WallInsDestroy").gameObject;
+            wallInsDestroy = newHallway.transform.Find("WallInsDestroy").gameObject;
             wallInsDestroy.SetActive(false);
 
-            wallDestroy = newHallway.transform.FindChild("WallDestroy").gameObject;
+            wallDestroy = newHallway.transform.Find("WallDestroy").gameObject;
             wallDestroy.SetActive(true);
 
             if (i < 5)

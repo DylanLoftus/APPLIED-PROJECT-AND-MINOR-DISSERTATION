@@ -1,50 +1,16 @@
 ﻿using UnityEngine;
 
-public class Window : MonoBehaviour
+public class Window : Interactable
 {
-    public bool isOpen;
-    private bool playerNear;
+    private Transform rigidbodyTransform;
 
-    GameManager gameManager;
-    Room room;
-    
-    void Start()
+    public void Start()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
-        room = GameManager.FindObjectOfType<Room>();
-        isOpen = false;
+        rigidbodyTransform = GetComponentInChildren<Rigidbody>().transform;
     }
 
-    private void Update()
+    public override void OnInteraction(bool activated)
     {
-        if (Input.GetMouseButtonDown(0) && playerNear || Input.GetButtonDown("Oculus_CrossPlatform_PrimaryIndexTrigger"))
-        {
-            isOpen = !isOpen;
-
-            if (isOpen)
-            {
-                GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0, Space.Self);
-            }
-            else
-            {
-                GetComponentInChildren<Rigidbody>().transform.Rotate(-90, 0, 0, Space.Self);
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.tag == "Player")
-        {
-            playerNear = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.tag == "Player")
-        {
-            playerNear = false;
-        }
+        rigidbodyTransform.Rotate(activated ? 90 : -90, 0, 0, Space.Self);
     }
 }

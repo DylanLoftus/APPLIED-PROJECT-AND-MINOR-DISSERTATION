@@ -14,27 +14,28 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RunSimulation()
     {
-        Debug.Log("Gamemanager received!");
         for (int i = 0; i < weatherHistory.length; i++)
         {
             DataPoint dataPoint = weatherHistory.data[i];
-            UpdateWeatherUI(dataPoint.timestamp, i);
             outsideTemp = dataPoint.temperature;
-            Debug.Log("New outside temperature is: " + outsideTemp);
+            UpdateWeatherUI(dataPoint.timestamp, i);
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                //EqualizeTemperatures();
+                EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
-        Debug.Log("Outside loop");
+        Debug.Log("End of weather data set");
     }
 
     public void UpdateWeatherUI(string timestamp, int dataPointIndex)
     {
-        TMPro.TextMeshProUGUI tmpComponent = GameObject.FindGameObjectWithTag("WeatherTimestamp").GetComponent<TMPro.TextMeshProUGUI>();
-        tmpComponent.text = timestamp;
+        TMPro.TextMeshProUGUI timestampComp = GameObject.FindGameObjectWithTag("WeatherTimestamp").GetComponent<TMPro.TextMeshProUGUI>();
+        timestampComp.text = timestamp;
+
+        TMPro.TextMeshProUGUI outsideTempComp = GameObject.FindGameObjectWithTag("OutsideTempText").GetComponent<TMPro.TextMeshProUGUI>();
+        outsideTempComp.text = string.Format("It is {0}° outside", System.Math.Round(outsideTemp, 2));
 
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         {
             Radiator radiator = room.GetComponentInChildren<Radiator>();
 
-            if (radiator.isOn)
+            if (radiator.activated)
             {
                 room.roomTemperature += 1;
             }

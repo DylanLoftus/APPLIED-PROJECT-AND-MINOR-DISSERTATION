@@ -15,3 +15,19 @@ public class DataPoint
     public float temperature;
     public float windspeed;
 }
+
+[System.Serializable]
+public class WeatherListing
+{
+    public string area;
+    public int dataset;
+    public int length;
+    public string link;
+    public string start_time;
+}
+
+[System.Serializable]
+public class WeatherListings
+{
+    public WeatherListing[] listings;
+}
