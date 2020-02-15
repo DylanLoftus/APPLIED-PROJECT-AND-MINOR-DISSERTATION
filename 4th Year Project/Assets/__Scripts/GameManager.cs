@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,10 +8,10 @@ public class GameManager : MonoBehaviour
     public WeatherHistory weatherHistory = new WeatherHistory();
 
     [SerializeField]
-    private Room[] rooms;
+    private IList<Room> rooms;
 
     [SerializeField]
-    private Door[] doors;
+    private IList<Door> doors;
 
     public IEnumerator RunSimulation()
     {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                //EqualizeTemperatures();
+                EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
         {
             Radiator radiator = room.GetComponentInChildren<Radiator>();
 
-            if (radiator.activated)
+            if (radiator != null && radiator.activated)
             {
                 room.roomTemperature += 1;
             }
@@ -70,5 +71,15 @@ public class GameManager : MonoBehaviour
     {
         this.weatherHistory = weatherHistory;
         StartCoroutine(RunSimulation());
+    }
+
+    public void addRoom(Room room)
+    {
+        rooms.Add(room);
+    }
+
+    public void addDoor(Door door)
+    {
+        doors.Add(door);
     }
 }

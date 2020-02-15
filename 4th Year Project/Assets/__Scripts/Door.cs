@@ -4,9 +4,8 @@ public class Door : Interactable
 {
     private bool playerNear;
     public GameObject cube;
-
-    [SerializeField]
-    private AdjRooms adjRooms;
+    
+    public AdjRooms adjRooms;
 
     void Start()
     {

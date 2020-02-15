@@ -24,6 +24,15 @@ public class Instantiator : MonoBehaviour
     private GameObject newHallway;
     private GameObject door;
 
+    private Door newDoorN, newDoorS;
+
+    private GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
+
     private void CreateHallway()
     {
         leftRoomCreate = false;
@@ -52,6 +61,20 @@ public class Instantiator : MonoBehaviour
         Room newHallwayRoom = newHallway.GetComponent<Room>();
         hallwayRoom.adjRooms.roomEast = newHallwayRoom;
         newHallwayRoom.adjRooms.roomWest = hallwayRoom;
+
+        // register new rooms and doors with GameManager
+        gameManager.addRoom(hallwayRoom);
+        gameManager.addDoor(door.GetComponent<Door>());
+        gameManager.addDoor(door.GetComponent<Door>());
+
+        newDoorN = hallway.transform.Find("SideWallN").GetComponent<Door>();
+        newDoorS = hallway.transform.Find("SideWallS").GetComponent<Door>();
+
+        gameManager.addDoor(newDoorN);
+        gameManager.addDoor(newDoorS);
+
+        newDoorN.adjRooms.roomSouth = newHallwayRoom;
+        newDoorS.adjRooms.roomNorth = newHallwayRoom;
 
         hallway = newHallway;
 
@@ -82,6 +105,9 @@ public class Instantiator : MonoBehaviour
             Room hallwayRoom = hallway.GetComponent<Room>();
             newRoom.adjRooms.roomSouth = hallwayRoom;
             hallwayRoom.adjRooms.roomNorth = newRoom;
+
+            // update door adjacency
+            newDoorN.adjRooms.roomNorth = newRoom;
         }
         else
         {
@@ -95,6 +121,9 @@ public class Instantiator : MonoBehaviour
             Room hallwayRoom = hallway.GetComponent<Room>();
             newRoom.adjRooms.roomNorth = hallwayRoom;
             hallwayRoom.adjRooms.roomSouth = newRoom;
+
+            // update door adjacency
+            newDoorS.adjRooms.roomSouth = newRoom;
         }
     }
 
