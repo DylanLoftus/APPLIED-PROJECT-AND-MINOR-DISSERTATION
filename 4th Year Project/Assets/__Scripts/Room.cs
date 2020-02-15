@@ -46,11 +46,8 @@ public class Room : MonoBehaviour
         float heatLossRate = (numWallsExposed * (window != null && window.activated ? 10 : 2)) / 80f;
 
         // change room temperature towards temperature outside
-        if (gameManager != null)
-        {
-            float tempDiff = gameManager.outsideTemp - roomTemperature;
-            float tempChange = tempDiff * heatLossRate;
-            roomTemperature += tempChange;
-        }
+        float tempDiff = gameManager.outsideTemp - roomTemperature;
+        float tempChange = tempDiff * heatLossRate;
+        roomTemperature += tempChange;
     }
 }
