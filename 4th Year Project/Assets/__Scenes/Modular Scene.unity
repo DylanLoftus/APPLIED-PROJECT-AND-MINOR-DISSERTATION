@@ -2632,6 +2632,16 @@ PrefabInstance:
       propertyPath: connectingRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1283546475}
+    - target: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 1283546475}
+    - target: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
     - target: {fileID: 7658453434527876369, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_IsActive
@@ -2670,7 +2680,7 @@ PrefabInstance:
     - target: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
@@ -2732,6 +2742,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5306012286218900638, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
+    - target: {fileID: 5306012286218900638, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 240855872}
     - target: {fileID: 5306012286316840204, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2751,7 +2771,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7658453436080051257}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440888421}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
