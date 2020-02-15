@@ -7,7 +7,7 @@ public class Door : Interactable
 
     [SerializeField]
     private AdjRooms adjRooms;
-    
+
     void Start()
     {
         cube = transform.GetChild(1).gameObject;

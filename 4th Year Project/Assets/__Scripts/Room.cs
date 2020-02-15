@@ -11,6 +11,8 @@ public class Room : MonoBehaviour
     
     public AdjRooms adjRooms;
     
+    public bool isHallway = false;
+
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();

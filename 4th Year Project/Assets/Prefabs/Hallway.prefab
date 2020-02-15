@@ -1046,6 +1046,7 @@ MonoBehaviour:
     roomSouth: {fileID: 0}
     roomEast: {fileID: 0}
     roomWest: {fileID: 0}
+  isHallway: 1
 --- !u!114 &8368813824299561398
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,14 +5,10 @@ using UnityEngine;
 [Serializable]
 public class AdjRooms
 {
-    [SerializeField]
-    private Room roomNorth;
-    [SerializeField]
-    private Room roomSouth;
-    [SerializeField]
-    private Room roomEast;
-    [SerializeField]
-    private Room roomWest;
+    public Room roomNorth;
+    public Room roomSouth;
+    public Room roomEast;
+    public Room roomWest;
 
     public Room[] GetAdjList()
     {

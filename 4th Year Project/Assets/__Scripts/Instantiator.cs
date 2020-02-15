@@ -24,17 +24,6 @@ public class Instantiator : MonoBehaviour
     private GameObject newHallway;
     private GameObject door;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void CreateHallway()
     {
         leftRoomCreate = false;
@@ -57,6 +46,12 @@ public class Instantiator : MonoBehaviour
 
         door = sideWallS.transform.Find("Door").gameObject;
         door.SetActive(false);
+
+        // update room adjacencies
+        Room hallwayRoom = hallway.GetComponent<Room>();
+        Room newHallwayRoom = newHallway.GetComponent<Room>();
+        hallwayRoom.adjRooms.roomEast = newHallwayRoom;
+        newHallwayRoom.adjRooms.roomWest = hallwayRoom;
 
         hallway = newHallway;
 
@@ -81,6 +76,12 @@ public class Instantiator : MonoBehaviour
         {
             roomL = CreateRoom(roomL, 90);
             leftRoomCreate = true;
+
+            // update room adjacencies
+            Room newRoom = roomL.GetComponent<Room>();
+            Room hallwayRoom = hallway.GetComponent<Room>();
+            newRoom.adjRooms.roomSouth = hallwayRoom;
+            hallwayRoom.adjRooms.roomNorth = newRoom;
         }
         else
         {
@@ -88,6 +89,12 @@ public class Instantiator : MonoBehaviour
             doorCover.SetActive(false);
             door.SetActive(true);
             rightRoomCreate = true;
+
+            // update room adjacencies
+            Room newRoom = roomR.GetComponent<Room>();
+            Room hallwayRoom = hallway.GetComponent<Room>();
+            newRoom.adjRooms.roomNorth = hallwayRoom;
+            hallwayRoom.adjRooms.roomSouth = newRoom;
         }
     }
 
