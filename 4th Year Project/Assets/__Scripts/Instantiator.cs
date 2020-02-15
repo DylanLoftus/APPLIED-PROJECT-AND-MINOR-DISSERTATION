@@ -67,8 +67,8 @@ public class Instantiator : MonoBehaviour
         gameManager.addDoor(door.GetComponent<Door>());
         gameManager.addDoor(door.GetComponent<Door>());
 
-        newDoorN = hallway.transform.Find("SideWallN").GetComponent<Door>();
-        newDoorS = hallway.transform.Find("SideWallS").GetComponent<Door>();
+        newDoorN = hallway.transform.Find("SideWallN").GetComponentInChildren<Door>();
+        newDoorS = hallway.transform.Find("SideWallS").GetComponentInChildren<Door>();
 
         gameManager.addDoor(newDoorN);
         gameManager.addDoor(newDoorS);
@@ -97,6 +97,9 @@ public class Instantiator : MonoBehaviour
         }
         else if (leftRoomCreate == false && rightRoomCreate == false)
         {
+            Room oldRoomL = roomL.GetComponent<Room>();
+            Room newRoomL = roomL.GetComponent<Room>();
+
             roomL = CreateRoom(roomL, 90);
             leftRoomCreate = true;
 
@@ -105,12 +108,18 @@ public class Instantiator : MonoBehaviour
             Room hallwayRoom = hallway.GetComponent<Room>();
             newRoom.adjRooms.roomSouth = hallwayRoom;
             hallwayRoom.adjRooms.roomNorth = newRoom;
+            
+            oldRoomL.adjRooms.roomEast = newRoomL;
+            newRoomL.adjRooms.roomWest = oldRoomL;
 
             // update door adjacency
             newDoorN.adjRooms.roomNorth = newRoom;
         }
         else
         {
+            Room oldRoomR = roomR.GetComponent<Room>();
+            Room newRoomR = roomR.GetComponent<Room>();
+
             roomR = CreateRoom(roomR, -90);
             doorCover.SetActive(false);
             door.SetActive(true);
@@ -121,6 +130,9 @@ public class Instantiator : MonoBehaviour
             Room hallwayRoom = hallway.GetComponent<Room>();
             newRoom.adjRooms.roomNorth = hallwayRoom;
             hallwayRoom.adjRooms.roomSouth = newRoom;
+
+            oldRoomR.adjRooms.roomEast = newRoomR;
+            newRoomR.adjRooms.roomWest = oldRoomR;
 
             // update door adjacency
             newDoorS.adjRooms.roomSouth = newRoom;

@@ -729,12 +729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectingRooms:
-  - {fileID: 103295450}
-  - {fileID: 718686829}
-  isOpen: 0
+  activated: 0
   cube: {fileID: 0}
-  cubeObject: {fileID: 0}
   adjRooms:
     roomNorth: {fileID: 718686829}
     roomSouth: {fileID: 103295450}
@@ -799,12 +795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectingRooms:
-  - {fileID: 805763000}
-  - {fileID: 1436157436}
-  isOpen: 0
+  activated: 0
   cube: {fileID: 0}
-  cubeObject: {fileID: 0}
   adjRooms:
     roomNorth: {fileID: 805763000}
     roomSouth: {fileID: 1436157436}
@@ -3543,12 +3535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectingRooms:
-  - {fileID: 1436157436}
-  - {fileID: 103295450}
-  isOpen: 0
+  activated: 0
   cube: {fileID: 0}
-  cubeObject: {fileID: 0}
   adjRooms:
     roomNorth: {fileID: 0}
     roomSouth: {fileID: 0}
@@ -3882,12 +3870,12 @@ MonoBehaviour:
     description: 
     length: 0
     data: []
-  rooms:
+  presetRooms:
   - {fileID: 805763000}
   - {fileID: 1436157436}
   - {fileID: 103295450}
   - {fileID: 718686829}
-  doors:
+  presetDoors:
   - {fileID: 2055658168}
   - {fileID: 1330122815}
   - {fileID: 260429959}

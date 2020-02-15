@@ -8,10 +8,34 @@ public class GameManager : MonoBehaviour
     public WeatherHistory weatherHistory = new WeatherHistory();
 
     [SerializeField]
-    private IList<Room> rooms;
+    private Room[] presetRooms;
 
     [SerializeField]
+    private Door[] presetDoors;
+    
+    private IList<Room> rooms;
     private IList<Door> doors;
+
+    private void Start()
+    {
+        InitialiseRooms();
+    }
+
+    void InitialiseRooms()
+    {
+        rooms = new List<Room>();
+        doors = new List<Door>();
+
+        foreach (Room room in presetRooms)
+        {
+            rooms.Add(room);
+        }
+
+        foreach (Door door in presetDoors)
+        {
+            doors.Add(door);
+        }
+    }
 
     public IEnumerator RunSimulation()
     {
