@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 1541210445932192544, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_Name
-      value: RoomMod
+      value: RoomModNorth
       objectReference: {fileID: 0}
     - target: {fileID: 1541210445932192544, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 1541210445932192545, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1541210445932192545, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -531,6 +531,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: adjRooms.roomWest
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: adjRooms.roomEast
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
     - target: {fileID: 7637828829012719930, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -555,11 +575,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1082685614074533948, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -889,6 +904,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7658453436080051257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &569303303 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5306012286218900638, guid: eb55fa0977248f14c9f5aea50ec10273,
+    type: 3}
+  m_PrefabInstance: {fileID: 7658453436080051257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622379251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1712,6 +1739,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1640042101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
+    type: 3}
+  m_PrefabInstance: {fileID: 7658453436080051257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e93c1f61cb80d4f80eb5cd58d0f76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642874718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,16 +1960,13 @@ MonoBehaviour:
     description: 
     length: 0
     data: []
-  rooms:
+  presetRooms:
+  - {fileID: 7658453436080051258}
   - {fileID: 1283546475}
   - {fileID: 240855872}
-  - {fileID: 0}
-  - {fileID: 0}
-  doors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  presetDoors:
+  - {fileID: 1640042101}
+  - {fileID: 569303303}
 --- !u!4 &1697273572
 Transform:
   m_ObjectHideFlags: 0
@@ -1983,7 +2019,7 @@ PrefabInstance:
     - target: {fileID: 1541210445932192544, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_Name
-      value: RoomMod (1)
+      value: RoomModSouth
       objectReference: {fileID: 0}
     - target: {fileID: 1541210445932192544, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -2013,7 +2049,7 @@ PrefabInstance:
     - target: {fileID: 1541210445932192545, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1541210445932192545, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -2160,6 +2196,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: roomId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: adjRooms.roomEast
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
     - target: {fileID: 7637828829012719930, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2184,11 +2235,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3725520257626575593, guid: f99fdf511b8f274478c3381238655f08,
-        type: 3}
-      propertyPath: roomId
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1082685614074533948, guid: f99fdf511b8f274478c3381238655f08, type: 3}
@@ -2437,7 +2483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!143 &2045054463
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2586,6 +2632,16 @@ PrefabInstance:
       propertyPath: connectingRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1283546475}
+    - target: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 1283546475}
+    - target: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
     - target: {fileID: 7658453434527876369, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_IsActive
@@ -2624,8 +2680,18 @@ PrefabInstance:
     - target: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 1283546475}
+    - target: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 240855872}
     - target: {fileID: 5306012285012279078, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2676,6 +2742,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5306012286218900638, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomNorth
+      value: 
+      objectReference: {fileID: 7658453436080051258}
+    - target: {fileID: 5306012286218900638, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: adjRooms.roomSouth
+      value: 
+      objectReference: {fileID: 240855872}
     - target: {fileID: 5306012286316840204, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2688,3 +2764,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb55fa0977248f14c9f5aea50ec10273, type: 3}
+--- !u!114 &7658453436080051258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7658453436176578654, guid: eb55fa0977248f14c9f5aea50ec10273,
+    type: 3}
+  m_PrefabInstance: {fileID: 7658453436080051257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440888421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

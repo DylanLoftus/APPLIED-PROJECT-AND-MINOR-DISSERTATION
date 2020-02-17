@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,10 +8,34 @@ public class GameManager : MonoBehaviour
     public WeatherHistory weatherHistory = new WeatherHistory();
 
     [SerializeField]
-    private Room[] rooms;
+    private Room[] presetRooms;
 
     [SerializeField]
-    private Door[] doors;
+    private Door[] presetDoors;
+    
+    private IList<Room> rooms;
+    private IList<Door> doors;
+
+    private void Start()
+    {
+        InitialiseRooms();
+    }
+
+    void InitialiseRooms()
+    {
+        rooms = new List<Room>();
+        doors = new List<Door>();
+
+        foreach (Room room in presetRooms)
+        {
+            rooms.Add(room);
+        }
+
+        foreach (Door door in presetDoors)
+        {
+            doors.Add(door);
+        }
+    }
 
     public IEnumerator RunSimulation()
     {
@@ -22,7 +47,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 // simulate 1 second (equalise temperatures)
-                //EqualizeTemperatures();
+                EqualizeTemperatures();
                 yield return new WaitForSeconds(1.0f);
             }
         }
@@ -40,17 +65,18 @@ public class GameManager : MonoBehaviour
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
     }
-    /*
+    
     public void EqualizeTemperatures()
     {
         // add heat to rooms if the radiator is on
         foreach (Room room in rooms)
         {
-            Radiator radiator = room.GetComponentInChildren<Radiator>();
-
-            if (radiator.activated)
+            foreach (Radiator radiator in room.GetComponentsInChildren<Radiator>())
             {
-                room.roomTemperature += 1;
+                if (radiator != null && radiator.activated)
+                {
+                    room.roomTemperature += 1;
+                }
             }
         }
 
@@ -59,16 +85,32 @@ public class GameManager : MonoBehaviour
             room.EqualiseTempToOutside();
         }
 
-        // equalise temperatures between rooms
+        // equalise temperatures between hallways
+        foreach (Room room in rooms)
+        {
+            room.EqualiseTempToAdjHallways();
+        }
+
+        // equalise temperatures between rooms with a door inbetween
         foreach (Door door in doors)
         {
             door.EqualiseTempBetweenRooms();
         }
     }
-    */
+    
     public void SetWeatherData(WeatherHistory weatherHistory)
     {
         this.weatherHistory = weatherHistory;
         StartCoroutine(RunSimulation());
+    }
+
+    public void addRoom(Room room)
+    {
+        rooms.Add(room);
+    }
+
+    public void addDoor(Door door)
+    {
+        doors.Add(door);
     }
 }
