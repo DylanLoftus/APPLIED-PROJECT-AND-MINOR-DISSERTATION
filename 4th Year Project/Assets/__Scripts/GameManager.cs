@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             room.EqualiseTempToAdjHallways();
         }
 
-        // equalise temperatures between rooms
+        // equalise temperatures between rooms with a door inbetween
         foreach (Door door in doors)
         {
             door.EqualiseTempBetweenRooms();

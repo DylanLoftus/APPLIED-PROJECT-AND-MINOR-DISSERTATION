@@ -24,8 +24,6 @@ public class Instantiator : MonoBehaviour
     private GameObject newHallway;
     private GameObject door;
 
-    private Door newDoorN, newDoorS;
-
     private GameManager gameManager;
 
     void Start()
@@ -62,19 +60,8 @@ public class Instantiator : MonoBehaviour
         hallwayRoom.adjRooms.roomEast = newHallwayRoom;
         newHallwayRoom.adjRooms.roomWest = hallwayRoom;
 
-        // register new rooms and doors with GameManager
+        // register new room with GameManager
         gameManager.addRoom(hallwayRoom);
-        gameManager.addDoor(door.GetComponent<Door>());
-        gameManager.addDoor(door.GetComponent<Door>());
-
-        newDoorN = hallway.transform.Find("SideWallN").GetComponentInChildren<Door>();
-        newDoorS = hallway.transform.Find("SideWallS").GetComponentInChildren<Door>();
-
-        gameManager.addDoor(newDoorN);
-        gameManager.addDoor(newDoorS);
-
-        newDoorN.adjRooms.roomSouth = newHallwayRoom;
-        newDoorS.adjRooms.roomNorth = newHallwayRoom;
 
         hallway = newHallway;
 
@@ -98,9 +85,8 @@ public class Instantiator : MonoBehaviour
         }
         else if (leftRoomCreate == false && rightRoomCreate == false)
         {
-            Room oldRoomL = roomL.GetComponent<Room>();
+            Room oldRoom = roomL.GetComponent<Room>();
             roomL = CreateRoom(roomL, 90);
-            Room newRoomL = roomL.GetComponent<Room>();
             leftRoomCreate = true;
 
             // update room adjacencies
@@ -109,32 +95,45 @@ public class Instantiator : MonoBehaviour
             newRoom.adjRooms.roomSouth = hallwayRoom;
             hallwayRoom.adjRooms.roomNorth = newRoom;
             
-            oldRoomL.adjRooms.roomEast = newRoomL;
-            newRoomL.adjRooms.roomWest = oldRoomL;
+            oldRoom.adjRooms.roomEast = newRoom;
+            newRoom.adjRooms.roomWest = oldRoom;
 
             // update door adjacency
-            newDoorN.adjRooms.roomNorth = newRoom;
+            Door newDoor = newHallway.transform.Find("SideWallN").GetComponentInChildren<Door>();
+
+            gameManager.addDoor(newDoor);
+
+            newDoor.adjRooms.roomSouth = hallwayRoom;
+            newDoor.adjRooms.roomNorth = newRoom;
+
+            // register new room with GameManager
+            gameManager.addRoom(newRoom);
         }
         else
         {
-            Room oldRoomR = roomR.GetComponent<Room>();
+            Room oldRoom = roomR.GetComponent<Room>();
             roomR = CreateRoom(roomR, -90);
-            Room newRoomR = roomR.GetComponent<Room>();
+            Room newRoom = roomR.GetComponent<Room>();
             doorCover.SetActive(false);
             door.SetActive(true);
             rightRoomCreate = true;
 
             // update room adjacencies
-            Room newRoom = roomR.GetComponent<Room>();
             Room hallwayRoom = hallway.GetComponent<Room>();
             newRoom.adjRooms.roomNorth = hallwayRoom;
             hallwayRoom.adjRooms.roomSouth = newRoom;
 
-            oldRoomR.adjRooms.roomEast = newRoomR;
-            newRoomR.adjRooms.roomWest = oldRoomR;
+            oldRoom.adjRooms.roomEast = newRoom;
+            newRoom.adjRooms.roomWest = oldRoom;
 
             // update door adjacency
-            newDoorS.adjRooms.roomSouth = newRoom;
+            Door newDoor = newHallway.transform.Find("SideWallS").GetComponentInChildren<Door>();
+            gameManager.addDoor(newDoor);
+            newDoor.adjRooms.roomNorth = newRoom;
+            newDoor.adjRooms.roomSouth = newRoom;
+
+            // register new room with GameManager
+            gameManager.addRoom(newRoom);
         }
     }
 
