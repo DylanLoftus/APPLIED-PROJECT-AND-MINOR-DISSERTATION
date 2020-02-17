@@ -72,7 +72,10 @@ public class Instantiator : MonoBehaviour
     {
         newRoom = Instantiate(roomR, new Vector3(room.transform.position.x, room.transform.position.y, room.transform.position.z + 10), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
-        newRoom.GetComponent<Room>().adjRooms.reset();
+
+        Room newRoomScript = newRoom.GetComponent<Room>();
+        newRoomScript.adjRooms.reset();
+        newRoomScript.roomTemperature = room.GetComponent<Room>().roomTemperature;
 
         return newRoom;
     }

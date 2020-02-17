@@ -2,7 +2,7 @@
 
 public class Room : MonoBehaviour
 {
-    public float roomTemperature;
+    public float roomTemperature = 0;
 
     private GameManager gameManager;
     private Room roomObject;
@@ -18,7 +18,11 @@ public class Room : MonoBehaviour
         roomObject = gameObject.GetComponent<Room>();
         window = gameObject.GetComponentInChildren<Window>();
 
-        roomTemperature = 18;
+        if (roomTemperature == 0)
+        {
+            // default room temperature
+            roomTemperature = 18;
+        }
     }
     
     void Update()
