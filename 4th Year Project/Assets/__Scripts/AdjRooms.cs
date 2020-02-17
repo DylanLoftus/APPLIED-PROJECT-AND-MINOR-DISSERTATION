@@ -29,4 +29,9 @@ public class AdjRooms
     {
         return GetAdjList().Count(r => r == null);
     }
+
+    public void reset()
+    {
+        roomNorth = roomSouth = roomEast = roomWest = null;
+    }
 }

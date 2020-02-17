@@ -85,6 +85,7 @@ public class Instantiator : MonoBehaviour
     {
         newRoom = Instantiate(roomR, new Vector3(room.transform.position.x, room.transform.position.y, room.transform.position.z + 10), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        newRoom.GetComponent<Room>().adjRooms.reset();
 
         return newRoom;
     }
@@ -98,9 +99,8 @@ public class Instantiator : MonoBehaviour
         else if (leftRoomCreate == false && rightRoomCreate == false)
         {
             Room oldRoomL = roomL.GetComponent<Room>();
-            Room newRoomL = roomL.GetComponent<Room>();
-
             roomL = CreateRoom(roomL, 90);
+            Room newRoomL = roomL.GetComponent<Room>();
             leftRoomCreate = true;
 
             // update room adjacencies
@@ -118,9 +118,8 @@ public class Instantiator : MonoBehaviour
         else
         {
             Room oldRoomR = roomR.GetComponent<Room>();
-            Room newRoomR = roomR.GetComponent<Room>();
-
             roomR = CreateRoom(roomR, -90);
+            Room newRoomR = roomR.GetComponent<Room>();
             doorCover.SetActive(false);
             door.SetActive(true);
             rightRoomCreate = true;

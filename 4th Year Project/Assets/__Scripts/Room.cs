@@ -2,7 +2,6 @@
 
 public class Room : MonoBehaviour
 {
-    public int roomId;
     public float roomTemperature;
 
     private GameManager gameManager;
