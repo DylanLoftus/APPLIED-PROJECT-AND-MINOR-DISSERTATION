@@ -50,4 +50,28 @@ public class Room : MonoBehaviour
         float tempChange = tempDiff * heatLossRate;
         roomTemperature += tempChange;
     }
+
+    public void EqualiseTempToAdjHallways()
+    {
+        if (!isHallway)
+        {
+            return;
+        }
+
+        foreach (Room adjRoom in adjRooms.GetConnectedRooms())
+        {
+            if (adjRoom.isHallway)
+            {
+                // fast temperature equalisation between hallways since they're
+                // effectivly one big room
+                // TODO this is duplicate code to code in Door.EqualiseTempBetweenRooms: create an abstraction
+                float heatChangeRate = 0.9f;
+
+                float tempDiff = roomTemperature - adjRoom.roomTemperature;
+                float tempChange = (tempDiff * heatChangeRate) / 2;
+                roomTemperature -= tempChange;
+                adjRoom.roomTemperature += tempChange;
+            }
+        }
+    }
 }

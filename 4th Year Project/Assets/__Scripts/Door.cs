@@ -21,17 +21,8 @@ public class Door : Interactable
         // faster heat exchange if door is open
         float heatChangeRate = (activated ? 5 : 1) / 10f;
 
-        if (roomA.isHallway && roomB.isHallway)
-        {
-            // fast temperature equalisation for hallways since they're
-            // effectivly one big room
-            heatChangeRate = 0.95f;
-        }
-        else
-        {
-            // faster heat exchange if door is open, slower otherwise
-            heatChangeRate = (activated ? 5 : 1) / 10f;
-        }
+        // faster heat exchange if door is open, slower otherwise
+        heatChangeRate = (activated ? 5 : 1) / 10f;
 
         float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
         float tempChange = (tempDiff * heatChangeRate) / 2;
