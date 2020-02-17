@@ -132,7 +132,7 @@ public class Instantiator : MonoBehaviour
             // update door adjacency
             Door newDoor = newHallway.transform.Find("SideWallS").GetComponentInChildren<Door>();
             gameManager.addDoor(newDoor);
-            newDoor.adjRooms.roomNorth = newRoom;
+            newDoor.adjRooms.roomNorth = hallwayRoom;
             newDoor.adjRooms.roomSouth = newRoom;
 
             // register new room with GameManager
