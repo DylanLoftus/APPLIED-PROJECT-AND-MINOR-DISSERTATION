@@ -2,7 +2,6 @@
 
 public class Door : Interactable
 {
-    private bool playerNear;
     public GameObject cube;
     
     public AdjRooms adjRooms;

@@ -33,7 +33,7 @@ public class Room : MonoBehaviour
         float red = tempGradient;
         float blue = (1 - tempGradient);
         
-        var roomRenderer = roomObject.GetComponentInChildren<Renderer>();
+        var roomRenderer = roomObject.transform.Find("Floor").GetComponent<Renderer>();
         roomRenderer.material.SetColor("_Color", new Color(red, 0, blue));
     }
 
