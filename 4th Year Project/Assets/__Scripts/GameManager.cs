@@ -71,11 +71,12 @@ public class GameManager : MonoBehaviour
         // add heat to rooms if the radiator is on
         foreach (Room room in rooms)
         {
-            Radiator radiator = room.GetComponentInChildren<Radiator>();
-
-            if (radiator != null && radiator.activated)
+            foreach (Radiator radiator in room.GetComponentsInChildren<Radiator>())
             {
-                room.roomTemperature += 1;
+                if (radiator != null && radiator.activated)
+                {
+                    room.roomTemperature += 1;
+                }
             }
         }
 
