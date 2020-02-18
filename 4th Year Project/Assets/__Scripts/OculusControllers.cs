@@ -5,11 +5,12 @@ using UnityEngine;
 public class OculusControllers : MonoBehaviour
 {
     public Instantiator instantiator;
+    [SerializeField]
+    private GameObject hallChoice;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class OculusControllers : MonoBehaviour
         OVRInput.Update();
 
         if ((OVRInput.GetDown(OVRInput.RawButton.A) == true) || (Input.GetKeyUp("space") == true)){
-            instantiator.CheckRooms();
+            hallChoice.SetActive(true);
         }
     }
 }

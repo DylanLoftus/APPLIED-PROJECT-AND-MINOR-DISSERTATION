@@ -12,6 +12,10 @@ public class TempDisplay : MonoBehaviour
     {
         room = GetComponentInParent<Room>();
         currentRoomTemp = GetComponent<TextMeshPro>();
+        currentRoomTemp.transform.rotation = Quaternion.identity;
+        currentRoomTemp.transform.Rotate(90,0,90);
+        currentRoomTemp.transform.position = new Vector3(room.transform.position.x, room.transform.position.y + 10, room.transform.position.z - (float)2.5);
+
     }
 
     // Update is called once per frame

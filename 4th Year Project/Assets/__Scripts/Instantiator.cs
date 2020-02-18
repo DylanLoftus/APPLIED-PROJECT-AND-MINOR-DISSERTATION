@@ -7,6 +7,8 @@ public class Instantiator : MonoBehaviour
     [SerializeField]
     private GameObject hallway;
     [SerializeField]
+    private GameObject hallwayL;
+    [SerializeField]
     private GameObject roomL;
 
     [SerializeField]
@@ -31,7 +33,7 @@ public class Instantiator : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    private void CreateHallway()
+    private void CreateHallway(GameObject hallwayChoice)
     {
         leftRoomCreate = false;
         rightRoomCreate = false;
@@ -39,7 +41,7 @@ public class Instantiator : MonoBehaviour
         wallDestroy = hallway.transform.Find("WallDestroy").gameObject;
         wallDestroy.SetActive(false);
 
-        newHallway = Instantiate(hallway, new Vector3(hallway.transform.position.x, hallway.transform.position.y, hallway.transform.position.z + 10), Quaternion.identity);
+        newHallway = Instantiate(hallwayChoice, new Vector3(hallway.transform.position.x, hallway.transform.position.y, hallway.transform.position.z + 10), Quaternion.identity);
 
         wallInsDestroy = newHallway.transform.Find("WallInsDestroy").gameObject;
         wallInsDestroy.SetActive(false);
@@ -65,7 +67,7 @@ public class Instantiator : MonoBehaviour
 
         hallway = newHallway;
 
-        CheckRooms();
+        CheckRooms(0);
     }
 
     private GameObject CreateRoom(GameObject room, int rotation)
@@ -80,11 +82,22 @@ public class Instantiator : MonoBehaviour
         return newRoom;
     }
 
-    public void CheckRooms()
+    public void CheckRooms(int choice)
     {
         if(leftRoomCreate == true && rightRoomCreate == true)
         {
-            CreateHallway();
+            if(choice == 1)
+            {
+                CreateHallway(hallway);
+            }
+            else if(choice == 2)
+            {
+                CreateHallway(hallwayL);
+            }
+            else
+            {
+                Debug.Log("InvalidChoice");
+            }
         }
         else if (leftRoomCreate == false && rightRoomCreate == false)
         {

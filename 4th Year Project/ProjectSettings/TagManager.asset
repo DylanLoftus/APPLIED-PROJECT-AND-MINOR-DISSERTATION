@@ -20,6 +20,7 @@ TagManager:
   - WeatherSelectPrompt
   - ListingButtonTemplate
   - WeatherSelectContent
+  - HallChoice
   layers:
   - Default
   - TransparentFX
