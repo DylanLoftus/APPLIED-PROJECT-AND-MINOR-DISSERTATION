@@ -5,14 +5,10 @@ using UnityEngine;
 [Serializable]
 public class AdjRooms
 {
-    [SerializeField]
-    private Room roomNorth;
-    [SerializeField]
-    private Room roomSouth;
-    [SerializeField]
-    private Room roomEast;
-    [SerializeField]
-    private Room roomWest;
+    public Room roomNorth;
+    public Room roomSouth;
+    public Room roomEast;
+    public Room roomWest;
 
     public Room[] GetAdjList()
     {
@@ -32,5 +28,10 @@ public class AdjRooms
     public int NumSidesNotConnected()
     {
         return GetAdjList().Count(r => r == null);
+    }
+
+    public void reset()
+    {
+        roomNorth = roomSouth = roomEast = roomWest = null;
     }
 }

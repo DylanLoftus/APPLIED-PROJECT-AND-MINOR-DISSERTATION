@@ -2,12 +2,10 @@
 
 public class Door : Interactable
 {
-    private bool playerNear;
     public GameObject cube;
-
-    [SerializeField]
-    private AdjRooms adjRooms;
     
+    public AdjRooms adjRooms;
+
     void Start()
     {
         cube = transform.GetChild(1).gameObject;
@@ -22,6 +20,9 @@ public class Door : Interactable
 
         // faster heat exchange if door is open
         float heatChangeRate = (activated ? 5 : 1) / 10f;
+
+        // faster heat exchange if door is open, slower otherwise
+        heatChangeRate = (activated ? 5 : 1) / 10f;
 
         float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
         float tempChange = (tempDiff * heatChangeRate) / 2;
