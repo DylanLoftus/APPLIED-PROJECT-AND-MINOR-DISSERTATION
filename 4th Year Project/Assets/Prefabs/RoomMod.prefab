@@ -145,13 +145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomId: 0
   roomTemperature: 0
   adjRooms:
     roomNorth: {fileID: 0}
     roomSouth: {fileID: 0}
     roomEast: {fileID: 0}
     roomWest: {fileID: 0}
+  isHallway: 0
 --- !u!95 &7099549308389479751
 Animator:
   serializedVersion: 3
@@ -1131,6 +1131,16 @@ PrefabInstance:
     - target: {fileID: 2136217771047817440, guid: 6d31248447c9738499d049490440d248,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525429905765690022, guid: 6d31248447c9738499d049490440d248,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876188179428162723, guid: 6d31248447c9738499d049490440d248,
+        type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
