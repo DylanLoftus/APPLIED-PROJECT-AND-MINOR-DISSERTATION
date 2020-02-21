@@ -18,8 +18,16 @@ public class OculusControllers : MonoBehaviour
     {
         OVRInput.Update();
 
-        if ((OVRInput.GetDown(OVRInput.RawButton.A) == true) || (Input.GetKeyUp("space") == true)){
-            hallChoice.SetActive(true);
+        if ((OVRInput.GetDown(OVRInput.RawButton.A) == true) || (Input.GetKeyUp("space") == true))
+        {
+            if(instantiator.rightRoomCreate == false || instantiator.leftRoomCreate == false)
+            {
+                instantiator.CheckRooms(0);
+            }
+            else if(instantiator.rightRoomCreate == true && instantiator.leftRoomCreate == true)
+            {
+                hallChoice.SetActive(true);
+            }
         }
     }
 }
