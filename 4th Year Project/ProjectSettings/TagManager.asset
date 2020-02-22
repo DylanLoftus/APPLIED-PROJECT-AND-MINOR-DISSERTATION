@@ -21,6 +21,7 @@ TagManager:
   - ListingButtonTemplate
   - WeatherSelectContent
   - HallChoice
+  - HallwayL
   layers:
   - Default
   - TransparentFX
