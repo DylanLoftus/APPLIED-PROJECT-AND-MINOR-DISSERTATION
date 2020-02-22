@@ -16,9 +16,16 @@ public class GameManager : MonoBehaviour
     private IList<Room> rooms;
     private IList<Door> doors;
 
+    // gamification state
+    public double money;
+    private double playerComfort = 1.0;
+
     private void Start()
     {
         InitialiseRooms();
+        
+        // starting money
+        money = 1000;
     }
 
     void InitialiseRooms()
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
             {
                 // simulate 1 second (equalise temperatures)
                 EqualizeTemperatures();
+                // update player stats on the UI
+                UpdateStatsUI();
                 yield return new WaitForSeconds(1.0f);
             }
         }
@@ -65,7 +74,16 @@ public class GameManager : MonoBehaviour
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
     }
-    
+
+    public void UpdateStatsUI()
+    {
+        TMPro.TextMeshProUGUI comfortComp = GameObject.FindGameObjectWithTag("ComfortValue").GetComponent<TMPro.TextMeshProUGUI>();
+        comfortComp.text = string.Format("Comfort: {0}%", System.Math.Round(playerComfort * 100d, 1));
+
+        TMPro.TextMeshProUGUI moneyComp = GameObject.FindGameObjectWithTag("PlayerMoney").GetComponent<TMPro.TextMeshProUGUI>();
+        moneyComp.text = string.Format("Money: €{0}", System.Math.Round(money, 2));
+    }
+
     public void EqualizeTemperatures()
     {
         // add heat to rooms if the radiator is on
