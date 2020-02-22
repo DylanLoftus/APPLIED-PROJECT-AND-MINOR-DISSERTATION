@@ -11,6 +11,7 @@ public class Room : MonoBehaviour
     public AdjRooms adjRooms;
     
     public bool isHallway = false;
+    public bool playerInside;
 
     void Start()
     {
@@ -73,6 +74,22 @@ public class Room : MonoBehaviour
             float tempChange = (tempDiff * heatChangeRate) / 2;
             roomTemperature -= tempChange;
             eastRoom.roomTemperature += tempChange;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerInside = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerInside = false;
         }
     }
 }

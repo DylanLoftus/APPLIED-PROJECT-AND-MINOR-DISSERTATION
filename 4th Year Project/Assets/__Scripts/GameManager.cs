@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // gamification state
-    public double money;
-    private double playerComfort = 1.0;
+    public float money;
+    private float playerComfort = 1.0f;
 
     private void Start()
     {
@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
             {
                 // simulate 1 second (equalise temperatures)
                 EqualizeTemperatures();
+                // update gamification state
+                GamificationStep();
                 // update player stats on the UI
                 UpdateStatsUI();
                 yield return new WaitForSeconds(1.0f);
@@ -82,6 +84,31 @@ public class GameManager : MonoBehaviour
 
         TMPro.TextMeshProUGUI moneyComp = GameObject.FindGameObjectWithTag("PlayerMoney").GetComponent<TMPro.TextMeshProUGUI>();
         moneyComp.text = string.Format("Money: €{0}", System.Math.Round(money, 2));
+    }
+
+    public void GamificationStep()
+    {
+        // find the room that the player is in
+        // (if it's multiple, just use whichever room is listed first)
+        Room playerRoom = null;
+        foreach (Room room in rooms)
+        {
+            if (room.playerInside)
+            {
+                playerRoom = room;
+                break;
+            }
+        }
+        
+        if (playerRoom != null)
+        {
+            float tempPlayerExperiencing = playerRoom.roomTemperature;
+            float optimalTemp = 18;
+            float offFromOptimal = Mathf.Abs(tempPlayerExperiencing - optimalTemp);
+            float comfortChange = (2 - offFromOptimal) / 5f;
+
+            playerComfort = Mathf.Clamp(playerComfort + comfortChange, 0, 1);
+        }
     }
 
     public void EqualizeTemperatures()
