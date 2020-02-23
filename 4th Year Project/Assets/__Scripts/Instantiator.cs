@@ -19,8 +19,9 @@ public class Instantiator : MonoBehaviour
     private int roomCount;
     private float rotation;
     private const int maxRoom = 2;
-    private int hallwayLCount = -1;
-    private const int MAXSPAWNROOMS = 8;
+    private int hallwayLCount = 0;
+    //private const int MAXSPAWNROOMS = 8;
+    private const int MAXSPAWNROOMS = 100000;
     private int totalRooms = 2;
 
 
@@ -33,7 +34,6 @@ public class Instantiator : MonoBehaviour
     private GameObject doorCover;
 
     public bool hallwayFull = true;
-    private bool rotateHallway = false;
     public bool spawnLimit = false;
 
     private GameObject newRoom;
@@ -56,46 +56,18 @@ public class Instantiator : MonoBehaviour
 
         wallDestroy = currentHallway.transform.Find("WallDestroy").gameObject;
         wallDestroy.SetActive(false);
-        
-        // Set the hallway spawn locations and their respective room allocation.
-        if(hallwayChoice == hallwayL)
-        {
-            hallwaySpawn = currentHallway.transform.Find("SpawnpointHallwayL").transform;
-            hallwayLCount++;
-            rotateHallway = true;
-        }
-        else
-        {
-            hallwaySpawn = currentHallway.transform.Find("SpawnpointHallway").transform;
-            switch (hallwayLCount)
-            {
-                case 0:
-                    rotation = 90;
-                    break;
-                case 1:
-                    rotation = 180;
-                    break;
-                case 2:
-                    rotation = 270;
-                    break;
 
-            }
-        }
+        // Set the hallway spawn locations and their respective room allocation.
+        string spawnpointName = "SpawnpointHallway" + (hallwayChoice == hallwayL ? "L" : "");
+        hallwaySpawn = currentHallway.transform.Find(spawnpointName).transform;
         Debug.Log("The current hallway is a: " + currentHallway.ToString());
 
         Debug.Log("Spawning in: " + hallwayChoice.ToString());
-        newHallway = Instantiate(hallwayChoice, new Vector3(hallwaySpawn.transform.position.x, hallwaySpawn.transform.position.y, hallwaySpawn.transform.position.z), Quaternion.identity);
+        Vector3 spawnPos = hallwaySpawn.transform.position;
+        newHallway = Instantiate(hallwayChoice, new Vector3(spawnPos.x, spawnPos.y, spawnPos.z), Quaternion.identity);
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
-        if (rotateHallway && hallwayLCount > 0)
-        {
-            rotateHallway = false;
-            rotation = currentHallway.transform.rotation.y + 90 * hallwayLCount;
-            newHallway.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
-        }
-        else
-        {
-            newHallway.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
-        }
+        rotation = currentHallway.transform.rotation.y + (90 * hallwayLCount);
+        newHallway.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
 
         wallInsDestroy = newHallway.transform.Find("WallInsDestroy").gameObject;
         wallInsDestroy.SetActive(false);
@@ -218,6 +190,7 @@ public class Instantiator : MonoBehaviour
             else if (choice == 2)
             {
                 CreateHallway(hallwayL);
+                hallwayLCount++;
             }
         }
         else if (choice == 0)
