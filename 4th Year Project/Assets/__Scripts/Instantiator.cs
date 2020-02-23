@@ -5,13 +5,14 @@ using UnityEngine;
 public class Instantiator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject hallway;
+    private GameObject hallwayStraight;
     [SerializeField]
     private GameObject hallwayL;
     [SerializeField]
     private GameObject roomL;
     [SerializeField]
     private Transform hallwaySpawn;
+    private GameObject currHallway;
 
     private Transform roomSpawn;
 
@@ -31,7 +32,6 @@ public class Instantiator : MonoBehaviour
     public bool hallwayFull = true;
 
     private GameObject newRoom;
-    private GameObject newHallway;
     private GameObject door;
 
     private GameManager gameManager;
@@ -39,81 +39,73 @@ public class Instantiator : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        currHallway = hallwayStraight;
     }
 
-    private void CreateHallway(GameObject hallwayChoice)
+    private void CreateHallway(int hallwayChoice)
     {
+        GameObject oldHallway = currHallway;
+
         // For creating rooms and checking if hallway is full.
         roomCount = 1;
         hallwayFull = false;
 
-        wallDestroy = hallway.transform.Find("WallDestroy").gameObject;
+        wallDestroy = currHallway.transform.Find("WallDestroy").gameObject;
         wallDestroy.SetActive(false);
-        
+
         // Set the hallway spawn locations and their respective room allocation.
-        if(hallwayChoice == hallwayL)
-        {
-            hallwaySpawn = hallway.transform.Find("SpawnpointHallwayL").transform;
-        }
-        else
-        {
-            hallwaySpawn = hallway.transform.Find("SpawnpointHallway").transform;
-        }
-        maxRoom = 2;
+        hallwaySpawn = currHallway.transform.Find("SpawnpointHallway" + (hallwayChoice == 2 ? "L" : "")).transform;
 
-        newHallway = Instantiate(hallwayChoice, new Vector3(hallwaySpawn.transform.position.x, hallwaySpawn.transform.position.y, hallwaySpawn.transform.position.z), Quaternion.identity);
+        GameObject hallwayChoiceObject = (hallwayChoice == 1 ? hallwayStraight : hallwayL);
+        currHallway = Instantiate(hallwayChoiceObject, new Vector3(hallwaySpawn.transform.position.x, hallwaySpawn.transform.position.y, hallwaySpawn.transform.position.z), Quaternion.identity);
 
-        newHallway.transform.Rotate(0, turnCount * 90, 0);
+        currHallway.transform.Rotate(0, turnCount * 90, 0);
 
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
-        if (hallwayChoice == hallwayL)
+        if (hallwayChoice == 2)
         {
             turnCount++;
         }
 
-        wallInsDestroy = newHallway.transform.Find("WallInsDestroy").gameObject;
+        wallInsDestroy = currHallway.transform.Find("WallInsDestroy").gameObject;
         wallInsDestroy.SetActive(false);
 
-        wallDestroy = newHallway.transform.Find("WallDestroy").gameObject;
+        wallDestroy = currHallway.transform.Find("WallDestroy").gameObject;
         wallDestroy.SetActive(true);
 
-        sideWallS = newHallway.transform.Find("SideWallS").gameObject;
+        sideWallS = currHallway.transform.Find("SideWallS").gameObject;
         doorCover = sideWallS.transform.Find("DoorCover").gameObject;
         doorCover.SetActive(true);
 
         door = sideWallS.transform.Find("Door").gameObject;
         door.SetActive(false);
 
-        // set up new spawnpoint for hallway
-        hallwaySpawn = newHallway.transform.Find("SpawnpointHallway").transform;
-
         // update room adjacencies
-        Room hallwayRoom = hallway.GetComponent<Room>();
-        Room newHallwayRoom = newHallway.GetComponent<Room>();
-        hallwayRoom.adjRooms.roomEast = newHallwayRoom;
-        newHallwayRoom.adjRooms.roomWest = hallwayRoom;
+        Room oldHallwayRoom = oldHallway.GetComponent<Room>();
+        Room currHallwayRoom = currHallway.GetComponent<Room>();
+        oldHallwayRoom.adjRooms.roomEast = currHallwayRoom;
+        currHallwayRoom.adjRooms.roomWest = oldHallwayRoom;
 
         // register new room with GameManager
-        gameManager.addRoom(hallwayRoom);
-
-        hallway = newHallway;
+        gameManager.addRoom(currHallwayRoom);
 
         CheckRooms(0);
     }
 
     // Creates a room Game Object
-    private GameObject CreateRoom(GameObject room, int rotation)
+    private GameObject CreateRoom(GameObject room, int rotationOffset)
     {
         // Set the room's spawn location.
-        roomSpawn = hallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform;
+        roomSpawn = currHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform;
         newRoom = Instantiate(roomR, new Vector3(roomSpawn.transform.position.x, roomSpawn.transform.position.y, roomSpawn.transform.position.z), Quaternion.identity);
-        newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
+        float roomRotation = currHallway.transform.rotation.eulerAngles.y + rotationOffset;
+        newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, roomRotation, 0));
 
         // Increment room count.
         roomCount++;
 
         // If the room count exceeds the maximum number of rooms for a hallway the hallway is full.
-        if (roomCount > maxRoom)
+        if (roomCount > 2)
         {
             hallwayFull = true;
         }
@@ -130,14 +122,7 @@ public class Instantiator : MonoBehaviour
         // If all rooms have been filled create a new hallway.
         if (hallwayFull)
         {
-            if (choice == 1)
-            {
-                CreateHallway(hallway);
-            }
-            else if (choice == 2)
-            {
-                CreateHallway(hallwayL);
-            }
+            CreateHallway(choice);
         }
         else if (choice == 0)
         {
