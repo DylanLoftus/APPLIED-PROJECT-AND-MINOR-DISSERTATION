@@ -16,9 +16,18 @@ public class GameManager : MonoBehaviour
     private IList<Room> rooms;
     private IList<Door> doors;
 
+    // time constants
+    private const int stepsPerHour = 5;
+    private const float secondsPerStep = 1;
+
     // gamification state
     public float money;
     private float playerComfort = 1.0f;
+
+    // gamification variables
+    private const float kwhRate = 0.150f;
+    private float radiatorWattage = 300;
+    private float radiatorTempIncreasePerHour = 5;
 
     private void Start()
     {
@@ -51,7 +60,7 @@ public class GameManager : MonoBehaviour
             DataPoint dataPoint = weatherHistory.data[i];
             outsideTemp = dataPoint.temperature;
             UpdateWeatherUI(dataPoint.timestamp, i);
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < stepsPerHour; j++)
             {
                 // simulate 1 second (equalise temperatures)
                 EqualizeTemperatures();
@@ -59,7 +68,7 @@ public class GameManager : MonoBehaviour
                 GamificationStep();
                 // update player stats on the UI
                 UpdateStatsUI();
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(secondsPerStep);
             }
         }
         Debug.Log("End of weather data set");
@@ -120,7 +129,12 @@ public class GameManager : MonoBehaviour
             {
                 if (radiator != null && radiator.activated)
                 {
-                    room.roomTemperature += 1;
+                    room.roomTemperature += radiatorTempIncreasePerHour / stepsPerHour;
+
+                    // apply a monetary cost to the player for using up electricity
+                    float kwhUsed = (radiatorWattage / 1000) / stepsPerHour;
+                    float electricityCost = kwhUsed * kwhRate;
+                    money -= electricityCost;
                 }
             }
         }
