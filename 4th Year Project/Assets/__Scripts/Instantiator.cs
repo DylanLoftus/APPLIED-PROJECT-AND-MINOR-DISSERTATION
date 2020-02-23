@@ -86,9 +86,6 @@ public class Instantiator : MonoBehaviour
         wallDestroy = newHallway.transform.Find("WallDestroy").gameObject;
         wallDestroy.SetActive(true);
 
-        // Hide the doorway.
-        ShowHideDoorway("hide");
-
         // set up new spawnpoint for hallway
         hallwaySpawn = newHallway.transform.Find("SpawnpointHallway").transform;
 
@@ -116,12 +113,6 @@ public class Instantiator : MonoBehaviour
         Vector3 roomSpawn = currentHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform.position;
         newRoom = Instantiate(roomTemplate, new Vector3(roomSpawn.x, roomSpawn.y, roomSpawn.z), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, roomRotation, 0));
-
-        // If the second room has not been spawned in yet hide the door.
-        if (roomCount != 2)
-        {
-            ShowHideDoorway("show");
-        }
 
         // temperature logic setup for this room
         InitialiseRoomTempLogic(newRoom, currentHallway);
@@ -172,17 +163,14 @@ public class Instantiator : MonoBehaviour
     public void CheckRooms(int choice)
     {
         // If all rooms have been filled create a new hallway.
-        if (hallwayFull == true)
+        if (hallwayFull)
         {
             PickHallway(choice);
         }
         else if (choice == 0)
         {
             // If the hallway is not full we have rooms to put in. Depending on how many rooms have already been created the rotations need to be set.
-            if (hallwayFull == false)
-            {
-                PickRoom(roomCount);
-            }
+            PickRoom(roomCount);
         }
     }
 
@@ -203,33 +191,27 @@ public class Instantiator : MonoBehaviour
     // Picks which room type and calls the CreateRoom method.
     private void PickRoom(int roomCount)
     {
-        switch (roomCount)
+        if (roomCount == 1)
         {
-            case 1:
-                prevRoomL = CreateRoom(roomL);
-                break;
-            case 2:
-                prevRoomR = CreateRoom(roomR);
-                break;
+            SetDoorwayHidden(true);
+            prevRoomL = CreateRoom(roomL);
+        }
+        else
+        {
+            SetDoorwayHidden(false);
+            prevRoomR = CreateRoom(roomR);
         }
     }
 
     // Reveals/hides a doorway.
-    private void ShowHideDoorway(string showHide)
+    private void SetDoorwayHidden(bool hidden)
     {
         sideWallS = newHallway.transform.Find("SideWallS").gameObject;
         doorCover = sideWallS.transform.Find("DoorCover").gameObject;
         door = sideWallS.transform.Find("Door").gameObject;
-        if (showHide == "show")
-        {
-            doorCover.SetActive(false);
-            door.SetActive(true);
-        }
-        else
-        {
-            doorCover.SetActive(true);
-            door.SetActive(false);
-        }
+
+        doorCover.SetActive(hidden);
+        door.SetActive(!hidden);
     }
 
     // Initialise a room's adjacency list and temperature
