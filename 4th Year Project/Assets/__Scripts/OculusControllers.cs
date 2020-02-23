@@ -35,6 +35,7 @@ public class OculusControllers : MonoBehaviour
                 // If the hallway is full ask the user if they want another one.
                 else if (instantiator.hallwayFull == true)
                 {
+                    Cursor.lockState = CursorLockMode.None;
                     hallChoice.SetActive(true);
                 }
             }
