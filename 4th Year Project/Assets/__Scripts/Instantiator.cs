@@ -26,6 +26,9 @@ public class Instantiator : MonoBehaviour
     [SerializeField]
     private GameObject roomR;
 
+    private GameObject prevRoomL;
+    private GameObject prevRoomR;
+
     private GameObject wallInsDestroy;
     private GameObject wallDestroy;
     private GameObject sideWallS;
@@ -45,6 +48,8 @@ public class Instantiator : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
         currentHallway = hallway;
         isCurrentHallwayL = false;
+        prevRoomL = roomL;
+        prevRoomR = roomR;
     }
 
     // Creates a hallway Game Object.
@@ -67,6 +72,7 @@ public class Instantiator : MonoBehaviour
 
         Vector3 spawnPos = hallwaySpawn.transform.position;
         newHallway = Instantiate(hallwayChoice, new Vector3(spawnPos.x, spawnPos.y, spawnPos.z), Quaternion.identity);
+        InitialiseRoomTempLogic(newHallway, currentHallway);
 
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
         rotation = currentHallway.transform.rotation.y + (90 * hallwayLCount);
@@ -87,7 +93,7 @@ public class Instantiator : MonoBehaviour
         hallwaySpawn = newHallway.transform.Find("SpawnpointHallway").transform;
 
         // update room adjacencies
-        LinkRoomsEastWest(hallway, newHallway, null);
+        LinkRoomsEastWest(currentHallway, newHallway, null);
 
         // register new room with GameManager
         gameManager.addRoom(newHallway.GetComponent<Room>());
@@ -100,7 +106,7 @@ public class Instantiator : MonoBehaviour
     }
 
     // Creates a room Game Object.
-    private void CreateRoom(GameObject roomTemplate)
+    private GameObject CreateRoom(GameObject roomTemplate)
     {
         // Sets a room's rotation.
         //bool isLeftRoom = GameObject.ReferenceEquals(room, roomL);
@@ -122,12 +128,24 @@ public class Instantiator : MonoBehaviour
         if (roomCount == 1)
         {
             // north/south room adjacency
-            LinkRoomsNorthSouth(currentHallway, newRoom, currentHallway.transform.Find("SideWallN"));
+            LinkRoomsNorthSouth(newRoom, currentHallway, currentHallway.transform.Find("SideWallN"));
+
+            if (!isCurrentHallwayL)
+            {
+                // east/west adjacency with previous L room
+                LinkRoomsEastWest(newRoom, prevRoomL, null);
+            }
         }
         else
         {
             // south/north room adjacency
-            LinkRoomsNorthSouth(newRoom, currentHallway, currentHallway.transform.Find("SideWallS"));
+            LinkRoomsNorthSouth(currentHallway, newRoom, currentHallway.transform.Find("SideWallS"));
+
+            if (!isCurrentHallwayL)
+            {
+                // east/west adjacency with previous L room
+                LinkRoomsEastWest(newRoom, prevRoomR, null);
+            }
         }
 
         // Increment room count.
@@ -146,6 +164,8 @@ public class Instantiator : MonoBehaviour
         {
             hallwayFull = true;
         }
+
+        return newRoom;
     }
 
     // Checks to see if a new hallway needs to be made or if a room needs to be made.
@@ -186,10 +206,10 @@ public class Instantiator : MonoBehaviour
         switch (roomCount)
         {
             case 1:
-                CreateRoom(roomL);
+                prevRoomL = CreateRoom(roomL);
                 break;
             case 2:
-                CreateRoom(roomR);
+                prevRoomR = CreateRoom(roomR);
                 break;
         }
     }
