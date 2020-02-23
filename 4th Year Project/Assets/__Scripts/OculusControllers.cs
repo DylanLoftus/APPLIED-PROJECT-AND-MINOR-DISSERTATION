@@ -20,15 +20,14 @@ public class OculusControllers : MonoBehaviour
 
         if ((OVRInput.GetDown(OVRInput.RawButton.A) == true) || (Input.GetKeyUp("space") == true))
         {
-            // If the hallway isn't full spawn in a room.
-            if(instantiator.hallwayFull == false)
-            {
-                instantiator.CheckRooms(0);
-            }
             // If the hallway is full ask the user if they want another one.
-            else if(instantiator.hallwayFull == true)
+            if (instantiator.hallwayFull)
             {
                 hallChoice.SetActive(true);
+            }
+            else // If the hallway isn't full spawn in a room.
+            {
+                instantiator.CheckRooms();
             }
         }
     }

@@ -13,6 +13,7 @@ public class Instantiator : MonoBehaviour
     [SerializeField]
     private Transform hallwaySpawn;
     private GameObject currHallway;
+    private int hallwayChoice;
 
     private Transform roomSpawn;
 
@@ -89,7 +90,7 @@ public class Instantiator : MonoBehaviour
         // register new room with GameManager
         gameManager.addRoom(currHallwayRoom);
 
-        CheckRooms(0);
+        CheckRooms();
     }
 
     // Creates a room Game Object
@@ -117,14 +118,14 @@ public class Instantiator : MonoBehaviour
         return newRoom;
     }
 
-    public void CheckRooms(int choice)
+    public void CheckRooms()
     {
         // If all rooms have been filled create a new hallway.
         if (hallwayFull)
         {
-            CreateHallway(choice);
+            CreateHallway(hallwayChoice);
         }
-        else if (choice == 0)
+        else if (hallwayChoice == 1 || hallwayChoice == 2)
         {
             // If the hallway is not full we have rooms to put in. Depending on how many rooms have already been created the rotations need to be set.
             // TODO: make rotation relative to hallway
@@ -136,7 +137,14 @@ public class Instantiator : MonoBehaviour
                         roomL = CreateRoom(roomL, 90);
                         break;
                     case 2:
-                        roomL = CreateRoom(roomL, 180);
+                        roomL = CreateRoom(roomL, (hallwayChoice == 1 ? 270 : 180));
+
+                        sideWallS = currHallway.transform.Find("SideWallS").gameObject;
+                        doorCover = sideWallS.transform.Find("DoorCover").gameObject;
+                        doorCover.SetActive(false);
+
+                        door = sideWallS.transform.Find("Door").gameObject;
+                        door.SetActive(true);
                         break;
 
                 }
@@ -144,10 +152,15 @@ public class Instantiator : MonoBehaviour
         }
         else
         {
-            Debug.Log("Invalid choice");
+            Debug.Log("Invalid choice: " + hallwayChoice);
         }
     }
 
+    public void OnUserSelectsHallway(int hallwayChoice)
+    {
+        this.hallwayChoice = hallwayChoice;
+        CheckRooms();
+    }
 }
 
 

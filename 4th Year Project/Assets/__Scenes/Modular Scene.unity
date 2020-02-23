@@ -1670,11 +1670,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440888422}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1779,6 +1774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -1991,7 +1991,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697273573}
-        m_MethodName: CheckRooms
+        m_MethodName: OnUserSelectsHallway
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2241,11 +2241,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1104623497}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2351,6 +2346,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_Mesh
@@ -2441,7 +2441,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697273573}
-        m_MethodName: CheckRooms
+        m_MethodName: OnUserSelectsHallway
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2567,14 +2567,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c2047a355587c428c3df9adb00a435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hallway: {fileID: 440888421}
+  hallwayStraight: {fileID: 440888421}
   hallwayL: {fileID: 7658453436176578652, guid: 75e7f8bb1c6768645a1bbbb2d169990e,
     type: 3}
   roomL: {fileID: 282308769}
   hallwaySpawn: {fileID: 1199035405}
   roomR: {fileID: 1104623495}
-  rightRoomCreate: 1
-  leftRoomCreate: 1
+  hallwayFull: 1
 --- !u!114 &1697273574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,11 +3046,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 282308771}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3156,6 +3150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -3430,6 +3429,11 @@ PrefabInstance:
       propertyPath: adjRooms.roomSouth
       value: 
       objectReference: {fileID: 240855872}
+    - target: {fileID: 2162752729253757046, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5306012285012279080, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: connectingRooms.Array.data[1]
@@ -3555,15 +3559,20 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2162752729253757046, guid: eb55fa0977248f14c9f5aea50ec10273,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1649307276608083200, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 489264619706935844, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262146031075810886, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb55fa0977248f14c9f5aea50ec10273, type: 3}
