@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1541210445932192545}
   - component: {fileID: 3725520257626575593}
   - component: {fileID: 7099549308389479751}
+  - component: {fileID: 82522800274441258}
   m_Layer: 0
   m_Name: RoomMod
   m_TagString: Untagged
@@ -145,13 +146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomId: 0
   roomTemperature: 0
   adjRooms:
     roomNorth: {fileID: 0}
     roomSouth: {fileID: 0}
     roomEast: {fileID: 0}
     roomWest: {fileID: 0}
+  isHallway: 0
+  playerInside: 0
 --- !u!95 &7099549308389479751
 Animator:
   serializedVersion: 3
@@ -171,6 +173,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &82522800274441258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541210445932192544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 3, z: 10}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1541210446107098839
 GameObject:
   m_ObjectHideFlags: 0

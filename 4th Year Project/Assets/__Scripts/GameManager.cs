@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         InitialiseRooms();
         
         // starting money
-        money = 1000;
+        money = 100;
     }
 
     void InitialiseRooms()
