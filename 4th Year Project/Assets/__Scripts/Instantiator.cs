@@ -104,14 +104,39 @@ public class Instantiator : MonoBehaviour
     private GameObject CreateRoom(GameObject roomTemplate)
     {
         // Sets a room's rotation.
-        //bool isLeftRoom = GameObject.ReferenceEquals(room, roomL);
         float roomRotation = roomTemplate.transform.rotation.eulerAngles.y + (isCurrentHallwayL ? 90 : 0) + rotation;
-        
+
         // Set the room's spawn location and instantiate it.
         Vector3 roomSpawn = currentHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform.position;
         newRoom = Instantiate(roomTemplate, new Vector3(roomSpawn.x, roomSpawn.y, roomSpawn.z), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, roomRotation, 0));
 
+        // Link new room up for the temperature exchange logic
+        LinkNewRoom();
+
+        // Increment room count.
+        roomCount++;
+        // Increment total room count.
+        totalRooms++;
+
+        // If the total amount of rooms spawned in is equal to the limit. Set spawnLimit to true.
+        if (totalRooms == MAXSPAWNROOMS)
+        {
+            spawnLimit = true;
+        }
+
+        // If the room count exceeds the maximum number of rooms for a hallway the hallway is full.
+        if (roomCount > maxRoom)
+        {
+            hallwayFull = true;
+        }
+
+        return newRoom;
+    }
+
+    // Link new room up for the temperature exchange logic
+    private void LinkNewRoom()
+    {
         // temperature logic setup for this room
         InitialiseRoomTempLogic(newRoom, currentHallway);
         if (roomCount == 1)
@@ -136,25 +161,6 @@ public class Instantiator : MonoBehaviour
                 LinkRoomsEastWest(gameManager, newRoom, prevRoomR, null);
             }
         }
-
-        // Increment room count.
-        roomCount++;
-        // Increment total room count.
-        totalRooms++;
-
-        // If the total amount of rooms spawned in is equal to the limit. Set spawnLimit to true.
-        if (totalRooms == MAXSPAWNROOMS)
-        {
-            spawnLimit = true;
-        }
-
-        // If the room count exceeds the maximum number of rooms for a hallway the hallway is full.
-        if (roomCount > maxRoom)
-        {
-            hallwayFull = true;
-        }
-
-        return newRoom;
     }
 
     // Checks to see if a new hallway needs to be made or if a room needs to be made.
@@ -179,7 +185,7 @@ public class Instantiator : MonoBehaviour
         {
             CreateHallway(hallway);
         }
-        else if (choice == 2)
+        else
         {
             CreateHallway(hallwayL);
             hallwayLCount++;
