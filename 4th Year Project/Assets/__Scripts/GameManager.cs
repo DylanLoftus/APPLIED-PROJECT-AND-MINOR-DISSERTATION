@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     private const float kwhRate = 0.150f;
     private float radiatorWattage = 300;
     private float radiatorTempIncreasePerHour = 5;
+    // radiators cut off after reaching a certain temperature (celsius)
+    private float radiatorCutoffTemp = 20;
 
     private void Start()
     {
@@ -129,12 +131,23 @@ public class GameManager : MonoBehaviour
             {
                 if (radiator != null && radiator.activated)
                 {
-                    room.roomTemperature += radiatorTempIncreasePerHour / stepsPerHour;
+                    if (room.roomTemperature >= radiatorCutoffTemp)
+                    {
+                        // radiator has reached it's target temp; don't heat the room any more
+                        // (color the radiator yellow to show this)
+                        radiator.SetColor(Color.yellow);
+                    }
+                    else
+                    {
+                        room.roomTemperature += radiatorTempIncreasePerHour / stepsPerHour;
 
-                    // apply a monetary cost to the player for using up electricity
-                    float kwhUsed = (radiatorWattage / 1000) / stepsPerHour;
-                    float electricityCost = kwhUsed * kwhRate;
-                    money -= electricityCost;
+                        // apply a monetary cost to the player for using up electricity
+                        float kwhUsed = (radiatorWattage / 1000) / stepsPerHour;
+                        float electricityCost = kwhUsed * kwhRate;
+                        money -= electricityCost;
+
+                        radiator.SetColor(Color.red);
+                    }
                 }
             }
         }
