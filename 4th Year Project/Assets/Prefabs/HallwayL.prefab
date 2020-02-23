@@ -1220,7 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7658453435154419210}
   m_Layer: 9
-  m_Name: SideWallSCopy
+  m_Name: UnusedWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,7 +1345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7658453435490874521}
   m_Layer: 9
-  m_Name: SideWallN
+  m_Name: UnusedWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1943,7 +1943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7932003746537168481}
   m_Layer: 9
-  m_Name: SideWallN (1)
+  m_Name: SideWallN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,16 +1974,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6491956817611544301}
     m_Modifications:
-    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2588150165987739283, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2044,6 +2034,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.03
       objectReference: {fileID: 0}
+    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_Layer
@@ -2069,11 +2069,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7658453436176578655}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2179,6 +2174,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_Mesh
@@ -2199,16 +2199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7932003746537168481}
     m_Modifications:
-    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2588150165987739283, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2269,7 +2259,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.03
       objectReference: {fileID: 0}
+    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150165987739282, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_Layer
       value: 9
@@ -2283,11 +2288,6 @@ PrefabInstance:
         type: 3}
       propertyPath: connectingRooms.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00464c4c5d60984fb81d4440bc2fc3b, type: 3}
