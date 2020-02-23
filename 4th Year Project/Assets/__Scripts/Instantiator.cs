@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using static RoomAdjUtils;
 
 public class Instantiator : MonoBehaviour
 {
@@ -90,7 +88,7 @@ public class Instantiator : MonoBehaviour
         hallwaySpawn = newHallway.transform.Find("SpawnpointHallway").transform;
 
         // update room adjacencies
-        LinkRoomsEastWest(currentHallway, newHallway, null);
+        LinkRoomsEastWest(gameManager, currentHallway, newHallway, null);
 
         // register new room with GameManager
         gameManager.addRoom(newHallway.GetComponent<Room>());
@@ -119,23 +117,23 @@ public class Instantiator : MonoBehaviour
         if (roomCount == 1)
         {
             // north/south room adjacency
-            LinkRoomsNorthSouth(newRoom, currentHallway, currentHallway.transform.Find("SideWallN"));
+            LinkRoomsNorthSouth(gameManager, newRoom, currentHallway, currentHallway.transform.Find("SideWallN"));
 
             if (!isCurrentHallwayL)
             {
                 // east/west adjacency with previous L room
-                LinkRoomsEastWest(newRoom, prevRoomL, null);
+                LinkRoomsEastWest(gameManager, newRoom, prevRoomL, null);
             }
         }
         else
         {
             // south/north room adjacency
-            LinkRoomsNorthSouth(currentHallway, newRoom, currentHallway.transform.Find("SideWallS"));
+            LinkRoomsNorthSouth(gameManager, currentHallway, newRoom, currentHallway.transform.Find("SideWallS"));
 
             if (!isCurrentHallwayL)
             {
                 // east/west adjacency with previous L room
-                LinkRoomsEastWest(newRoom, prevRoomR, null);
+                LinkRoomsEastWest(gameManager, newRoom, prevRoomR, null);
             }
         }
 
@@ -212,68 +210,6 @@ public class Instantiator : MonoBehaviour
 
         doorCover.SetActive(hidden);
         door.SetActive(!hidden);
-    }
-
-    // Initialise a room's adjacency list and temperature
-    private void InitialiseRoomTempLogic(GameObject room, GameObject copyTempRoom)
-    {
-        Room newRoomScript = room.GetComponent<Room>();
-        newRoomScript.adjRooms.reset();
-        newRoomScript.roomTemperature = copyTempRoom.GetComponent<Room>().roomTemperature;
-    }
-
-    // Create adjacencies between two rooms (north/south), for the temperature logic
-    private void LinkRoomsNorthSouth(GameObject roomN, GameObject roomS, Transform doorWall)
-    {
-        // find scripts from GameObjects
-        Room roomNorth = roomN.GetComponent<Room>();
-        Room roomSouth = roomS.GetComponent<Room>();
-
-        // create room adjacencies
-        roomNorth.adjRooms.roomSouth = roomSouth;
-        roomSouth.adjRooms.roomNorth = roomNorth;
-        
-        if (doorWall != null)
-        {
-            // create door room adjacencies
-            Door door = doorWall.GetComponentInChildren<Door>();
-            door.adjRooms.roomNorth = roomNorth;
-            door.adjRooms.roomSouth = roomSouth;
-
-            // register door with temperature logic
-            gameManager.addDoor(door);
-        }
-
-        // register rooms with temperature logic
-        gameManager.addRoom(roomNorth);
-        gameManager.addRoom(roomSouth);
-    }
-
-    // Create adjacencies between two rooms (east/west), for the temperature logic
-    private void LinkRoomsEastWest(GameObject roomE, GameObject roomW, Transform doorWall)
-    {
-        // find scripts from GameObjects
-        Room roomEast = roomE.GetComponent<Room>();
-        Room roomWest = roomW.GetComponent<Room>();
-
-        // create room adjacencies
-        roomEast.adjRooms.roomWest = roomWest;
-        roomWest.adjRooms.roomEast = roomEast;
-
-        if (doorWall != null)
-        {
-            // create door room adjacencies
-            Door door = doorWall.GetComponentInChildren<Door>();
-            door.adjRooms.roomEast = roomEast;
-            door.adjRooms.roomWest = roomWest;
-
-            // register door with temperature logic
-            gameManager.addDoor(door);
-        }
-
-        // register rooms with temperature logic
-        gameManager.addRoom(roomEast);
-        gameManager.addRoom(roomWest);
     }
 }
 
