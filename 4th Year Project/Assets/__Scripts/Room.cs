@@ -36,8 +36,12 @@ public class Room : MonoBehaviour
         float red = tempGradient;
         float blue = (1 - tempGradient);
         
-        var roomRenderer = roomObject.transform.Find("Floor").GetComponent<Renderer>();
-        roomRenderer.material.SetColor("_Color", new Color(red, 0, blue));
+        // floor may be split into multiple parts
+        Renderer[] floorRenderers = roomObject.transform.Find("Floor").GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in floorRenderers)
+        {
+            renderer.material.SetColor("_Color", new Color(red, 0, blue));
+        }
     }
 
     public void EqualiseTempToOutside()
