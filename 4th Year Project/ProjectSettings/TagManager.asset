@@ -22,6 +22,8 @@ TagManager:
   - WeatherSelectContent
   - HallChoice
   - HallwayL
+  - ComfortValue
+  - PlayerMoney
   layers:
   - Default
   - TransparentFX

@@ -1747,11 +1747,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440888422}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1857,6 +1852,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_Mesh
@@ -1919,6 +1919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1324561252 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1936994917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367343408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2250,7 @@ RectTransform:
   - {fileID: 862164644}
   - {fileID: 1203468996}
   - {fileID: 930974370}
+  - {fileID: 1324561252}
   m_Father: {fileID: 82711238}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2319,11 +2326,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1104623497}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2428,6 +2430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -2619,6 +2626,7 @@ MonoBehaviour:
   presetDoors:
   - {fileID: 1640042101}
   - {fileID: 569303303}
+  money: 0
 --- !u!4 &1697273572
 Transform:
   m_ObjectHideFlags: 0
@@ -3062,6 +3070,125 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933199043}
   m_CullTransparentMesh: 0
+--- !u!1001 &1936994917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1658814027}
+    m_Modifications:
+    - target: {fileID: 9064570649559688708, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_Name
+      value: Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -126.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281660745221536987, guid: 86892c3e7c3a7af409677c19ccbae5b9,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86892c3e7c3a7af409677c19ccbae5b9, type: 3}
 --- !u!1001 &1946145581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3126,11 +3253,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 282308771}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3235,6 +3357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}

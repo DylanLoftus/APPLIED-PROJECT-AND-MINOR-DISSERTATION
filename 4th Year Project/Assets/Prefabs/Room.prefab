@@ -1524,6 +1524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4571443780402599106}
   - component: {fileID: 8959785835410388982}
+  - component: {fileID: 8743493580456902891}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -1567,7 +1568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomId: 0
   roomTemperature: 0
   adjRooms:
     roomNorth: {fileID: 0}
@@ -1575,6 +1575,20 @@ MonoBehaviour:
     roomEast: {fileID: 0}
     roomWest: {fileID: 0}
   isHallway: 0
+  playerInside: 0
+--- !u!65 &8743493580456902891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332832530680009158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 3, z: 10}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &8735284831860603233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,11 +1763,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4571443780402599106}
     m_Modifications:
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
-      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1858,6 +1867,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}

@@ -11,6 +11,11 @@ public class Radiator : Interactable
 
     public override void OnInteraction(bool activated)
     {
-        mat.SetColor("_Color", activated ? Color.red : Color.white);
+        SetColor(activated ? Color.red : Color.white);
+    }
+
+    public void SetColor(Color color)
+    {
+        mat.SetColor("_Color", color);
     }
 }

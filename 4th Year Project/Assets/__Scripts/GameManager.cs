@@ -16,9 +16,27 @@ public class GameManager : MonoBehaviour
     private IList<Room> rooms;
     private IList<Door> doors;
 
+    // time constants
+    private const int stepsPerHour = 5;
+    private const float secondsPerStep = 1;
+
+    // gamification state
+    public float money;
+    private float playerComfort = 1.0f;
+
+    // gamification variables
+    private const float kwhRate = 0.150f;
+    private float radiatorWattage = 300;
+    private float radiatorTempIncreasePerHour = 5;
+    // radiators cut off after reaching a certain temperature (celsius)
+    private float radiatorCutoffTemp = 20;
+
     private void Start()
     {
         InitialiseRooms();
+        
+        // starting money
+        money = 100;
     }
 
     void InitialiseRooms()
@@ -44,11 +62,15 @@ public class GameManager : MonoBehaviour
             DataPoint dataPoint = weatherHistory.data[i];
             outsideTemp = dataPoint.temperature;
             UpdateWeatherUI(dataPoint.timestamp, i);
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < stepsPerHour; j++)
             {
                 // simulate 1 second (equalise temperatures)
                 EqualizeTemperatures();
-                yield return new WaitForSeconds(1.0f);
+                // update gamification state
+                GamificationStep();
+                // update player stats on the UI
+                UpdateStatsUI();
+                yield return new WaitForSeconds(secondsPerStep);
             }
         }
         Debug.Log("End of weather data set");
@@ -65,7 +87,41 @@ public class GameManager : MonoBehaviour
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
     }
-    
+
+    public void UpdateStatsUI()
+    {
+        TMPro.TextMeshProUGUI comfortComp = GameObject.FindGameObjectWithTag("ComfortValue").GetComponent<TMPro.TextMeshProUGUI>();
+        comfortComp.text = string.Format("Comfort: {0}%", System.Math.Round(playerComfort * 100d, 1));
+
+        TMPro.TextMeshProUGUI moneyComp = GameObject.FindGameObjectWithTag("PlayerMoney").GetComponent<TMPro.TextMeshProUGUI>();
+        moneyComp.text = string.Format("Money: €{0}", System.Math.Round(money, 2));
+    }
+
+    public void GamificationStep()
+    {
+        // find the room that the player is in
+        // (if it's multiple, just use whichever room is listed first)
+        Room playerRoom = null;
+        foreach (Room room in rooms)
+        {
+            if (room.playerInside)
+            {
+                playerRoom = room;
+                break;
+            }
+        }
+        
+        if (playerRoom != null)
+        {
+            float tempPlayerExperiencing = playerRoom.roomTemperature;
+            float optimalTemp = 18;
+            float offFromOptimal = Mathf.Abs(tempPlayerExperiencing - optimalTemp);
+            float comfortChange = (2 - offFromOptimal) / 5f;
+
+            playerComfort = Mathf.Clamp(playerComfort + comfortChange, 0, 1);
+        }
+    }
+
     public void EqualizeTemperatures()
     {
         // add heat to rooms if the radiator is on
@@ -75,7 +131,23 @@ public class GameManager : MonoBehaviour
             {
                 if (radiator != null && radiator.activated)
                 {
-                    room.roomTemperature += 1;
+                    if (room.roomTemperature >= radiatorCutoffTemp)
+                    {
+                        // radiator has reached it's target temp; don't heat the room any more
+                        // (color the radiator yellow to show this)
+                        radiator.SetColor(Color.yellow);
+                    }
+                    else
+                    {
+                        room.roomTemperature += radiatorTempIncreasePerHour / stepsPerHour;
+
+                        // apply a monetary cost to the player for using up electricity
+                        float kwhUsed = (radiatorWattage / 1000) / stepsPerHour;
+                        float electricityCost = kwhUsed * kwhRate;
+                        money -= electricityCost;
+
+                        radiator.SetColor(Color.red);
+                    }
                 }
             }
         }

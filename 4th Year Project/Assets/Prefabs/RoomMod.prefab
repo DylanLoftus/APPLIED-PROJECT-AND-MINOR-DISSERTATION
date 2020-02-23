@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1541210445932192545}
   - component: {fileID: 3725520257626575593}
   - component: {fileID: 7099549308389479751}
+  - component: {fileID: 1672560886266503676}
   m_Layer: 0
   m_Name: RoomMod
   m_TagString: Untagged
@@ -152,6 +153,7 @@ MonoBehaviour:
     roomEast: {fileID: 0}
     roomWest: {fileID: 0}
   isHallway: 0
+  playerInside: 0
 --- !u!95 &7099549308389479751
 Animator:
   serializedVersion: 3
@@ -171,6 +173,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1672560886266503676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541210445932192544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 3, z: 10}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1541210446107098839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,15 +1148,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2525429905765690022, guid: 6d31248447c9738499d049490440d248,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5876188179428162723, guid: 6d31248447c9738499d049490440d248,
         type: 3}
       propertyPath: m_Center.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525429905765690022, guid: 6d31248447c9738499d049490440d248,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d31248447c9738499d049490440d248, type: 3}
@@ -1158,11 +1173,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1541210445932192545}
     m_Modifications:
-    - target: {fileID: 2391304493239338223, guid: 9cedb63bb91368341950992c06d4edf0,
-        type: 3}
-      propertyPath: m_Name
-      value: Window (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4987798151717489510, guid: 9cedb63bb91368341950992c06d4edf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1217,6 +1227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391304493239338223, guid: 9cedb63bb91368341950992c06d4edf0,
+        type: 3}
+      propertyPath: m_Name
+      value: Window (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cedb63bb91368341950992c06d4edf0, type: 3}
