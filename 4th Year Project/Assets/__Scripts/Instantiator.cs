@@ -14,7 +14,7 @@ public class Instantiator : MonoBehaviour
     [SerializeField]
     private Transform hallwaySpawn;
     private GameObject currentHallway;
-    private bool currentHallwayL;
+    private bool isCurrentHallwayL;
 
     private int roomCount;
     private float rotation;
@@ -25,6 +25,9 @@ public class Instantiator : MonoBehaviour
 
     [SerializeField]
     private GameObject roomR;
+
+    private GameObject prevRoomL;
+    private GameObject prevRoomR;
 
     private GameObject wallInsDestroy;
     private GameObject wallDestroy;
@@ -44,14 +47,16 @@ public class Instantiator : MonoBehaviour
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         currentHallway = hallway;
-        currentHallwayL = false;
+        isCurrentHallwayL = false;
+        prevRoomL = roomL;
+        prevRoomR = roomR;
     }
 
     // Creates a hallway Game Object.
     private void CreateHallway(GameObject hallwayChoice)
     {
         Cursor.lockState = CursorLockMode.Locked;
-        currentHallwayL = (hallwayChoice == hallwayL);
+        isCurrentHallwayL = (hallwayChoice == hallwayL);
 
         // For creating rooms and checking if hallway is full.
         roomCount = 1;
@@ -62,11 +67,12 @@ public class Instantiator : MonoBehaviour
         wallDestroy.SetActive(false);
 
         // Set the hallway spawn locations and their respective room allocation.
-        string spawnpointName = "SpawnpointHallway" + (currentHallwayL ? "L" : "");
+        string spawnpointName = "SpawnpointHallway" + (isCurrentHallwayL ? "L" : "");
         hallwaySpawn = currentHallway.transform.Find(spawnpointName).transform;
 
         Vector3 spawnPos = hallwaySpawn.transform.position;
         newHallway = Instantiate(hallwayChoice, new Vector3(spawnPos.x, spawnPos.y, spawnPos.z), Quaternion.identity);
+        InitialiseRoomTempLogic(newHallway, currentHallway);
 
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
         rotation = currentHallway.transform.rotation.y + (90 * hallwayLCount);
@@ -87,13 +93,10 @@ public class Instantiator : MonoBehaviour
         hallwaySpawn = newHallway.transform.Find("SpawnpointHallway").transform;
 
         // update room adjacencies
-        Room hallwayRoom = currentHallway.GetComponent<Room>();
-        Room newHallwayRoom = newHallway.GetComponent<Room>();
-        hallwayRoom.adjRooms.roomEast = newHallwayRoom;
-        newHallwayRoom.adjRooms.roomWest = hallwayRoom;
+        LinkRoomsEastWest(currentHallway, newHallway, null);
 
         // register new room with GameManager
-        gameManager.addRoom(hallwayRoom);
+        gameManager.addRoom(newHallway.GetComponent<Room>());
 
         // Set the newHallway as the currentHallway.
         currentHallway = newHallway;
@@ -103,28 +106,53 @@ public class Instantiator : MonoBehaviour
     }
 
     // Creates a room Game Object.
-    private void CreateRoom(GameObject room)
+    private GameObject CreateRoom(GameObject roomTemplate)
     {
         // Sets a room's rotation.
         //bool isLeftRoom = GameObject.ReferenceEquals(room, roomL);
-        float roomRotation = room.transform.rotation.eulerAngles.y + (currentHallwayL ? 90 : 0) + rotation;
+        float roomRotation = roomTemplate.transform.rotation.eulerAngles.y + (isCurrentHallwayL ? 90 : 0) + rotation;
         
         // Set the room's spawn location and instantiate it.
         Vector3 roomSpawn = currentHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform.position;
-        newRoom = Instantiate(room, new Vector3(roomSpawn.x, roomSpawn.y, roomSpawn.z), Quaternion.identity);
+        newRoom = Instantiate(roomTemplate, new Vector3(roomSpawn.x, roomSpawn.y, roomSpawn.z), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, roomRotation, 0));
-
-        // Increment room count.
-        roomCount++;
-        // Increment total room count.
-        totalRooms++;
 
         // If the second room has not been spawned in yet hide the door.
         if (roomCount != 2)
         {
             ShowHideDoorway("show");
         }
-        
+
+        // temperature logic setup for this room
+        InitialiseRoomTempLogic(newRoom, currentHallway);
+        if (roomCount == 1)
+        {
+            // north/south room adjacency
+            LinkRoomsNorthSouth(newRoom, currentHallway, currentHallway.transform.Find("SideWallN"));
+
+            if (!isCurrentHallwayL)
+            {
+                // east/west adjacency with previous L room
+                LinkRoomsEastWest(newRoom, prevRoomL, null);
+            }
+        }
+        else
+        {
+            // south/north room adjacency
+            LinkRoomsNorthSouth(currentHallway, newRoom, currentHallway.transform.Find("SideWallS"));
+
+            if (!isCurrentHallwayL)
+            {
+                // east/west adjacency with previous L room
+                LinkRoomsEastWest(newRoom, prevRoomR, null);
+            }
+        }
+
+        // Increment room count.
+        roomCount++;
+        // Increment total room count.
+        totalRooms++;
+
         // If the total amount of rooms spawned in is equal to the limit. Set spawnLimit to true.
         if (totalRooms == MAXSPAWNROOMS)
         {
@@ -137,9 +165,7 @@ public class Instantiator : MonoBehaviour
             hallwayFull = true;
         }
 
-        Room newRoomScript = newRoom.GetComponent<Room>();
-        newRoomScript.adjRooms.reset();
-        newRoomScript.roomTemperature = room.GetComponent<Room>().roomTemperature;
+        return newRoom;
     }
 
     // Checks to see if a new hallway needs to be made or if a room needs to be made.
@@ -180,10 +206,10 @@ public class Instantiator : MonoBehaviour
         switch (roomCount)
         {
             case 1:
-                CreateRoom(roomL);
+                prevRoomL = CreateRoom(roomL);
                 break;
             case 2:
-                CreateRoom(roomR);
+                prevRoomR = CreateRoom(roomR);
                 break;
         }
     }
@@ -206,6 +232,67 @@ public class Instantiator : MonoBehaviour
         }
     }
 
+    // Initialise a room's adjacency list and temperature
+    private void InitialiseRoomTempLogic(GameObject room, GameObject copyTempRoom)
+    {
+        Room newRoomScript = room.GetComponent<Room>();
+        newRoomScript.adjRooms.reset();
+        newRoomScript.roomTemperature = copyTempRoom.GetComponent<Room>().roomTemperature;
+    }
+
+    // Create adjacencies between two rooms (north/south), for the temperature logic
+    private void LinkRoomsNorthSouth(GameObject roomN, GameObject roomS, Transform doorWall)
+    {
+        // find scripts from GameObjects
+        Room roomNorth = roomN.GetComponent<Room>();
+        Room roomSouth = roomS.GetComponent<Room>();
+
+        // create room adjacencies
+        roomNorth.adjRooms.roomSouth = roomSouth;
+        roomSouth.adjRooms.roomNorth = roomNorth;
+        
+        if (doorWall != null)
+        {
+            // create door room adjacencies
+            Door door = doorWall.GetComponentInChildren<Door>();
+            door.adjRooms.roomNorth = roomNorth;
+            door.adjRooms.roomSouth = roomSouth;
+
+            // register door with temperature logic
+            gameManager.addDoor(door);
+        }
+
+        // register rooms with temperature logic
+        gameManager.addRoom(roomNorth);
+        gameManager.addRoom(roomSouth);
+    }
+
+    // Create adjacencies between two rooms (east/west), for the temperature logic
+    private void LinkRoomsEastWest(GameObject roomE, GameObject roomW, Transform doorWall)
+    {
+        // find scripts from GameObjects
+        Room roomEast = roomE.GetComponent<Room>();
+        Room roomWest = roomW.GetComponent<Room>();
+
+        // create room adjacencies
+        roomEast.adjRooms.roomWest = roomWest;
+        roomWest.adjRooms.roomEast = roomEast;
+
+        if (doorWall != null)
+        {
+            // create door room adjacencies
+            Door door = doorWall.GetComponentInChildren<Door>();
+            door.adjRooms.roomEast = roomEast;
+            door.adjRooms.roomWest = roomWest;
+
+            // register door with temperature logic
+            gameManager.addDoor(door);
+        }
+
+        // register rooms with temperature logic
+        gameManager.addRoom(roomEast);
+        gameManager.addRoom(roomWest);
+    }
 }
 
 
