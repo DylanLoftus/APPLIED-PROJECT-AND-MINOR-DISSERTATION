@@ -14,7 +14,7 @@ public class Instantiator : MonoBehaviour
     [SerializeField]
     private Transform hallwaySpawn;
     private GameObject currentHallway;
-    private bool currentHallwayL;
+    private bool isCurrentHallwayL;
 
     private int roomCount;
     private float rotation;
@@ -44,14 +44,14 @@ public class Instantiator : MonoBehaviour
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         currentHallway = hallway;
-        currentHallwayL = false;
+        isCurrentHallwayL = false;
     }
 
     // Creates a hallway Game Object.
     private void CreateHallway(GameObject hallwayChoice)
     {
         Cursor.lockState = CursorLockMode.Locked;
-        currentHallwayL = (hallwayChoice == hallwayL);
+        isCurrentHallwayL = (hallwayChoice == hallwayL);
 
         // For creating rooms and checking if hallway is full.
         roomCount = 1;
@@ -62,7 +62,7 @@ public class Instantiator : MonoBehaviour
         wallDestroy.SetActive(false);
 
         // Set the hallway spawn locations and their respective room allocation.
-        string spawnpointName = "SpawnpointHallway" + (currentHallwayL ? "L" : "");
+        string spawnpointName = "SpawnpointHallway" + (isCurrentHallwayL ? "L" : "");
         hallwaySpawn = currentHallway.transform.Find(spawnpointName).transform;
 
         Vector3 spawnPos = hallwaySpawn.transform.position;
@@ -107,7 +107,7 @@ public class Instantiator : MonoBehaviour
     {
         // Sets a room's rotation.
         //bool isLeftRoom = GameObject.ReferenceEquals(room, roomL);
-        float roomRotation = room.transform.rotation.eulerAngles.y + (currentHallwayL ? 90 : 0) + rotation;
+        float roomRotation = room.transform.rotation.eulerAngles.y + (isCurrentHallwayL ? 90 : 0) + rotation;
         
         // Set the room's spawn location and instantiate it.
         Vector3 roomSpawn = currentHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform.position;
@@ -137,9 +137,7 @@ public class Instantiator : MonoBehaviour
             hallwayFull = true;
         }
 
-        Room newRoomScript = newRoom.GetComponent<Room>();
-        newRoomScript.adjRooms.reset();
-        newRoomScript.roomTemperature = room.GetComponent<Room>().roomTemperature;
+        InitialiseRoomTempLogic(newRoom, room);
     }
 
     // Checks to see if a new hallway needs to be made or if a room needs to be made.
@@ -206,6 +204,13 @@ public class Instantiator : MonoBehaviour
         }
     }
 
+    // Initialise a room's adjacency list and temperature
+    private void InitialiseRoomTempLogic(GameObject room, GameObject copyTempRoom)
+    {
+        Room newRoomScript = room.GetComponent<Room>();
+        newRoomScript.adjRooms.reset();
+        newRoomScript.roomTemperature = copyTempRoom.GetComponent<Room>().roomTemperature;
+    }
 }
 
 
