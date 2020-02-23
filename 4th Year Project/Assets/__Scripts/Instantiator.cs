@@ -54,23 +54,20 @@ public class Instantiator : MonoBehaviour
         if(hallwayChoice == hallwayL)
         {
             hallwaySpawn = hallway.transform.Find("SpawnpointHallwayL").transform;
-            maxRoom = 4;
         }
         else
         {
             hallwaySpawn = hallway.transform.Find("SpawnpointHallway").transform;
-            maxRoom = 2;
         }
-        
+        maxRoom = 2;
+
         newHallway = Instantiate(hallwayChoice, new Vector3(hallwaySpawn.transform.position.x, hallwaySpawn.transform.position.y, hallwaySpawn.transform.position.z), Quaternion.identity);
 
+        newHallway.transform.Rotate(0, turnCount * 90, 0);
+
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
-        if(hallwayChoice == hallwayL)
+        if (hallwayChoice == hallwayL)
         {
-            if(turnCount > 0)
-            {
-                newHallway.transform.Rotate(0, turnCount * 90, 0);
-            }
             turnCount++;
         }
 
@@ -131,7 +128,7 @@ public class Instantiator : MonoBehaviour
     public void CheckRooms(int choice)
     {
         // If all rooms have been filled create a new hallway.
-        if (hallwayFull == true)
+        if (hallwayFull)
         {
             if (choice == 1)
             {
@@ -146,7 +143,7 @@ public class Instantiator : MonoBehaviour
         {
             // If the hallway is not full we have rooms to put in. Depending on how many rooms have already been created the rotations need to be set.
             // TODO: make rotation relative to hallway
-            if (hallwayFull == false)
+            if (!hallwayFull)
             {
                 switch (roomCount)
                 {
@@ -154,67 +151,11 @@ public class Instantiator : MonoBehaviour
                         roomL = CreateRoom(roomL, 90);
                         break;
                     case 2:
-                        roomL = CreateRoom(roomL, -90);
-                        break;
-                    case 3:
                         roomL = CreateRoom(roomL, 180);
-                        break;
-                    case 4:
-                        roomL = CreateRoom(roomL, 0);
                         break;
 
                 }
             }
-                /*
-                Room oldRoom = roomL.GetComponent<Room>();
-                roomL = CreateRoom(roomL, 90);
-
-                // update room adjacencies
-                Room newRoom = roomL.GetComponent<Room>();
-                Room hallwayRoom = hallway.GetComponent<Room>();
-                newRoom.adjRooms.roomSouth = hallwayRoom;
-                hallwayRoom.adjRooms.roomNorth = newRoom;
-
-                oldRoom.adjRooms.roomEast = newRoom;
-                newRoom.adjRooms.roomWest = oldRoom;
-
-                // update door adjacency
-                Door newDoor = newHallway.transform.Find("SideWallN").GetComponentInChildren<Door>();
-
-                gameManager.addDoor(newDoor);
-
-                newDoor.adjRooms.roomSouth = hallwayRoom;
-                newDoor.adjRooms.roomNorth = newRoom;
-
-                // register new room with GameManager
-                gameManager.addRoom(newRoom);
-            }
-            else
-            {
-                Room oldRoom = roomR.GetComponent<Room>();
-                roomR = CreateRoom(roomR, -90);
-                Room newRoom = roomR.GetComponent<Room>();
-                doorCover.SetActive(false);
-                door.SetActive(true);
-
-                // update room adjacencies
-                Room hallwayRoom = hallway.GetComponent<Room>();
-                newRoom.adjRooms.roomNorth = hallwayRoom;
-                hallwayRoom.adjRooms.roomSouth = newRoom;
-
-                oldRoom.adjRooms.roomEast = newRoom;
-                newRoom.adjRooms.roomWest = oldRoom;
-
-                // update door adjacency
-                Door newDoor = newHallway.transform.Find("SideWallS").GetComponentInChildren<Door>();
-                gameManager.addDoor(newDoor);
-                newDoor.adjRooms.roomNorth = hallwayRoom;
-                newDoor.adjRooms.roomSouth = newRoom;
-
-                // register new room with GameManager
-                gameManager.addRoom(newRoom);
-            }
-            */
         }
         else
         {
