@@ -211,6 +211,40 @@ public class Instantiator : MonoBehaviour
         newRoomScript.adjRooms.reset();
         newRoomScript.roomTemperature = copyTempRoom.GetComponent<Room>().roomTemperature;
     }
+
+    // Create adjacencies between two rooms (north/south), for the temperature logic
+    private void LinkRoomsNorthSouth(GameObject roomN, GameObject roomS, GameObject doorWall)
+    {
+        // find scripts from GameObjects
+        Room roomNorth = roomN.GetComponent<Room>();
+        Room roomSouth = roomS.GetComponent<Room>();
+        Door door = doorWall.GetComponentInChildren<Door>();
+
+        // create room adjacencies
+        roomNorth.adjRooms.roomSouth = roomSouth;
+        roomSouth.adjRooms.roomNorth = roomNorth;
+
+        // create door room adjacencies
+        door.adjRooms.roomNorth = roomNorth;
+        door.adjRooms.roomSouth = roomSouth;
+    }
+
+    // Create adjacencies between two rooms (east/west), for the temperature logic
+    private void LinkRoomsEastWest(GameObject roomE, GameObject roomW, GameObject doorWall)
+    {
+        // find scripts from GameObjects
+        Room roomEast = roomE.GetComponent<Room>();
+        Room roomWest = roomW.GetComponent<Room>();
+        Door door = doorWall.GetComponentInChildren<Door>();
+
+        // create room adjacencies
+        roomEast.adjRooms.roomWest = roomWest;
+        roomWest.adjRooms.roomEast = roomEast;
+
+        // create door room adjacencies
+        door.adjRooms.roomEast = roomEast;
+        door.adjRooms.roomWest = roomWest;
+    }
 }
 
 
