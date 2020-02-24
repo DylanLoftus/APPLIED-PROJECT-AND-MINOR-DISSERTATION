@@ -730,8 +730,9 @@ GameObject:
   m_Component:
   - component: {fileID: 382011125}
   - component: {fileID: 382011124}
+  - component: {fileID: 382011126}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,8 +748,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.8569949, b: 0.4669811, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -804,13 +805,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382011123}
-  m_LocalRotation: {x: 0.8137466, y: -0.13944413, z: 0.2180427, w: 0.5204126}
-  m_LocalPosition: {x: 3.231, y: 6.297, z: 3.474}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -6.962473, y: 207.42456, z: -3.2347164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1895388825}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 114.8, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &382011126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382011123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c66e63c5cffcc4cad9bac0f6f0b4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &440888421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7658453436176578652, guid: eb55fa0977248f14c9f5aea50ec10273,
@@ -1063,6 +1076,110 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652018003}
   m_CullTransparentMesh: 0
+--- !u!1 &775089672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775089674}
+  - component: {fileID: 775089673}
+  - component: {fileID: 775089675}
+  m_Layer: 0
+  m_Name: Moon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &775089673
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775089672}
+  m_Enabled: 1
+  serializedVersion: 9
+  m_Type: 1
+  m_Color: {r: 0.4198113, g: 0.68168, b: 1, a: 1}
+  m_Intensity: 0.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: 3
+    m_CustomResolution: -1
+    m_Strength: 0.5
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &775089674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775089672}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -6.962473, y: -192.57544, z: -3.2347164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1895388825}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &775089675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775089672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c66e63c5cffcc4cad9bac0f6f0b4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &794551407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1864,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440888422}
     m_Modifications:
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,11 +1973,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -2326,6 +2443,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1104623497}
     m_Modifications:
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2430,11 +2552,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -2676,6 +2793,38 @@ MonoBehaviour:
   instantiator: {fileID: 1697273573}
   hallChoice: {fileID: 1203468995}
   warningText: {fileID: 930974371}
+--- !u!1 &1895388824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895388825}
+  m_Layer: 0
+  m_Name: SunAndMoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1895388825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895388824}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 6.962473, y: -7.4245625, z: 3.2347164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 382011125}
+  - {fileID: 775089674}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1001 &1923568169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3253,6 +3402,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 282308771}
     m_Modifications:
+    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
+        type: 3}
+      propertyPath: m_Name
+      value: TextMeshProMiniMap
+      objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3357,11 +3511,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127682393477510672, guid: 2434f539709bf394186c5f70d9a73092,
-        type: 3}
-      propertyPath: m_Name
-      value: TextMeshProMiniMap
       objectReference: {fileID: 0}
     - target: {fileID: 1786830257005469149, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -3769,7 +3918,12 @@ PrefabInstance:
     - target: {fileID: 1649307276608083200, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262146031075810886, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb55fa0977248f14c9f5aea50ec10273, type: 3}
