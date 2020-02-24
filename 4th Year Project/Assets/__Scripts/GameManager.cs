@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour
     // radiators cut off after reaching a certain temperature (celsius)
     private float radiatorCutoffTemp = 20;
 
+    public float timeStampForSun;
+
+
     private void Start()
     {
         InitialiseRooms();
@@ -61,6 +65,8 @@ public class GameManager : MonoBehaviour
         {
             DataPoint dataPoint = weatherHistory.data[i];
             outsideTemp = dataPoint.temperature;
+            // For the day/night cycle
+            timeStampForSun = float.Parse(dataPoint.timestamp.Substring(12, 2));
             UpdateWeatherUI(dataPoint.timestamp, i);
             for (int j = 0; j < stepsPerHour; j++)
             {
