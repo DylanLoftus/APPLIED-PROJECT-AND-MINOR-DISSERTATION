@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
             // For the day/night cycle
             timeStampForSun = float.Parse(dataPoint.timestamp.Substring(12, 2));
             UpdateWeatherUI(dataPoint.timestamp, i);
+            GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().RotateSunAndMoon();
             for (int j = 0; j < stepsPerHour; j++)
             {
                 // simulate 1 second (equalise temperatures)

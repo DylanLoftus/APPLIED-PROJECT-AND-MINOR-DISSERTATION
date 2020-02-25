@@ -7,48 +7,47 @@ public class DayNightCycle : MonoBehaviour
 {
     GameManager gameManager;
     private float timeStamp;
-    private float timeStampInSeconds;
-    private float sunMoonRotation;
+    private float sunMoonRotationByHour = 180 / 12;
     [SerializeField]
     private Transform sunMoonStartRotation;
     private const float dayLength = 24;
+    private int totalRotation = -15;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        timeStamp = GetTimeStamp();
 
-        if(timeStamp > 0)
-        {
-            timeStampInSeconds = timeStamp * 60 * 60;
-            sunMoonStartRotation.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            sunMoonStartRotation.transform.eulerAngles = new Vector3(360f / timeStamp, 0, 0);
-        }
-        
+        StartCoroutine(WaitTime());
         
     }
 
+    private IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(2);
+        Debug.Log("In waittime");
+        timeStamp = GetTimeStamp();
+        SetSunMoonRotation(timeStamp);
+    }
+
+    private void SetSunMoonRotation(float timeStamp)
+    {
+        sunMoonStartRotation.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        sunMoonStartRotation.transform.eulerAngles = new Vector3(360f / dayLength * timeStamp + (sunMoonRotationByHour * 2), 0, 0);
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if(timeStamp == 0)
-        {
-            Start();
-        }
-
-        if(timeStampInSeconds > 0)
-        {
-            RotateSunAndMoon();
-        }
+        
     }
-
-    private void RotateSunAndMoon()
+    
+    
+    public void RotateSunAndMoon()
     {
-        timeStamp = GetTimeStamp();
-
-        transform.Rotate(360f * timeStampInSeconds / 2, 0, 0);
-
+        Debug.Log(totalRotation);
+        transform.RotateAround(Vector3.zero, Vector3.right, totalRotation);
+        transform.LookAt(Vector3.zero);
     }
 
     private float GetTimeStamp()
