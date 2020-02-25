@@ -13,7 +13,9 @@ public class DayNightCycle : MonoBehaviour
     private const float dayLength = 24;
     private int totalRotation = -15;
     private MeshRenderer mr;
-    private float offsetDiv = 0.05f;
+    private float skyBoxIncrement;
+    private float skyBoxInc8Dec;
+    private float smallInc;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +29,17 @@ public class DayNightCycle : MonoBehaviour
     private IEnumerator WaitTime()
     {
         yield return new WaitForSeconds(2);
-        Debug.Log("In waittime");
         timeStamp = GetTimeStamp();
         SetSunMoonRotation(timeStamp);
     }
 
     private void SetSunMoonRotation(float timeStamp)
     {
+        skyBoxIncrement = ((1f / dayLength * timeStamp + (sunMoonRotationByHour * 2)) / 100);
+        skyBoxInc8Dec = (float)Math.Round((Decimal)skyBoxIncrement, 8, MidpointRounding.AwayFromZero);
         sunMoonStartRotation.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         sunMoonStartRotation.transform.eulerAngles = new Vector3(360f / dayLength * timeStamp + (sunMoonRotationByHour * 2), 0, 0);
-        mr.material.mainTextureOffset = new Vector2((360f / dayLength * timeStamp + (sunMoonRotationByHour * 2)) / 1000, 0);
+        mr.material.mainTextureOffset = new Vector2(skyBoxInc8Dec, 0);
     }
     
     // Update is called once per frame
@@ -44,19 +47,18 @@ public class DayNightCycle : MonoBehaviour
     {
         
     }
-    
+   
     
     public void RotateSunAndMoon()
     {
-        mr.material.mainTextureOffset += new Vector2(.04167f, 0);
-        Debug.Log(totalRotation);
+        smallInc = skyBoxIncrement / timeStamp;
+        mr.material.mainTextureOffset += new Vector2(smallInc * 2, 0);
         transform.RotateAround(Vector3.zero, Vector3.right, totalRotation);
         transform.LookAt(Vector3.zero);
     }
 
     private float GetTimeStamp()
     {
-        Debug.Log("Timestamp" +gameManager.timeStampForSun);
         return gameManager.timeStampForSun;
     }
 }
