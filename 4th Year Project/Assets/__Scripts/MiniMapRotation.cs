@@ -1,23 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MiniMapRotation : MonoBehaviour
 {
-    GameObject player;
-    GameObject miniMapCam;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        miniMapCam = GameObject.Find("MinimapCamera");
-    }
+    // Adapted from https://youtu.be/MFQhpwc6cKE
+    public Transform target;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        miniMapCam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 20, player.transform.position.z);
-
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }
