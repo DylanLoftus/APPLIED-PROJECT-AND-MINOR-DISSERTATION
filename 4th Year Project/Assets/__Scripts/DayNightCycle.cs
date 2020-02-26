@@ -35,20 +35,14 @@ public class DayNightCycle : MonoBehaviour
 
     private void SetSunMoonRotation(float timeStamp)
     {
-        skyBoxIncrement = ((1f / dayLength * timeStamp + (sunMoonRotationByHour * 2)) / 100);
-        skyBoxInc8Dec = (float)Math.Round((Decimal)skyBoxIncrement, 8, MidpointRounding.AwayFromZero);
+        
         sunMoonStartRotation.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         sunMoonStartRotation.transform.eulerAngles = new Vector3(360f / dayLength * timeStamp + (sunMoonRotationByHour * 2), 0, 0);
+        skyBoxIncrement = ((1f / dayLength * timeStamp + (sunMoonRotationByHour * 2)) / 100);
+        skyBoxInc8Dec = (float)Math.Round((Decimal)skyBoxIncrement, 8, MidpointRounding.AwayFromZero);
         mr.material.mainTextureOffset = new Vector2(skyBoxInc8Dec, 0);
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-   
-    
+
     public void RotateSunAndMoon()
     {
         smallInc = skyBoxIncrement / timeStamp;
@@ -56,6 +50,8 @@ public class DayNightCycle : MonoBehaviour
         transform.RotateAround(Vector3.zero, Vector3.right, totalRotation);
         transform.LookAt(Vector3.zero);
     }
+
+    
 
     private float GetTimeStamp()
     {
