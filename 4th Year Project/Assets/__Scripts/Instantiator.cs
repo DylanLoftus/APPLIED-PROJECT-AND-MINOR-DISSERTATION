@@ -54,6 +54,7 @@ public class Instantiator : MonoBehaviour
     private void CreateHallway(GameObject hallwayChoice)
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         isCurrentHallwayL = (hallwayChoice == hallwayL);
 
         // For creating rooms and checking if hallway is full.

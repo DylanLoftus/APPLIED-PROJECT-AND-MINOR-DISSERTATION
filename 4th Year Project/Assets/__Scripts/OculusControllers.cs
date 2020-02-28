@@ -36,7 +36,8 @@ public class OculusControllers : MonoBehaviour
                 else if (instantiator.hallwayFull == true)
                 {
                     Cursor.lockState = CursorLockMode.None;
-                    hallChoice.SetActive(true);
+                    Cursor.visible = true;
+                    hallChoice.SetActive(true); 
                 }
             }
             else

@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/__Scenes/WeatherSelect.unity
     guid: d2a3810235d6b2849b6f266bb9316a1b
-  - enabled: 1
+  - enabled: 0
     path: Assets/__Scenes/SampleScene.unity
     guid: b5e98bb1d05abc74d99c89e0643d413d
   - enabled: 1

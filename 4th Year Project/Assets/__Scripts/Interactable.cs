@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerNear /*|| (OVRInput.Get(OVRInput.RawButton.LIndexTrigger) == true && playerNear)*/)
+        if (Input.GetMouseButtonDown(0) && playerNear || (OVRInput.Get(OVRInput.RawButton.LIndexTrigger) == true && playerNear))
         {
             activated = !activated;
             OnInteraction(activated);
