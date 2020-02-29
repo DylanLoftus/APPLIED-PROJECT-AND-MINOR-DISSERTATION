@@ -1,7 +1,47 @@
 {
     "description": "Data set description here",
-    "length": 180,
+    "length": 240,
     "data": [
+        {
+            "timestamp": "15-aug-2012 09:00",
+            "temperature": 17.1,
+            "windspeed": 16.0
+        },
+        {
+            "timestamp": "15-aug-2012 10:00",
+            "temperature": 17.2,
+            "windspeed": 15.0
+        },
+        {
+            "timestamp": "15-aug-2012 11:00",
+            "temperature": 17.1,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "15-aug-2012 12:00",
+            "temperature": 17.0,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "15-aug-2012 13:00",
+            "temperature": 16.6,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "15-aug-2012 14:00",
+            "temperature": 16.8,
+            "windspeed": 15.0
+        },
+        {
+            "timestamp": "15-aug-2012 15:00",
+            "temperature": 17.8,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "15-aug-2012 16:00",
+            "temperature": 17.6,
+            "windspeed": 17.0
+        },
         {
             "timestamp": "15-aug-2012 17:00",
             "temperature": 17.1,
@@ -901,6 +941,266 @@
             "timestamp": "23-aug-2012 04:00",
             "temperature": 12.8,
             "windspeed": 6.0
+        },
+        {
+            "timestamp": "23-aug-2012 05:00",
+            "temperature": 12.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "23-aug-2012 06:00",
+            "temperature": 12.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "23-aug-2012 07:00",
+            "temperature": 12.8,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "23-aug-2012 08:00",
+            "temperature": 12.9,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "23-aug-2012 09:00",
+            "temperature": 14.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "23-aug-2012 10:00",
+            "temperature": 15.0,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "23-aug-2012 11:00",
+            "temperature": 15.0,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "23-aug-2012 12:00",
+            "temperature": 14.8,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "23-aug-2012 13:00",
+            "temperature": 16.2,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "23-aug-2012 14:00",
+            "temperature": 16.7,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "23-aug-2012 15:00",
+            "temperature": 15.5,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "23-aug-2012 16:00",
+            "temperature": 16.5,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "23-aug-2012 17:00",
+            "temperature": 15.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "23-aug-2012 18:00",
+            "temperature": 13.1,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "23-aug-2012 19:00",
+            "temperature": 13.6,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "23-aug-2012 20:00",
+            "temperature": 13.1,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "23-aug-2012 21:00",
+            "temperature": 13.2,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "23-aug-2012 22:00",
+            "temperature": 12.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "23-aug-2012 23:00",
+            "temperature": 12.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "24-aug-2012 00:00",
+            "temperature": 12.7,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "24-aug-2012 01:00",
+            "temperature": 12.5,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "24-aug-2012 02:00",
+            "temperature": 12.3,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "24-aug-2012 03:00",
+            "temperature": 12.5,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "24-aug-2012 04:00",
+            "temperature": 12.2,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 05:00",
+            "temperature": 12.1,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "24-aug-2012 06:00",
+            "temperature": 12.2,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 07:00",
+            "temperature": 12.5,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 08:00",
+            "temperature": 12.7,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "24-aug-2012 09:00",
+            "temperature": 13.7,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "24-aug-2012 10:00",
+            "temperature": 14.0,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "24-aug-2012 11:00",
+            "temperature": 13.8,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "24-aug-2012 12:00",
+            "temperature": 13.9,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "24-aug-2012 13:00",
+            "temperature": 14.8,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "24-aug-2012 14:00",
+            "temperature": 15.3,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "24-aug-2012 15:00",
+            "temperature": 15.6,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "24-aug-2012 16:00",
+            "temperature": 15.3,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "24-aug-2012 17:00",
+            "temperature": 15.2,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "24-aug-2012 18:00",
+            "temperature": 14.5,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "24-aug-2012 19:00",
+            "temperature": 13.9,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "24-aug-2012 20:00",
+            "temperature": 13.7,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 21:00",
+            "temperature": 13.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 22:00",
+            "temperature": 13.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "24-aug-2012 23:00",
+            "temperature": 13.2,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "25-aug-2012 00:00",
+            "temperature": 13.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "25-aug-2012 01:00",
+            "temperature": 13.2,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "25-aug-2012 02:00",
+            "temperature": 13.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "25-aug-2012 03:00",
+            "temperature": 12.7,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "25-aug-2012 04:00",
+            "temperature": 12.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "25-aug-2012 05:00",
+            "temperature": 12.3,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "25-aug-2012 06:00",
+            "temperature": 12.6,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "25-aug-2012 07:00",
+            "temperature": 13.1,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "25-aug-2012 08:00",
+            "temperature": 14.5,
+            "windspeed": 8.0
         }
     ]
 }

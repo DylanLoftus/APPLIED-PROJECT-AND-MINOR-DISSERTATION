@@ -4,15 +4,17 @@ import json
 
 # some maths to work out how many lines of data are needed for a certain length of simulation time
 # how long the simulation should last for a single set of data (minutes)
-sim_length_mins = 15
+sim_length_mins = 20
 # how many seconds of simulated time make up one "real" hour from the dataset
 seconds_per_hour = 5
 # lines needed for one run of the simulation
 sim_set_length = (sim_length_mins * 60) // seconds_per_hour
 # number of simulation sets to extract from the raw data
-num_sets = 15
+num_sets = 20
 # number of lines to skip from the start of the csv file
-num_skip = 10000
+num_skip_start = 9992
+# number of lines to skip after each data set
+num_skip = sim_set_length
 
 # 15 simulated minutes = 7.5 "real" days
 
@@ -49,7 +51,7 @@ df = pd.read_csv(input_file_path, dtype=dtypes)
 
 # create json data sets
 print("\nConverting CSV from:\n\t{}\ninto JSON and dumping into:\n\t{}\n\n...\n".format(input_file_path, out_dir))
-line = num_skip
+line = num_skip_start
 for i in range(num_sets):
     weather_history = {
         "description": "Data set description here",
@@ -73,6 +75,6 @@ for i in range(num_sets):
     with open(out_path, "w") as out_file:
         json.dump(weather_history, out_file, indent=4)
 
-    line += sim_set_length
+    line += sim_set_length + num_skip
 
 print("Finished.")
