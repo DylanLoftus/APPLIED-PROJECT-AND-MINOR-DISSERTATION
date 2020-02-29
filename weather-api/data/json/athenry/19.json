@@ -1,0 +1,1206 @@
+{
+    "description": "Data set description here",
+    "length": 240,
+    "data": [
+        {
+            "timestamp": "30-aug-2013 09:00",
+            "temperature": 16.3,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "30-aug-2013 10:00",
+            "temperature": 15.5,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "30-aug-2013 11:00",
+            "temperature": 15.9,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "30-aug-2013 12:00",
+            "temperature": 16.3,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "30-aug-2013 13:00",
+            "temperature": 17.2,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "30-aug-2013 14:00",
+            "temperature": 16.4,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "30-aug-2013 15:00",
+            "temperature": 15.5,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "30-aug-2013 16:00",
+            "temperature": 16.8,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "30-aug-2013 17:00",
+            "temperature": 15.8,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "30-aug-2013 18:00",
+            "temperature": 14.6,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "30-aug-2013 19:00",
+            "temperature": 12.8,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "30-aug-2013 20:00",
+            "temperature": 11.5,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "30-aug-2013 21:00",
+            "temperature": 9.5,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "30-aug-2013 22:00",
+            "temperature": 9.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "30-aug-2013 23:00",
+            "temperature": 10.9,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "31-aug-2013 00:00",
+            "temperature": 11.6,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "31-aug-2013 01:00",
+            "temperature": 11.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "31-aug-2013 02:00",
+            "temperature": 11.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "31-aug-2013 03:00",
+            "temperature": 11.7,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "31-aug-2013 04:00",
+            "temperature": 11.5,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "31-aug-2013 05:00",
+            "temperature": 11.5,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "31-aug-2013 06:00",
+            "temperature": 11.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "31-aug-2013 07:00",
+            "temperature": 11.7,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "31-aug-2013 08:00",
+            "temperature": 13.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "31-aug-2013 09:00",
+            "temperature": 13.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "31-aug-2013 10:00",
+            "temperature": 14.1,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "31-aug-2013 11:00",
+            "temperature": 14.7,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "31-aug-2013 12:00",
+            "temperature": 14.3,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "31-aug-2013 13:00",
+            "temperature": 16.2,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "31-aug-2013 14:00",
+            "temperature": 15.6,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "31-aug-2013 15:00",
+            "temperature": 15.6,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "31-aug-2013 16:00",
+            "temperature": 16.2,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "31-aug-2013 17:00",
+            "temperature": 15.8,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "31-aug-2013 18:00",
+            "temperature": 14.4,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "31-aug-2013 19:00",
+            "temperature": 13.8,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "31-aug-2013 20:00",
+            "temperature": 12.4,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "31-aug-2013 21:00",
+            "temperature": 11.1,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "31-aug-2013 22:00",
+            "temperature": 12.1,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "31-aug-2013 23:00",
+            "temperature": 11.9,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "01-sep-2013 00:00",
+            "temperature": 12.7,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "01-sep-2013 01:00",
+            "temperature": 12.8,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "01-sep-2013 02:00",
+            "temperature": 13.3,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "01-sep-2013 03:00",
+            "temperature": 13.1,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "01-sep-2013 04:00",
+            "temperature": 12.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "01-sep-2013 05:00",
+            "temperature": 13.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "01-sep-2013 06:00",
+            "temperature": 13.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "01-sep-2013 07:00",
+            "temperature": 13.5,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "01-sep-2013 08:00",
+            "temperature": 13.7,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "01-sep-2013 09:00",
+            "temperature": 14.2,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "01-sep-2013 10:00",
+            "temperature": 14.6,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "01-sep-2013 11:00",
+            "temperature": 15.2,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "01-sep-2013 12:00",
+            "temperature": 15.5,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "01-sep-2013 13:00",
+            "temperature": 15.6,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "01-sep-2013 14:00",
+            "temperature": 15.5,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "01-sep-2013 15:00",
+            "temperature": 15.8,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "01-sep-2013 16:00",
+            "temperature": 16.4,
+            "windspeed": 14.0
+        },
+        {
+            "timestamp": "01-sep-2013 17:00",
+            "temperature": 16.1,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "01-sep-2013 18:00",
+            "temperature": 15.4,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "01-sep-2013 19:00",
+            "temperature": 15.2,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "01-sep-2013 20:00",
+            "temperature": 15.0,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "01-sep-2013 21:00",
+            "temperature": 15.1,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "01-sep-2013 22:00",
+            "temperature": 14.6,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "01-sep-2013 23:00",
+            "temperature": 14.5,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 00:00",
+            "temperature": 14.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "02-sep-2013 01:00",
+            "temperature": 14.8,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 02:00",
+            "temperature": 14.9,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "02-sep-2013 03:00",
+            "temperature": 15.1,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "02-sep-2013 04:00",
+            "temperature": 15.3,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 05:00",
+            "temperature": 15.5,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "02-sep-2013 06:00",
+            "temperature": 15.6,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 07:00",
+            "temperature": 15.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "02-sep-2013 08:00",
+            "temperature": 15.9,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "02-sep-2013 09:00",
+            "temperature": 16.0,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 10:00",
+            "temperature": 15.9,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "02-sep-2013 11:00",
+            "temperature": 16.1,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "02-sep-2013 12:00",
+            "temperature": 16.2,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 13:00",
+            "temperature": 16.6,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "02-sep-2013 14:00",
+            "temperature": 16.6,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 15:00",
+            "temperature": 16.6,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "02-sep-2013 16:00",
+            "temperature": 16.5,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "02-sep-2013 17:00",
+            "temperature": 16.2,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 18:00",
+            "temperature": 16.1,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "02-sep-2013 19:00",
+            "temperature": 16.0,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "02-sep-2013 20:00",
+            "temperature": 15.9,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "02-sep-2013 21:00",
+            "temperature": 15.8,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "02-sep-2013 22:00",
+            "temperature": 15.7,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "02-sep-2013 23:00",
+            "temperature": 15.5,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "03-sep-2013 00:00",
+            "temperature": 13.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "03-sep-2013 01:00",
+            "temperature": 12.5,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "03-sep-2013 02:00",
+            "temperature": 12.7,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 03:00",
+            "temperature": 12.4,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "03-sep-2013 04:00",
+            "temperature": 12.2,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 05:00",
+            "temperature": 11.1,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 06:00",
+            "temperature": 10.2,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "03-sep-2013 07:00",
+            "temperature": 11.2,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 08:00",
+            "temperature": 13.2,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "03-sep-2013 09:00",
+            "temperature": 15.1,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "03-sep-2013 10:00",
+            "temperature": 16.2,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "03-sep-2013 11:00",
+            "temperature": 16.0,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "03-sep-2013 12:00",
+            "temperature": 16.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "03-sep-2013 13:00",
+            "temperature": 18.4,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "03-sep-2013 14:00",
+            "temperature": 18.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "03-sep-2013 15:00",
+            "temperature": 19.0,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "03-sep-2013 16:00",
+            "temperature": 17.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "03-sep-2013 17:00",
+            "temperature": 17.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "03-sep-2013 18:00",
+            "temperature": 17.3,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "03-sep-2013 19:00",
+            "temperature": 15.6,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "03-sep-2013 20:00",
+            "temperature": 13.0,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "03-sep-2013 21:00",
+            "temperature": 13.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 22:00",
+            "temperature": 12.4,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "03-sep-2013 23:00",
+            "temperature": 11.6,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "04-sep-2013 00:00",
+            "temperature": 11.0,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "04-sep-2013 01:00",
+            "temperature": 10.4,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "04-sep-2013 02:00",
+            "temperature": 9.6,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "04-sep-2013 03:00",
+            "temperature": 9.6,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "04-sep-2013 04:00",
+            "temperature": 10.0,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "04-sep-2013 05:00",
+            "temperature": 9.9,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "04-sep-2013 06:00",
+            "temperature": 10.1,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "04-sep-2013 07:00",
+            "temperature": 11.8,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "04-sep-2013 08:00",
+            "temperature": 14.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "04-sep-2013 09:00",
+            "temperature": 15.9,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "04-sep-2013 10:00",
+            "temperature": 16.9,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "04-sep-2013 11:00",
+            "temperature": 17.9,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "04-sep-2013 12:00",
+            "temperature": 19.4,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "04-sep-2013 13:00",
+            "temperature": 20.2,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "04-sep-2013 14:00",
+            "temperature": 21.0,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "04-sep-2013 15:00",
+            "temperature": 20.7,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "04-sep-2013 16:00",
+            "temperature": 20.9,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "04-sep-2013 17:00",
+            "temperature": 17.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "04-sep-2013 18:00",
+            "temperature": 15.7,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "04-sep-2013 19:00",
+            "temperature": 15.5,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "04-sep-2013 20:00",
+            "temperature": 14.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "04-sep-2013 21:00",
+            "temperature": 13.3,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "04-sep-2013 22:00",
+            "temperature": 12.2,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "04-sep-2013 23:00",
+            "temperature": 10.7,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "05-sep-2013 00:00",
+            "temperature": 10.3,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "05-sep-2013 01:00",
+            "temperature": 9.6,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "05-sep-2013 02:00",
+            "temperature": 7.7,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "05-sep-2013 03:00",
+            "temperature": 6.7,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "05-sep-2013 04:00",
+            "temperature": 6.1,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "05-sep-2013 05:00",
+            "temperature": 5.4,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "05-sep-2013 06:00",
+            "temperature": 4.9,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "05-sep-2013 07:00",
+            "temperature": 7.1,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "05-sep-2013 08:00",
+            "temperature": 9.0,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "05-sep-2013 09:00",
+            "temperature": 12.4,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "05-sep-2013 10:00",
+            "temperature": 13.8,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "05-sep-2013 11:00",
+            "temperature": 14.2,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "05-sep-2013 12:00",
+            "temperature": 14.7,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "05-sep-2013 13:00",
+            "temperature": 13.5,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "05-sep-2013 14:00",
+            "temperature": 13.1,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "05-sep-2013 15:00",
+            "temperature": 14.6,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "05-sep-2013 16:00",
+            "temperature": 14.5,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "05-sep-2013 17:00",
+            "temperature": 13.1,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "05-sep-2013 18:00",
+            "temperature": 13.5,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "05-sep-2013 19:00",
+            "temperature": 10.3,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "05-sep-2013 20:00",
+            "temperature": 7.9,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "05-sep-2013 21:00",
+            "temperature": 7.1,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "05-sep-2013 22:00",
+            "temperature": 6.1,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "05-sep-2013 23:00",
+            "temperature": 6.5,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "06-sep-2013 00:00",
+            "temperature": 7.4,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "06-sep-2013 01:00",
+            "temperature": 7.7,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "06-sep-2013 02:00",
+            "temperature": 7.7,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "06-sep-2013 03:00",
+            "temperature": 7.1,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "06-sep-2013 04:00",
+            "temperature": 6.9,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "06-sep-2013 05:00",
+            "temperature": 6.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "06-sep-2013 06:00",
+            "temperature": 6.1,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "06-sep-2013 07:00",
+            "temperature": 7.3,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "06-sep-2013 08:00",
+            "temperature": 8.7,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "06-sep-2013 09:00",
+            "temperature": 10.9,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "06-sep-2013 10:00",
+            "temperature": 12.6,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "06-sep-2013 11:00",
+            "temperature": 13.1,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "06-sep-2013 12:00",
+            "temperature": 14.0,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "06-sep-2013 13:00",
+            "temperature": 13.7,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "06-sep-2013 14:00",
+            "temperature": 14.9,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "06-sep-2013 15:00",
+            "temperature": 14.7,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "06-sep-2013 16:00",
+            "temperature": 14.3,
+            "windspeed": 13.0
+        },
+        {
+            "timestamp": "06-sep-2013 17:00",
+            "temperature": 12.6,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "06-sep-2013 18:00",
+            "temperature": 11.8,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "06-sep-2013 19:00",
+            "temperature": 10.1,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "06-sep-2013 20:00",
+            "temperature": 8.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "06-sep-2013 21:00",
+            "temperature": 8.2,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "06-sep-2013 22:00",
+            "temperature": 7.8,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "06-sep-2013 23:00",
+            "temperature": 7.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "07-sep-2013 00:00",
+            "temperature": 6.6,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "07-sep-2013 01:00",
+            "temperature": 6.1,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "07-sep-2013 02:00",
+            "temperature": 7.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "07-sep-2013 03:00",
+            "temperature": 7.7,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "07-sep-2013 04:00",
+            "temperature": 8.7,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "07-sep-2013 05:00",
+            "temperature": 8.6,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "07-sep-2013 06:00",
+            "temperature": 8.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "07-sep-2013 07:00",
+            "temperature": 8.8,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "07-sep-2013 08:00",
+            "temperature": 9.6,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "07-sep-2013 09:00",
+            "temperature": 10.1,
+            "windspeed": 12.0
+        },
+        {
+            "timestamp": "07-sep-2013 10:00",
+            "temperature": 9.7,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "07-sep-2013 11:00",
+            "temperature": 9.9,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "07-sep-2013 12:00",
+            "temperature": 9.9,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "07-sep-2013 13:00",
+            "temperature": 10.2,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "07-sep-2013 14:00",
+            "temperature": 9.9,
+            "windspeed": 8.0
+        },
+        {
+            "timestamp": "07-sep-2013 15:00",
+            "temperature": 9.8,
+            "windspeed": 11.0
+        },
+        {
+            "timestamp": "07-sep-2013 16:00",
+            "temperature": 9.9,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "07-sep-2013 17:00",
+            "temperature": 9.9,
+            "windspeed": 10.0
+        },
+        {
+            "timestamp": "07-sep-2013 18:00",
+            "temperature": 9.4,
+            "windspeed": 9.0
+        },
+        {
+            "timestamp": "07-sep-2013 19:00",
+            "temperature": 9.3,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "07-sep-2013 20:00",
+            "temperature": 9.0,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "07-sep-2013 21:00",
+            "temperature": 9.1,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "07-sep-2013 22:00",
+            "temperature": 9.2,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "07-sep-2013 23:00",
+            "temperature": 9.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "08-sep-2013 00:00",
+            "temperature": 9.4,
+            "windspeed": 6.0
+        },
+        {
+            "timestamp": "08-sep-2013 01:00",
+            "temperature": 10.0,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 02:00",
+            "temperature": 9.6,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 03:00",
+            "temperature": 9.4,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 04:00",
+            "temperature": 9.1,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 05:00",
+            "temperature": 9.3,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 06:00",
+            "temperature": 9.4,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 07:00",
+            "temperature": 9.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 08:00",
+            "temperature": 10.8,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 09:00",
+            "temperature": 11.6,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 10:00",
+            "temperature": 12.9,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 11:00",
+            "temperature": 13.4,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 12:00",
+            "temperature": 13.7,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "08-sep-2013 13:00",
+            "temperature": 13.7,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "08-sep-2013 14:00",
+            "temperature": 13.6,
+            "windspeed": 7.0
+        },
+        {
+            "timestamp": "08-sep-2013 15:00",
+            "temperature": 13.8,
+            "windspeed": 5.0
+        },
+        {
+            "timestamp": "08-sep-2013 16:00",
+            "temperature": 14.0,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "08-sep-2013 17:00",
+            "temperature": 14.2,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "08-sep-2013 18:00",
+            "temperature": 13.6,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "08-sep-2013 19:00",
+            "temperature": 12.3,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "08-sep-2013 20:00",
+            "temperature": 11.7,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "08-sep-2013 21:00",
+            "temperature": 10.1,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "08-sep-2013 22:00",
+            "temperature": 8.4,
+            "windspeed": 3.0
+        },
+        {
+            "timestamp": "08-sep-2013 23:00",
+            "temperature": 9.3,
+            "windspeed": 4.0
+        },
+        {
+            "timestamp": "09-sep-2013 00:00",
+            "temperature": 8.4,
+            "windspeed": 2.0
+        },
+        {
+            "timestamp": "09-sep-2013 01:00",
+            "temperature": 6.6,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 02:00",
+            "temperature": 7.4,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 03:00",
+            "temperature": 7.4,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 04:00",
+            "temperature": 7.6,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 05:00",
+            "temperature": 8.3,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 06:00",
+            "temperature": 8.4,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 07:00",
+            "temperature": 9.1,
+            "windspeed": 1.0
+        },
+        {
+            "timestamp": "09-sep-2013 08:00",
+            "temperature": 10.8,
+            "windspeed": 1.0
+        }
+    ]
+}
