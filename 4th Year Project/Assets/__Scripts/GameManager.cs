@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     private const float timeMultiplier = 720;
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
-    //private const float gameSeconds = realSecondsPerHour * 60;
-    //private const float secondsPerStep = 1;
 
     // gamification state
     public float money;
@@ -50,7 +48,8 @@ public class GameManager : MonoBehaviour
     {
         if (weatherHistory.length > 0)
         {
-            int dataPointIndex = (int) (Time.time * gameHoursPerSecond);
+            float gameHours = Time.time * gameHoursPerSecond;
+            int dataPointIndex = (int) (gameHours);
             // if simulation has ended, just use the last DataPoint
             dataPointIndex = Mathf.Min(dataPointIndex, weatherHistory.length - 1);
             DataPoint currDataPoint = weatherHistory.data[dataPointIndex];
@@ -58,9 +57,14 @@ public class GameManager : MonoBehaviour
             UpdateWeatherUI(currDataPoint.timestamp, dataPointIndex);
 
             float deltaMinutes = Time.deltaTime * gameMinutesPerSecond;
+            // sun and moon logic
+            timeStampForSun = float.Parse(currDataPoint.timestamp.Substring(12, 2));
+            GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().RotateSunAndMoon(gameHours);
+            //GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().SetSunMoonRotation(timeStampForSun);
+
             EqualizeTemperatures(deltaMinutes);
             // update gamification state
-            GamificationStep();
+            GamificationStep(deltaMinutes);
             // update player stats on the UI
             UpdateStatsUI();
         }
@@ -103,7 +107,7 @@ public class GameManager : MonoBehaviour
         moneyComp.text = string.Format("Money: €{0}", System.Math.Round(money, 2));
     }
 
-    public void GamificationStep()
+    public void GamificationStep(float deltaMinutes)
     {
         // find the room that the player is in
         // (if it's multiple, just use whichever room is listed first)
@@ -122,7 +126,7 @@ public class GameManager : MonoBehaviour
             float tempPlayerExperiencing = playerRoom.roomTemperature;
             float optimalTemp = 18;
             float offFromOptimal = Mathf.Abs(tempPlayerExperiencing - optimalTemp);
-            float comfortChange = (2 - offFromOptimal) / 5f;
+            float comfortChange = (2 - offFromOptimal) / 5f * deltaMinutes;
 
             playerComfort = Mathf.Clamp(playerComfort + comfortChange, 0, 1);
         }
@@ -148,7 +152,7 @@ public class GameManager : MonoBehaviour
                         room.roomTemperature += radiatorTempIncreasePerMinute * deltaMinutes;
 
                         // apply a monetary cost to the player for using up electricity
-                        float kwhUsed = (radiatorWattage / 1000) * deltaMinutes * 60;
+                        float kwhUsed = (radiatorWattage / 1000) / 60 * deltaMinutes;
                         float electricityCost = kwhUsed * kwhRate;
                         money -= electricityCost;
 
