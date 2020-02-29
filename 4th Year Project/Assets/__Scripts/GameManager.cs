@@ -34,8 +34,7 @@ public class GameManager : MonoBehaviour
     private float radiatorCutoffTemp = 20;
 
     public float timeStampForSun;
-
-
+    
     void Start()
     {
         InitialiseRooms();
