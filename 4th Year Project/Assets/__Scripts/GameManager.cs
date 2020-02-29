@@ -124,10 +124,13 @@ public class GameManager : MonoBehaviour
         {
             float tempPlayerExperiencing = playerRoom.roomTemperature;
             float optimalTemp = 18;
-            float offFromOptimal = Mathf.Abs(tempPlayerExperiencing - optimalTemp);
-            float comfortChange = (2 - offFromOptimal) / 5f * deltaMinutes;
+            // degrees from optimalTemp where the player's comfort value reaches 0
+            float zeroComfortOffset = 14;
+            // degree range from offset where the player is fully comfortable
+            float maxComfortRange = 1.5f;
+            float offFromOptimal = Mathf.Abs(tempPlayerExperiencing - optimalTemp) - maxComfortRange;
 
-            playerComfort = Mathf.Clamp(playerComfort + comfortChange, 0, 1);
+            playerComfort = Mathf.Clamp(1 - (offFromOptimal / zeroComfortOffset), 0, 1);
         }
     }
 
