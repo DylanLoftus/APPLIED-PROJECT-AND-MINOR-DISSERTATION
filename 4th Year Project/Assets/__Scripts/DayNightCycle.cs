@@ -22,18 +22,9 @@ public class DayNightCycle : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         mr = GameObject.Find("SkyDome").GetComponent<MeshRenderer>();
-        StartCoroutine(WaitTime());
-        
     }
 
-    private IEnumerator WaitTime()
-    {
-        yield return new WaitForSeconds(2);
-        timeStamp = GetTimeStamp();
-        SetSunMoonRotation(timeStamp);
-    }
-
-    private void SetSunMoonRotation(float timeStamp)
+    public void SetSunMoonRotation(float timeStamp)
     {
         
         sunMoonStartRotation.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -43,15 +34,19 @@ public class DayNightCycle : MonoBehaviour
         mr.material.mainTextureOffset = new Vector2(skyBoxInc8Dec, 0);
     }
 
-    public void RotateSunAndMoon()
+    public void RotateSunAndMoon(float gameHours)
     {
+        float startingPos = 12;
+        float startingHour = 17 - startingPos;
+        gameHours += startingHour;
+        float rotation = (gameHours % 24) / 24 * 360;
+
         smallInc = skyBoxIncrement / timeStamp;
-        mr.material.mainTextureOffset += new Vector2(smallInc * 2, 0);
-        transform.RotateAround(Vector3.zero, Vector3.right, totalRotation);
+        mr.material.mainTextureOffset = new Vector2(rotation / 360, 0);
+        transform.rotation = Quaternion.identity;
+        transform.RotateAround(Vector3.zero, Vector3.right, rotation);
         transform.LookAt(Vector3.zero);
     }
-
-    
 
     private float GetTimeStamp()
     {
