@@ -18,8 +18,11 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // time constants
-    private const int stepsPerHour = 5;
-    private const float secondsPerStep = 1;
+    private const float timeMultiplier = 720;
+    private const float gameMinutesPerSecond = timeMultiplier / 60;
+    private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
+    //private const float gameSeconds = realSecondsPerHour * 60;
+    //private const float secondsPerStep = 1;
 
     // gamification state
     public float money;
@@ -28,19 +31,39 @@ public class GameManager : MonoBehaviour
     // gamification variables
     private const float kwhRate = 0.150f;
     private float radiatorWattage = 300;
-    private float radiatorTempIncreasePerHour = 5;
+    private float radiatorTempIncreasePerMinute = 1;
     // radiators cut off after reaching a certain temperature (celsius)
     private float radiatorCutoffTemp = 20;
 
     public float timeStampForSun;
 
 
-    private void Start()
+    void Start()
     {
         InitialiseRooms();
         
         // starting money
         money = 100;
+    }
+
+    void Update()
+    {
+        if (weatherHistory.length > 0)
+        {
+            int dataPointIndex = (int) (Time.time * gameHoursPerSecond);
+            // if simulation has ended, just use the last DataPoint
+            dataPointIndex = Mathf.Min(dataPointIndex, weatherHistory.length - 1);
+            DataPoint currDataPoint = weatherHistory.data[dataPointIndex];
+            outsideTemp = currDataPoint.temperature;
+            UpdateWeatherUI(currDataPoint.timestamp, dataPointIndex);
+
+            float deltaMinutes = Time.deltaTime * gameMinutesPerSecond;
+            EqualizeTemperatures(deltaMinutes);
+            // update gamification state
+            GamificationStep();
+            // update player stats on the UI
+            UpdateStatsUI();
+        }
     }
 
     void InitialiseRooms()
@@ -57,30 +80,6 @@ public class GameManager : MonoBehaviour
         {
             doors.Add(door);
         }
-    }
-
-    public IEnumerator RunSimulation()
-    {
-        for (int i = 0; i < weatherHistory.length; i++)
-        {
-            DataPoint dataPoint = weatherHistory.data[i];
-            outsideTemp = dataPoint.temperature;
-            // For the day/night cycle
-            timeStampForSun = float.Parse(dataPoint.timestamp.Substring(12, 2));
-            UpdateWeatherUI(dataPoint.timestamp, i);
-            GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().RotateSunAndMoon();
-            for (int j = 0; j < stepsPerHour; j++)
-            {
-                // simulate 1 second (equalise temperatures)
-                EqualizeTemperatures();
-                // update gamification state
-                GamificationStep();
-                // update player stats on the UI
-                UpdateStatsUI();
-                yield return new WaitForSeconds(secondsPerStep);
-            }
-        }
-        Debug.Log("End of weather data set");
     }
 
     public void UpdateWeatherUI(string timestamp, int dataPointIndex)
@@ -129,7 +128,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EqualizeTemperatures()
+    public void EqualizeTemperatures(float deltaMinutes)
     {
         // add heat to rooms if the radiator is on
         foreach (Room room in rooms)
@@ -146,10 +145,10 @@ public class GameManager : MonoBehaviour
                     }
                     else
                     {
-                        room.roomTemperature += radiatorTempIncreasePerHour / stepsPerHour;
+                        room.roomTemperature += radiatorTempIncreasePerMinute * deltaMinutes;
 
                         // apply a monetary cost to the player for using up electricity
-                        float kwhUsed = (radiatorWattage / 1000) / stepsPerHour;
+                        float kwhUsed = (radiatorWattage / 1000) * deltaMinutes * 60;
                         float electricityCost = kwhUsed * kwhRate;
                         money -= electricityCost;
 
@@ -161,26 +160,25 @@ public class GameManager : MonoBehaviour
 
         // equalise temperatures between each room and the outside weather
         foreach (Room room in rooms) {
-            room.EqualiseTempToOutside();
+            room.EqualiseTempToOutside(deltaMinutes);
         }
 
         // equalise temperatures between hallways
         foreach (Room room in rooms)
         {
-            room.EqualiseTempToEasternHallway();
+            room.EqualiseTempToEasternHallway(deltaMinutes);
         }
 
         // equalise temperatures between rooms with a door inbetween
         foreach (Door door in doors)
         {
-            door.EqualiseTempBetweenRooms();
+            door.EqualiseTempBetweenRooms(deltaMinutes);
         }
     }
     
     public void SetWeatherData(WeatherHistory weatherHistory)
     {
         this.weatherHistory = weatherHistory;
-        StartCoroutine(RunSimulation());
     }
 
     public void addRoom(Room room)

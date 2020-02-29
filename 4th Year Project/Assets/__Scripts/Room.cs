@@ -45,21 +45,21 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void EqualiseTempToOutside()
+    public void EqualiseTempToOutside(float deltaMinutes)
     {
         // count the number of walls that are exposed to the elements
         float numWallsExposed = adjRooms.NumSidesNotConnected();
 
         // compute heat rate to the outside (10x faster if window is open)
-        float heatLossRate = (numWallsExposed * (window != null && window.activated ? 10 : 2)) / 80f;
+        float heatLossRate = (numWallsExposed * (window != null && window.activated ? 10 : 2)) / 400f;
 
         // change room temperature towards temperature outside
         float tempDiff = gameManager.outsideTemp - roomTemperature;
-        float tempChange = tempDiff * heatLossRate;
+        float tempChange = tempDiff * heatLossRate * deltaMinutes;
         roomTemperature += tempChange;
     }
 
-    public void EqualiseTempToEasternHallway()
+    public void EqualiseTempToEasternHallway(float deltaMinutes)
     {
         if (!isHallway)
         {
@@ -75,7 +75,7 @@ public class Room : MonoBehaviour
             float heatChangeRate = 0.9f;
 
             float tempDiff = roomTemperature - eastRoom.roomTemperature;
-            float tempChange = (tempDiff * heatChangeRate) / 2;
+            float tempChange = (tempDiff * heatChangeRate * deltaMinutes) / 2;
             roomTemperature -= tempChange;
             eastRoom.roomTemperature += tempChange;
         }

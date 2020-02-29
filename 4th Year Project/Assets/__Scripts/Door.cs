@@ -12,7 +12,7 @@ public class Door : Interactable
         cube.SetActive(true);
     }
 
-    public void EqualiseTempBetweenRooms()
+    public void EqualiseTempBetweenRooms(float deltaMinutes)
     {
         Room[] twoRooms = adjRooms.GetConnectedRooms();
         Room roomA = twoRooms[0];
@@ -25,7 +25,7 @@ public class Door : Interactable
         heatChangeRate = (activated ? 5 : 1) / 10f;
 
         float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
-        float tempChange = (tempDiff * heatChangeRate) / 2;
+        float tempChange = (tempDiff * heatChangeRate * deltaMinutes) / 2;
         roomA.roomTemperature -= tempChange;
         roomB.roomTemperature += tempChange;
     }
