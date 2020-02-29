@@ -11,6 +11,8 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     private Transform sunMoonStartRotation;
     private const float dayLength = 24;
+    private float datasetStartHour = 9;
+    private float rotZeroHour = 12;
     private int totalRotation = -15;
     private MeshRenderer mr;
     private float skyBoxIncrement;
@@ -36,8 +38,8 @@ public class DayNightCycle : MonoBehaviour
 
     public void RotateSunAndMoon(float gameHours)
     {
-        float startingPos = 12;
-        float startingHour = 17 - startingPos;
+        
+        float startingHour = datasetStartHour - rotZeroHour;
         gameHours += startingHour;
         float rotation = (gameHours % 24) / 24 * 360;
 
