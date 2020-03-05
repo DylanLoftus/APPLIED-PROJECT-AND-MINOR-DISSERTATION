@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         
         if (playerRoom != null)
         {
-            float tempPlayerExperiencing = playerRoom.roomTemperature;
+            float tempPlayerExperiencing = playerRoom.temperature;
             float optimalTemp = 18;
             // degrees from optimalTemp where the player's comfort value reaches 0
             float zeroComfortOffset = 14;
