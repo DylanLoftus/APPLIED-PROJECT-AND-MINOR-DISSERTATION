@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().RotateSunAndMoon(gameHours);
             //GameObject.Find("SunAndMoon").GetComponent<DayNightCycle>().SetSunMoonRotation(timeStampForSun);
 
-            EqualizeTemperatures(deltaMinutes);
+            TempSimulationStep(deltaMinutes);
             // update gamification state
             GamificationStep(deltaMinutes);
             // update player stats on the UI
@@ -130,19 +130,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EqualizeTemperatures(float deltaMinutes)
+    public void TempSimulationStep(float deltaMinutes)
     {
+        // equalise temperatures between each room and the outside weather
+        foreach (Room room in rooms)
+        {
+            room.EqualiseTempToOutside(deltaMinutes);
+        }
+
         // add heat to rooms if a radiator is on
         foreach (Room room in rooms)
         {
             // add radiator heat and incurr a realstic electricity cost, per radiator
-            float kwhCost = kwhRate * room.AddRadiatorHeat(deltaMinutes);
+            float kwhCost = kwhRate * room.SimulateRadiators(deltaMinutes);
             money -= kwhCost;
-        }
-
-        // equalise temperatures between each room and the outside weather
-        foreach (Room room in rooms) {
-            room.EqualiseTempToOutside(deltaMinutes);
         }
 
         // equalise temperatures between hallways

@@ -81,12 +81,15 @@ public class Room : MonoBehaviour
         }
     }
 
-    public float AddRadiatorHeat(float deltaMinutes)
+    public float SimulateRadiators(float deltaMinutes)
     {
         float totalKwh = 0;
         foreach (Radiator radiator in GetComponentsInChildren<Radiator>())
         {
-            totalKwh += radiator.SimulateTime(deltaMinutes, this);
+            // simulate radiator for the given amount of time (returns kwh used)
+            float kwhUsed = radiator.SimulateTime(deltaMinutes, this);
+            // add this radiator's kwh usage to the total
+            totalKwh += kwhUsed;
         }
 
         return totalKwh;
