@@ -22,16 +22,12 @@ public class GameManager : MonoBehaviour
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
 
+    // gamification constants
+    public const float kwhRate = 0.150f;
+
     // gamification state
     public float money;
     private float playerComfort = 1.0f;
-
-    // gamification variables
-    private const float kwhRate = 0.150f;
-    private float radiatorWattage = 300;
-    private float radiatorTempIncreasePerMinute = 1;
-    // radiators cut off after reaching a certain temperature (celsius)
-    private float radiatorCutoffTemp = 20;
 
     public float timeStampForSun;
     
@@ -136,32 +132,12 @@ public class GameManager : MonoBehaviour
 
     public void EqualizeTemperatures(float deltaMinutes)
     {
-        // add heat to rooms if the radiator is on
+        // add heat to rooms if a radiator is on
         foreach (Room room in rooms)
         {
-            foreach (Radiator radiator in room.GetComponentsInChildren<Radiator>())
-            {
-                if (radiator != null && radiator.activated)
-                {
-                    if (room.roomTemperature >= radiatorCutoffTemp)
-                    {
-                        // radiator has reached it's target temp; don't heat the room any more
-                        // (color the radiator yellow to show this)
-                        radiator.SetColor(Color.yellow);
-                    }
-                    else
-                    {
-                        room.roomTemperature += radiatorTempIncreasePerMinute * deltaMinutes;
-
-                        // apply a monetary cost to the player for using up electricity
-                        float kwhUsed = (radiatorWattage / 1000) / 60 * deltaMinutes;
-                        float electricityCost = kwhUsed * kwhRate;
-                        money -= electricityCost;
-
-                        radiator.SetColor(Color.red);
-                    }
-                }
-            }
+            // add radiator heat and incurr a realstic electricity cost, per radiator
+            float kwhCost = kwhRate * room.AddRadiatorHeat(deltaMinutes);
+            money -= kwhCost;
         }
 
         // equalise temperatures between each room and the outside weather

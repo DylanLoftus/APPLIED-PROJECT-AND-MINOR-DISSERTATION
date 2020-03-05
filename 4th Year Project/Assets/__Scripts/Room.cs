@@ -81,6 +81,34 @@ public class Room : MonoBehaviour
         }
     }
 
+    public float AddRadiatorHeat(float deltaMinutes)
+    {
+        float totalKwh = 0;
+        foreach (Radiator radiator in GetComponentsInChildren<Radiator>())
+        {
+            if (radiator != null && radiator.activated)
+            {
+                if (roomTemperature >= radiator.cutoffTemp)
+                {
+                    // radiator has reached it's target temp; don't heat the room any more
+                    // (color the radiator yellow to show this)
+                    radiator.SetColor(Color.yellow);
+                }
+                else
+                {
+                    roomTemperature += radiator.tempIncreasePerMinute * deltaMinutes;
+
+                    // calculate kwh used for this radiator and add to the total
+                    totalKwh += (radiator.wattage / 1000) / 60 * deltaMinutes;
+
+                    radiator.SetColor(Color.red);
+                }
+            }
+        }
+
+        return totalKwh;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
