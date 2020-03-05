@@ -6,7 +6,7 @@ public class RoomAdjUtils {
     {
         Room newRoomScript = room.GetComponent<Room>();
         newRoomScript.adjRooms.reset();
-        newRoomScript.roomTemperature = copyTempRoom.GetComponent<Room>().roomTemperature;
+        newRoomScript.temperature = copyTempRoom.GetComponent<Room>().temperature;
     }
 
     // Create adjacencies between two rooms (north/south), for the temperature logic

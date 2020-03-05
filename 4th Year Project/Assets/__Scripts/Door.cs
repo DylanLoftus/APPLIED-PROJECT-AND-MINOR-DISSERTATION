@@ -24,10 +24,10 @@ public class Door : Interactable
         // faster heat exchange if door is open, slower otherwise
         heatChangeRate = (activated ? 5 : 1) / 10f;
 
-        float tempDiff = roomA.roomTemperature - roomB.roomTemperature;
+        float tempDiff = roomA.temperature - roomB.temperature;
         float tempChange = (tempDiff * heatChangeRate * deltaMinutes) / 2;
-        roomA.roomTemperature -= tempChange;
-        roomB.roomTemperature += tempChange;
+        roomA.temperature -= tempChange;
+        roomB.temperature += tempChange;
     }
 
     public override void OnInteraction(bool activated)

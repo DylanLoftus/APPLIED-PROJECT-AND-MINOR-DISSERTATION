@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/__Scenes/WeatherSelect.unity
     guid: d2a3810235d6b2849b6f266bb9316a1b
   - enabled: 0
     path: Assets/__Scenes/SampleScene.unity
     guid: b5e98bb1d05abc74d99c89e0643d413d
   - enabled: 1
-    path: Assets/__Scenes/Modular Scene.unity
+    path: Assets/__Scenes/ModularScene.unity
     guid: 3b794e3bf159c814bb463f5af3098688
   m_configObjects: {}

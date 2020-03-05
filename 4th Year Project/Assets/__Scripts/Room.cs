@@ -2,7 +2,7 @@
 
 public class Room : MonoBehaviour
 {
-    public float roomTemperature = 0;
+    public float temperature = 0;
 
     private GameManager gameManager;
     private Room roomObject;
@@ -19,10 +19,10 @@ public class Room : MonoBehaviour
         roomObject = gameObject.GetComponent<Room>();
         window = gameObject.GetComponentInChildren<Window>();
 
-        if (roomTemperature == 0)
+        if (temperature == 0)
         {
             // default room temperature
-            roomTemperature = 18;
+            temperature = 18;
         }
     }
     
@@ -33,7 +33,7 @@ public class Room : MonoBehaviour
         float ceilTemp = 18;
         float tempScale = ceilTemp - floorTemp;
 
-        float tempGradient = Mathf.Clamp((roomTemperature - floorTemp) / tempScale, 0, 1);
+        float tempGradient = Mathf.Clamp((temperature - floorTemp) / tempScale, 0, 1);
         float red = tempGradient;
         float blue = (1 - tempGradient);
         
@@ -54,9 +54,9 @@ public class Room : MonoBehaviour
         float heatLossRate = (numWallsExposed * (window != null && window.activated ? 10 : 2)) / 400f;
 
         // change room temperature towards temperature outside
-        float tempDiff = gameManager.outsideTemp - roomTemperature;
+        float tempDiff = gameManager.outsideTemp - temperature;
         float tempChange = tempDiff * heatLossRate * deltaMinutes;
-        roomTemperature += tempChange;
+        temperature += tempChange;
     }
 
     public void EqualiseTempToEasternHallway(float deltaMinutes)
@@ -74,11 +74,25 @@ public class Room : MonoBehaviour
             // TODO this is duplicate code to code in Door.EqualiseTempBetweenRooms: create an abstraction
             float heatChangeRate = 0.9f;
 
-            float tempDiff = roomTemperature - eastRoom.roomTemperature;
+            float tempDiff = temperature - eastRoom.temperature;
             float tempChange = (tempDiff * heatChangeRate * deltaMinutes) / 2;
-            roomTemperature -= tempChange;
-            eastRoom.roomTemperature += tempChange;
+            temperature -= tempChange;
+            eastRoom.temperature += tempChange;
         }
+    }
+
+    public float SimulateRadiators(float deltaMinutes)
+    {
+        float totalKwh = 0;
+        foreach (Radiator radiator in GetComponentsInChildren<Radiator>())
+        {
+            // simulate radiator for the given amount of time (returns kwh used)
+            float kwhUsed = radiator.SimulateTime(deltaMinutes, this);
+            // add this radiator's kwh usage to the total
+            totalKwh += kwhUsed;
+        }
+
+        return totalKwh;
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -21,7 +21,7 @@ public class TempDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float rounded = (float)Math.Round(room.roomTemperature * 100f) / 100f;
+        float rounded = (float)Math.Round(room.temperature * 100f) / 100f;
         currentRoomTemp.text = rounded.ToString();
     }
 }
