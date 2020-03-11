@@ -273,7 +273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6ee08f2df4c44b0479d332145f28ce31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1474,7 +1474,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6ee08f2df4c44b0479d332145f28ce31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2095,7 +2095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03305fd9fb0c53f4cba2673740ada423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTemperature: 0
+  temperature: 0
   adjRooms:
     roomNorth: {fileID: 0}
     roomSouth: {fileID: 0}
@@ -2406,6 +2406,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2588150165987739283, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2465,16 +2475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00464c4c5d60984fb81d4440bc2fc3b, type: 3}
@@ -2631,6 +2631,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150165987739292, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 7658453436176578654}
+    - target: {fileID: 2588150165987739292, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: connectingRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2588150165987739283, guid: b00464c4c5d60984fb81d4440bc2fc3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2690,26 +2710,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150166090995470, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150165987739292, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[0]
-      value: 
-      objectReference: {fileID: 7658453436176578654}
-    - target: {fileID: 2588150165987739292, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: connectingRooms.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588150166899349351, guid: b00464c4c5d60984fb81d4440bc2fc3b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00464c4c5d60984fb81d4440bc2fc3b, type: 3}
