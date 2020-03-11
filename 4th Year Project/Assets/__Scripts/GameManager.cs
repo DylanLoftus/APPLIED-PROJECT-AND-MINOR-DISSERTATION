@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // time constants
-    private const float timeMultiplier = 46080;
+    private const float timeMultiplier = 2000;
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
 
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private float playerComfort = 1.0f;
 
     public float timeStampForSun;
+    private float startTime;
 
     void Start()
     {
@@ -38,18 +39,19 @@ public class GameManager : MonoBehaviour
         
         // starting money
         money = 100;
+
+        startTime = Time.time;
     }
 
     void Update()
     {
         if (weatherHistory.length > 0)
         {
-            float gameHours = Time.time * gameHoursPerSecond;
+            float gameHours = (Time.time - startTime) * gameHoursPerSecond;
             int dataPointIndex = (int) (gameHours);
-            // if simulation has ended, just use the last DataPoint
+            // if simulation has ended, show the weather select scene again
             if(dataPointIndex >= weatherHistory.length)
             {
-                dataPointIndex = 0;
                 SceneManager.LoadSceneAsync("WeatherSelect");
             }
             DataPoint currDataPoint = weatherHistory.data[dataPointIndex];
