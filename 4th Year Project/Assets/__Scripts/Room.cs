@@ -29,13 +29,18 @@ public class Room : MonoBehaviour
     void Update()
     {
         // change floor color of floor to gradient between blue/red based on temperature
-        float floorTemp = 0;
-        float ceilTemp = 18;
+        float intensity = 0.5f;
+        float floorTemp = 8;
+        float ceilTemp = 25;
         float tempScale = ceilTemp - floorTemp;
 
         float tempGradient = Mathf.Clamp((temperature - floorTemp) / tempScale, 0, 1);
         float red = tempGradient;
         float blue = (1 - tempGradient);
+
+        // intensity modifier
+        red *= intensity;
+        blue *= intensity;
         
         // floor may be split into multiple parts
         Renderer[] floorRenderers = roomObject.transform.Find("Floor").GetComponentsInChildren<Renderer>();
