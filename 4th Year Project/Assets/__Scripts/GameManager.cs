@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // time constants
-    private const float timeMultiplier = 2000;
+    private const float timeMultiplier = 540;
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
 
