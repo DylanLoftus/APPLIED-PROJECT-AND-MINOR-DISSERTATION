@@ -17,6 +17,8 @@ public class WeatherListingReader : MonoBehaviour
     {
         DontDestroyOnLoad(transform.gameObject);
 
+        Cursor.lockState = CursorLockMode.None;
+
         StartCoroutine(GetListings());
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }

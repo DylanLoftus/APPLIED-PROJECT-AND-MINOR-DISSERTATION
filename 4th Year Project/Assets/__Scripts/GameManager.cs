@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // time constants
-    private const float timeMultiplier = 720;
+    private const float timeMultiplier = 46080;
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     private float playerComfort = 1.0f;
 
     public float timeStampForSun;
-    
+
     void Start()
     {
         InitialiseRooms();
@@ -46,7 +47,11 @@ public class GameManager : MonoBehaviour
             float gameHours = Time.time * gameHoursPerSecond;
             int dataPointIndex = (int) (gameHours);
             // if simulation has ended, just use the last DataPoint
-            dataPointIndex = Mathf.Min(dataPointIndex, weatherHistory.length - 1);
+            if(dataPointIndex >= weatherHistory.length)
+            {
+                dataPointIndex = 0;
+                SceneManager.LoadSceneAsync("WeatherSelect");
+            }
             DataPoint currDataPoint = weatherHistory.data[dataPointIndex];
             outsideTemp = currDataPoint.temperature;
             UpdateWeatherUI(currDataPoint.timestamp, dataPointIndex);

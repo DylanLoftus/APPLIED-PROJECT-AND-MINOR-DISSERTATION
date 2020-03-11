@@ -12,6 +12,6 @@ public class OnDatasetChosen : MonoBehaviour
         WeatherListingReader reader = GameObject.Find("WeatherListingReader").GetComponent<WeatherListingReader>();
         string datasetLink = reader.listings.listings[dataset].link;
         reader.chosenDatasetLink = datasetLink;
-        SceneManager.LoadSceneAsync("ModularScene");
+        SceneManager.LoadScene("ModularScene");
     }
 }
