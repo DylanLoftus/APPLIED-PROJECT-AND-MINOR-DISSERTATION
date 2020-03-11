@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private IList<Door> doors;
 
     // time constants
-    private const float timeMultiplier = 2000;
+    private const float timeMultiplier = 540;
     private const float gameMinutesPerSecond = timeMultiplier / 60;
     private const float gameHoursPerSecond = gameMinutesPerSecond / 60;
 
@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
 
         UnityEngine.UI.Slider slider = GameObject.FindGameObjectWithTag("ProgressSlider").GetComponent<UnityEngine.UI.Slider>();
         slider.value = dataPointIndex;
+        slider.maxValue = weatherHistory.length - 1;
     }
 
     public void UpdateStatsUI()
