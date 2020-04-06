@@ -13,7 +13,7 @@ public class Room : MonoBehaviour
     public bool isHallway = false;
     public bool playerInside;
 
-    void Start()
+    void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         roomObject = gameObject.GetComponent<Room>();
@@ -113,6 +113,16 @@ public class Room : MonoBehaviour
         if (collision.tag == "Player")
         {
             playerInside = false;
+        }
+    }
+
+    public void ResetState()
+    {
+        // deactivate and reset all doors, radiators, and windows
+        foreach (Interactable interactable in GetComponentsInChildren<Interactable>())
+        {
+            interactable.activated = false;
+            interactable.ResetState();
         }
     }
 }

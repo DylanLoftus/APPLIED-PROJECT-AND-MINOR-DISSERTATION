@@ -73,6 +73,9 @@ public class Instantiator : MonoBehaviour
         newHallway = Instantiate(hallwayChoice, new Vector3(spawnPos.x, spawnPos.y, spawnPos.z), Quaternion.identity);
         InitialiseRoomTempLogic(newHallway, currentHallway);
 
+        // reset hallway (close doors)
+        newHallway.GetComponent<Room>().ResetState();
+
         // If the hallway is an L hallway we'll need to rotate the second one and ever subsequent one after that 90 degrees.
         rotation = currentHallway.transform.rotation.y + (90 * hallwayLCount);
         newHallway.transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
@@ -111,6 +114,9 @@ public class Instantiator : MonoBehaviour
         Vector3 roomSpawn = currentHallway.transform.Find("SpawnpointRoom" + roomCount.ToString()).transform.position;
         newRoom = Instantiate(roomTemplate, new Vector3(roomSpawn.x, roomSpawn.y, roomSpawn.z), Quaternion.identity);
         newRoom.transform.rotation = Quaternion.Euler(new Vector3(0, roomRotation, 0));
+
+        // reset room state (close window, turn off radiators, etc)
+        newRoom.GetComponent<Room>().ResetState();
 
         // Link new room up for the temperature exchange logic
         LinkNewRoom();
