@@ -3945,7 +3945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: Horizontal
   verticalInput: Vertical
-  movementSpeed: 6
+  movementSpeed: 4
 --- !u!4 &2045054466
 Transform:
   m_ObjectHideFlags: 0
