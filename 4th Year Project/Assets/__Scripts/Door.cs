@@ -6,7 +6,7 @@ public class Door : Interactable
     
     public AdjRooms adjRooms;
 
-    void Start()
+    void Awake()
     {
         cube = transform.GetChild(1).gameObject;
         cube.SetActive(true);
@@ -34,5 +34,11 @@ public class Door : Interactable
     {
         GetComponentInChildren<Rigidbody>().transform.Rotate(0, activated ? 90 : -90, 0, Space.Self);
         cube.SetActive(!activated);
+    }
+
+    public override void ResetState()
+    {
+        GetComponentInChildren<Rigidbody>().transform.localRotation = Quaternion.Euler(0, 0, 0);
+        cube.SetActive(true);
     }
 }

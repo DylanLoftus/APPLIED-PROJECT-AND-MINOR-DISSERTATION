@@ -16,7 +16,7 @@ public class Radiator : Interactable
 
     private Material mat;
 
-    void Start()
+    void Awake()
     {
         mat = GetComponentInChildren<Renderer>().material;
         tempInc = 0;
@@ -31,7 +31,6 @@ public class Radiator : Interactable
 
         if (activated)
         {
-            Debug.Log(tempInc);
             if (room.temperature >= cutoffTemp)
             {
                 // radiator has reached it's target temp; don't heat the room any more
@@ -60,6 +59,11 @@ public class Radiator : Interactable
     public override void OnInteraction(bool activated)
     {
         SetColor(activated ? Color.red : Color.white);
+    }
+
+    public override void ResetState()
+    {
+        // no rotation to reset
     }
 
     public void SetColor(Color color)

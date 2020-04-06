@@ -25,6 +25,7 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public abstract void OnInteraction(bool activated);
+    public abstract void ResetState();
 
     private void OnTriggerEnter(Collider collision)
     {
