@@ -55,7 +55,7 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
-    m_Resolution: 2
+    m_Resolution: 4
     m_BakeResolution: 40
     m_AtlasSize: 1024
     m_AO: 0
@@ -64,7 +64,8 @@ LightmapSettings:
     m_CompAOExponentDirect: 0
     m_ExtractAmbientOcclusion: 0
     m_Padding: 2
-    m_LightmapParameters: {fileID: 0}
+    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000,
+      type: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
     m_FinalGather: 0
@@ -76,7 +77,7 @@ LightmapSettings:
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
-    m_PVRBounces: 2
+    m_PVRBounces: 3
     m_PVREnvironmentSampleCount: 256
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 1
@@ -86,8 +87,8 @@ LightmapSettings:
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVREnvironmentMIS: 1
-    m_PVRCulling: 1
+    m_PVREnvironmentMIS: 0
+    m_PVRCulling: 0
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
@@ -96,7 +97,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: cfefc51dd409dea4a8a82ccfc308b6c2,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -395,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 1541210446735851401, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1541210446525336254, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -580,17 +582,22 @@ PrefabInstance:
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3.747e-42
+      value: 9.965e-42
       objectReference: {fileID: 0}
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.05e-43
+      value: 1.02e-43
       objectReference: {fileID: 0}
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 4.5904e-41
+      value: 54608132
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6944286895357648336, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -601,6 +608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908479318894530271, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1082685614074533948, guid: f99fdf511b8f274478c3381238655f08, type: 3}
@@ -902,13 +914,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.001e-42, y: 1.02e-43, z: 54608132, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2664,7 +2676,7 @@ PrefabInstance:
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -3163,7 +3175,7 @@ PrefabInstance:
     - target: {fileID: 1541210446735851401, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1541210446525336254, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
@@ -3338,17 +3350,27 @@ PrefabInstance:
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 6.662e-42
+      value: 6.733116e+22
       objectReference: {fileID: 0}
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.02e-43
+      value: 1.1865871e+27
       objectReference: {fileID: 0}
     - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 54608132
+      value: 7.146321e+22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651375103558997005, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 4.861348e+30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908479318894530271, guid: f99fdf511b8f274478c3381238655f08,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1082685614074533948, guid: f99fdf511b8f274478c3381238655f08, type: 3}
@@ -3827,7 +3849,7 @@ PrefabInstance:
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3977318779500532886, guid: 2434f539709bf394186c5f70d9a73092,
         type: 3}
@@ -4228,7 +4250,7 @@ PrefabInstance:
     - target: {fileID: 7658453434672132233, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7658453435154419211, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
@@ -4428,22 +4450,22 @@ PrefabInstance:
     - target: {fileID: 8509254270391008431, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3.2361339e+21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509254270391008431, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.086311e-10
+      value: 1.12e-43
       objectReference: {fileID: 0}
     - target: {fileID: 8509254270391008431, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 54608132
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509254270391008431, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.11566945e-11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979360024293316416, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
@@ -4464,6 +4486,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210857153028258930, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327601168024622645, guid: eb55fa0977248f14c9f5aea50ec10273,
+        type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5881835697669774676, guid: eb55fa0977248f14c9f5aea50ec10273,
         type: 3}
