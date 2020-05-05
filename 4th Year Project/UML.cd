@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AdjRooms">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgEAAAAAAAAAAABEAAEAAAAAAEAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\AdjRooms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DayNightCycle">
+    <Position X="9.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gMAAAAEAECAAAAAAiBAAgAAAAQgEAgAAAAAAAAAgAAg=</HashCode>
+      <FileName>Assets\__Scripts\DayNightCycle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Door" Collapsed="true">
+    <Position X="13.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEgAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\__Scripts\Door.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="15" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAIAIAAOAAAAABEAIgAlABBAEAAAkACAAAACAEEEA=</HashCode>
+      <FileName>Assets\__Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hallway">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\Hallway.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Instantiator">
+    <Position X="16.75" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEACAIAAICAgAAgIAFiAAYAAEQAAwwCAEEQAIEAIEIA=</HashCode>
+      <FileName>Assets\__Scripts\Instantiator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interactable">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAgAgAACAAABAAAAAAQAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JSONReader">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAABACAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\__Scripts\JSONReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OculusControllers">
+    <Position X="13.25" Y="10.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAACAAAAAFAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\__Scripts\OculusControllers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerLook">
+    <Position X="16.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABQAQAAAAAAAAAAAAAAAAAEAAAAAAABAAAEQ=</HashCode>
+      <FileName>Assets\__Scripts\PlayerLook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMove">
+    <Position X="15" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAJAEEg=</HashCode>
+      <FileName>Assets\__Scripts\PlayerMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Radiator" Collapsed="true">
+    <Position X="15" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAkAAAQAAAAhAAAAAAAAAAAAAAAAAAAIgAEAAAEEA=</HashCode>
+      <FileName>Assets\__Scripts\Radiator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAEEAAAABDAAAAAABgEAAAAAIAIQAQAAAAAAEA=</HashCode>
+      <FileName>Assets\__Scripts\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomAdjUtils">
+    <Position X="9.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\__Scripts\RoomAdjUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TempDisplay">
+    <Position X="11.5" Y="10.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\TempDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WalkWhereLooking">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAECAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\WalkWhereLooking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeatherHistory">
+    <Position X="13.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\WeatherForecast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataPoint">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\__Scripts\WeatherForecast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Window" Collapsed="true">
+    <Position X="11.5" Y="9.75" Width="1.5" />
+    <InheritanceLine Type="Interactable" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="9.531" />
+        <Point X="14" Y="9.627" />
+        <Point X="12.188" Y="9.627" />
+        <Point X="12.188" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\__Scripts\Window.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
