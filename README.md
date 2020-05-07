@@ -14,7 +14,10 @@ The concept of this project is to see if Virtual Reality can be used as a medium
 
 **weather-api/**: All of the files relating to the RESTful weather API that we created for use with the project. This includes the OpenAPI specification, Flask server code, weather data files, and the scripts we used to process the weather data into a format that is appropriate for use in our project. Running any of this code is not required to assess the project, as the weather data is served in the background to each instance of our project over the internet, using our own server.
 
-**ScreenCast.mp4**: A brief ~6-minute tour of our project. This was done over a video call, with each of us taking turns to explain various aspects of the project. 
+**ScreenCast.mp4**: A brief ~6-minute tour of our project. This was done over a video call, with each of us taking turns to explain various aspects of the project.
+
+### The Wiki
+Our [GitHub Wiki](https://github.com/DylanLoftus/APPLIED-PROJECT-AND-MINOR-DISSERTATION/wiki) contains some extra documentation for our project. This includes our **Effort Logs**, where we wrote about the work we accomplished and the difficulties we faced every time we did work on the project.
 
 ## Running the Simulation
 To run this project, navigate to the *Project Builds* folder. Within that folder you will find two *zip* archives: *PC Build* and *Oculus Build*. Both archives must be extracted before the project can be executed.
